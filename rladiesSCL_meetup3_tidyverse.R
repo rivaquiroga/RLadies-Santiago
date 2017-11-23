@@ -5,7 +5,7 @@
 
 
 # LLAMAR LOS PAQUETES
-# Cada vez que iniciamos una sesión tenemos que indicarle a R qué paquetes vamos a utiliza
+# Cada vez que iniciamos una sesión tenemos que indicarle a R qué paquetes vamos a utilizar
 
 library(tidyverse) # aquí estamos llamando a todos los paquetes que lo conforman. Nosotras trabajaremos específicamente con tres: dplyr, ggplot y readr. 
 library(gapminder) 

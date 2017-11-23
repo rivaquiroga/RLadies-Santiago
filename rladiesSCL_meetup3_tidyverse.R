@@ -4,7 +4,7 @@
 
 
 
-# LLAMAR LOS PAQUETES
+# LOS PAQUETES
 # Cada vez que iniciamos una sesión tenemos que indicarle a R qué paquetes vamos a utilizar
 
 library(tidyverse) # aquí estamos llamando a todos los paquetes que lo conforman. Nosotras trabajaremos específicamente con tres: dplyr, ggplot y readr. 
@@ -90,21 +90,21 @@ gapminder %>%
 # Ahí sí queda bien 
 
 
-#Al filtrar podemos indicar también condiciones que se tengan que cumplir. Por ejemplo, filtrar los casos del año 2007 de los países en que el PIB per cápita haya sido inferior a mil dólares:
+# Al filtrar podemos indicar también condiciones que se tengan que cumplir. Por ejemplo, filtrar los casos del año 2007 de los países en que el PIB per cápita haya sido inferior a mil dólares:
 
 gapminder %>%
     filter(year == 2007, gdpPercap < 1000) 
 
 
-#REORDENAR
-#con arrange() podemos reordenar los casos. En esta base vienen por orden alfabético de los países. Podemos cambiar eso.
+# REORDENAR
+# con arrange() podemos reordenar los casos. En esta base vienen por orden alfabético de los países. Podemos cambiar eso.
 
-#ordenar los datos de América en 2007, según expectativa de vida:
+# ordenar los datos de América en 2007, según expectativa de vida:
 gapminder %>%
     filter(year == 2007, continent == "Americas") %>% 
     arrange(lifeExp) #por defecto el orden es ascendente
 
-#Puedo cambiarlo a descendente utilizando desc()
+# Puedo cambiarlo a descendente utilizando desc()
 gapminder %>%
     filter(year == 2007, continent == "Americas") %>% 
     arrange(desc(lifeExp))
@@ -116,7 +116,7 @@ gapminder %>%
     filter(year == 2007) %>% 
     ggplot() + geom_point(aes(gdpPercap, lifeExp, color = continent)) 
 
-#los datos del PIB se encuentran muy concentrados hacia el lado izquierdo. Para poder ver mejor la relación, podemos ajustar la escala con la opción scale_x_log10()
+# los datos del PIB se encuentran muy concentrados hacia el lado izquierdo. Para poder ver mejor la relación, podemos ajustar la escala con la opción scale_x_log10()
 
 gapminder %>% 
     filter(year == 2007) %>% 
@@ -128,23 +128,23 @@ gapminder %>%
     filter(year == 2007) %>% 
     ggplot() + geom_point(aes(gdpPercap, lifeExp, color = continent)) + scale_x_log10() + expand_limits(y = 0) 
 
-#¿Y si quisiera ver los datos en gráficos distintos? Para eso puedo ocupar las opción +facet_wrap() e indicar en su interior la variable de interés.
+# ¿Y si quisiera ver los datos en gráficos distintos? Para eso puedo ocupar las opción +facet_wrap() e indicar en su interior la variable de interés.
 
 gapminder %>% 
     filter(year == 2007) %>% 
     ggplot() + geom_point(aes(gdpPercap, lifeExp, color = continent)) + scale_x_log10() + expand_limits(y = 0) + facet_wrap(~continent)
 
 
-#A nuestro gráfico aún le faltan algunas cosas importantes, como ponerle nombre a los ejes. Podemos hacerlo con +xlab() e +ylab().
+# A nuestro gráfico aún le faltan algunas cosas importantes, como ponerle nombre a los ejes. Podemos hacerlo con +xlab() e +ylab().
 
 gapminder %>% 
     filter(year == 2007) %>% 
     ggplot() + geom_point(aes(gdpPercap, lifeExp, color = continent)) + scale_x_log10() + expand_limits(y = 0)  +xlab("PIB per cápita") +ylab("Expectativa de vida (US$)")
 
-#¿Y el título? Lo pueden agregar con +ggtitle(). Igual que con xlab() e ylab(), tienen que ponerlo con comillas
+# ¿Y el título? Lo pueden agregar con +ggtitle(). Igual que con xlab() e ylab(), tienen que ponerlo con comillas
 
 
-#RESUMIR/SINTETIZAR y AGRUPAR
+# RESUMIR/SINTETIZAR y AGRUPAR
 # La función summarize() sirve para resumir información en una nueva tabla.
 # ¿cuál fue el promedio de la expectativa de vida el año 2007?
 
@@ -159,13 +159,13 @@ gapminder %>%
     group_by(continent) %>% #agrupa los datos por continente
     summarize(media_exp_vida = mean(lifeExp))
 
-#Miremos más: en vez de ver solo un año, revisémoslos todos. Agrupemos por continente y luego por año:
+# Miremos más: en vez de ver solo un año, revisémoslos todos. Agrupemos por continente y luego por año:
 
 gapminder %>% 
     group_by(continent, year) %>% 
     summarize(media_exp_vida = mean(lifeExp)) 
 
-#si agregamos %>% View() al final, podemos ver todos los resultados
+# si agregamos %>% View() al final, podemos ver todos los resultados
 
 gapminder %>% 
     group_by(continent, year) %>% 
@@ -183,30 +183,30 @@ gapminder %>%
 
 exp_vida_continente <- read_csv("exp_vida.csv") #si ya no estamos dentro del proyecto, tendríamos que indicar toda la ruta del archivo.
 
-#grafiquemos esos datos. Como creamos un objeto con ellos, podemos irnos directo a ggplot
+# grafiquemos esos datos. Como creamos un objeto con ellos, podemos irnos directo a ggplot
 ggplot(exp_vida_continente) + geom_line(aes(year, media_exp_vida, colour = continent)) + expand_limits(y = 0)
     
-#podrían agregarle nombre a los ejes y título :)
+# podrían agregarle nombre a los ejes y título :)
 
 # CREAR NUEVAS VARIABLES
 # mutate() sirve para crear una nueva variable en función de una que ya existe
 
-#primero, creemos un objeto nuevo que tenga solo los datos de Chile: gapminder_CL
+# primero, creemos un objeto nuevo que tenga solo los datos de Chile: gapminder_CL
 
 gapminder_CL <- gapminder %>% 
     filter(country == "Chile")
 
-#en esta base el PIB está calculado en dólares. Podríamos crear una nueva variable en la que se indique el valor en pesos. Asumamos que el dolar está a 640 (pueden cambiarlo por el valor del día si quieren ser más precisas):
+# en esta base el PIB está calculado en dólares. Podríamos crear una nueva variable en la que se indique el valor en pesos. Asumamos que el dolar está a 640 (pueden cambiarlo por el valor del día si quieren ser más precisas):
 
 gapminder_CL %>% 
     mutate(PIBpercap_pesos = 640 * gdpPercap)
-#la variable nueva quedó en el extremo derecho de la tabla. Puede que no la vean, porque se muestran solo las columnas que caben en la ventana. En ese caso, puede utilizar agrgar %>% View() para mirarla:
+# la variable nueva quedó en el extremo derecho de la tabla. Puede que no la vean, porque se muestran solo las columnas que caben en la ventana. En ese caso, puede utilizar agrgar %>% View() para mirarla:
 
 gapminder_CL %>% 
     mutate(PIBpercap_pesos = 640 * gdpPercap) %>% 
     View()
 
-#también podríamos recalcular la población, para que nos la muestre en millones. Agreguen %>% View() al final si no pueden ver la columna
+# también podríamos recalcular la población, para que nos la muestre en millones. Agreguen %>% View() al final si no pueden ver la columna
 
 gapminder_CL %>% 
     mutate(PIBpercap_pesos = 640 * gdpPercap, pop_millones = (pop / 1000000))
@@ -216,10 +216,10 @@ gapminder_CL %>%
 gapminder_CL %>% 
     mutate(PIBpercap_pesos = 640 * gdpPercap, pob_millones = round((pop / 1000000),1))
 
-#SELECCIONAR VARIABLES
+# SELECCIONAR VARIABLES
 # Después de ejecutar el código anterior nos quedamos con algunas variables duplicadas. Además, tenemos algunas variables que ya no son útiles: esta base solo tiene datos de Chile y todas sabemos en qué continente se encuentra. Con select() podemos seleccionar columnas. 
 
-#reescribiremos nuestro objeto gapminder_CL
+# reescribiremos nuestro objeto gapminder_CL
 
 gapminder_CL <- gapminder_CL %>% 
     mutate(PIBpercap_pesos = 640 * gdpPercap, pob_millones = round(pop / 1000000, 1)) %>% 

@@ -1,2 +1,2 @@
 # RLadies Santiago
-Presentaciones para R-Ladies Santiago
+Presentaciones, scripts y materiales varios creados para R-Ladies Santiago

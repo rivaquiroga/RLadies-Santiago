@@ -3,7 +3,7 @@ Presentaciones, scripts y materiales creados para R-Ladies Santiago
 
 * __Primera reunión (septiembre 2017): introtextanalysis.pdf__
 
-Presentación de algunos paquetes y sus posibilidades para el análisis de texto
+Presentación de algunos paquetes y sus posibilidades para el análisis de textos
 
 * __Tercera reunión (noviembre 2017): intro_tidyverse.pdf__
 

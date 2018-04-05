@@ -38,7 +38,7 @@ install.packages("babynames")
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/install.packages.png)
 
-3. y presiona 'enter'. El resultado se debería ver parecido a esto:
+3. y presiona 'enter'. El último paquete es un poco ms pesado que el resto, así que, dependiendo de tu conexión, podría tomar un minuto. El resultado se debería ver parecido a esto:
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/paquetes_instalados.png)
 

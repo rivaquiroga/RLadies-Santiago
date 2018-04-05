@@ -8,11 +8,12 @@ Para poder instalar R y RStudio, sigue los siguientes pasos:
 
 - Descarga R desde https://cran.r-project.org/. Debes elegir la opción que corresponda según tu sistema operativo.
 - Instala R en tu computador, tal como lo haces con cualquier programa. 
-- Chequea que el programa haya quedado adecuadamente instalado (por ejemplo, abriéndolo).
 - Descarga RStudio desde https://www.rstudio.com/products/rstudio/download/. Elige la primera opción, es decir, "RStudio Desktop
 Open Source License" (gratuita). 
 - Instala RStudio en tu computador, tal como lo haces con cualquier programa. 
-- Chequea que el programa haya quedado adecuadamente instalado.
+
+Si el quedó todo bien instalado, cuando abras RStudio deberías ver algo así:
+
 
 ## Instalación de los paquetes de R que usaremos
 

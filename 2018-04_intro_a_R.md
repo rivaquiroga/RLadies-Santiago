@@ -36,11 +36,11 @@ install.packages("babynames")
 
 2. pégalo en RStudio
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/install_packages.png)
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/install.packages.png)
 
 3. y presiona 'enter'. El resultado se debería ver parecido a esto:
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/instalados.png)
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/paquetes_instalados.png)
 
 ## Descarga de otros archivos
 

@@ -14,7 +14,7 @@ Open Source License" (gratuita).
 
 Si el quedó todo bien instalado, cuando abras RStudio deberías ver algo así:
 
-![RStudio](https://www.dropbox.com/s/a0vfyj56bvdd813/rstudio.png)
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio.png)
 
 ## Instalación de los paquetes de R que usaremos
 

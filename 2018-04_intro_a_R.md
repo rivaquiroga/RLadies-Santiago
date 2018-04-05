@@ -32,8 +32,13 @@ install.packages("gapminder")
 
 2. pégalo en RStudio
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/install.packages.png)
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/install_packages.png)
 
 3. y presiona 'enter'. El resultado se debería ver parecido a esto:
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/paquetes_instalados.png)
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/instalados.png)
+
+## Descarga de otros archivos
+
+Durante el taller, aprenderemos también a importar archivos y a unir planillas de datos. Para ello, descarga los siguientes archivos:
+

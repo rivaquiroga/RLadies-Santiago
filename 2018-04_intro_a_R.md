@@ -22,7 +22,7 @@ Si quedó todo bien instalado, cuando abras RStudio deberías ver algo así:
 
 Cuando instalamos R por primera vez en nuestro computador, lo que estamos instalando es lo que se conoce como "R Base", es decir, los elementos centrales del lenguaje de programación. Una de las ventajas de R es que se trata de un lenguaje extensible: la propia comunidad de usuarios puede desarrollar nuevas posibilidades para utilizarlo. La manera de compartir estos nuevos desarrollos es a través de "paquetes", que incluyen, entre otras cosas, código y datos.
 
-En este taller usaremos dos paquetes: `gapminder` y `tidyverse`. `gapminder` es una base de datos que nos servirá para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos estos paquetes comparten la misma visión sobre el trabajo con datos. Quizás ahora eso suene un poco enigmático, pero durante el taller explicaremos qué quiere decir. 
+En este taller usaremos tres paquetes: `gapminder`, `babynames` y `tidyverse`. `gapminder` y `babynames` son paquetes de datos que nos servirán para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos los paquetes del Tidyverse comparten la misma visión sobre el trabajo con datos. Quizás ahora eso suene un poco enigmático, pero durante el taller explicaremos qué quiere decir. 
 
 Vamos al grano: es importante que descargues esos paquetes antes del taller, porque no tenemos la posibilidad de ofrecer conexión a internet. Para instalarlos, 
 
@@ -31,6 +31,7 @@ Vamos al grano: es importante que descargues esos paquetes antes del taller, por
 ```r
 install.packages("tidyverse")
 install.packages("gapminder")
+install.packages("babynames")
 ```
 
 2. pégalo en RStudio
@@ -44,4 +45,8 @@ install.packages("gapminder")
 ## Descarga de otros archivos
 
 Durante el taller, aprenderemos también a importar archivos y a unir planillas de datos. Para ello, descarga los siguientes archivos:
+
+[Datos 2014](https://goo.gl/pNWbhd)
+
+[Datos 2015](https://goo.gl/i5K8K9)
 

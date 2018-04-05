@@ -5,7 +5,7 @@ A continuación encontrarás las indicaciones para instalar los programas y desc
 
 ## Instalación de R y RStudio
 
-En este taller utilizaremos R a través del IDE RStudio. ¿Qué es un IDE? IDE es el acrónimo de *Integrated Development Environment*, es decir, un *Entorno de Desarrollo Integrado*. Esto quiere decir que RStudio es una aplicació que nos entrega herramientas para hacer más fácil el desarrollo de proyectos usando R.  
+En este taller utilizaremos R a través del IDE RStudio. ¿Qué es un IDE? IDE es el acrónimo de *Integrated Development Environment*, es decir, un *Entorno de Desarrollo Integrado*. Esto quiere decir que RStudio es una aplicación que nos entrega herramientas para hacer más fácil el desarrollo de proyectos usando R.  
 
 Para poder instalar R y RStudio, sigue los siguientes pasos:
 
@@ -24,9 +24,9 @@ Cuando instalamos R por primera vez en nuestro computador, lo que estamos instal
 
 En este taller usaremos tres paquetes: `gapminder`, `babynames` y `tidyverse`. `gapminder` y `babynames` son paquetes de datos que nos servirán para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos los paquetes del Tidyverse comparten la misma visión sobre el trabajo con datos. Quizás ahora eso suene un poco enigmático, pero durante el taller explicaremos qué quiere decir. 
 
-Vamos al grano: es importante que descargues esos paquetes antes del taller, porque no tenemos la posibilidad de ofrecer conexión a internet. Para instalarlos, 
+Es importante que descargues esos paquetes antes del taller, porque no tenemos la posibilidad de ofrecer conexión a internet. Para instalarlos, 
 
-1. copia el siguiente código
+1. copia el siguiente código:
 
 ```r
 install.packages("tidyverse")
@@ -34,11 +34,12 @@ install.packages("gapminder")
 install.packages("babynames")
 ```
 
-2. pégalo en RStudio
+2. pégalo en la consola (_Console_) de RStudio:
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/install.packages.png)
 
-3. y presiona 'enter'. El último paquete es un poco ms pesado que el resto, así que, dependiendo de tu conexión, podría tomar un minuto. El resultado se debería ver parecido a esto:
+3. presiona 'enter'. 
+El último paquete es un poco más pesado que el resto, así que, dependiendo de tu conexión, podría tomar un minuto. El resultado se debería ver parecido a esto:
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/paquetes_instalados.png)
 
@@ -46,7 +47,7 @@ install.packages("babynames")
 
 Durante el taller, aprenderemos también a importar archivos y a unir planillas de datos. Para ello, descarga los siguientes archivos:
 
-[Datos 2014](https://goo.gl/pNWbhd)
+* [Datos 2014](https://goo.gl/pNWbhd)
 
-[Datos 2015](https://goo.gl/i5K8K9)
+* [Datos 2015](https://goo.gl/i5K8K9)
 

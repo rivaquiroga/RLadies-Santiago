@@ -14,10 +14,11 @@ Open Source License" (gratuita).
 
 Si el quedó todo bien instalado, cuando abras RStudio deberías ver algo así:
 
+![RStudio](https://www.dropbox.com/s/a0vfyj56bvdd813/rstudio.png)
 
 ## Instalación de los paquetes de R que usaremos
 
-Cuando instalamos R en nuestro computador queda lo que se conce como R Base. 
+Cuando instalamos R en nuestro computador queda lo que se conoce como R Base. 
 
 En este taller usaremos con una serie de paquetes de R que nos permitirán expandir las posibilidades de R Base. Especficamente, trabajaremos con dos paquetes: `r tidyverse`
 

@@ -49,7 +49,7 @@ El último paquete es un poco más pesado que el resto, así que, dependiendo de
 
 ¿Salió todo bien? ¡Excelente! Ya escribiste tus primeras líneas de código :)
 
-### Advertencias / Warnings
+#### Advertencias / Warnings
 Si no tienes la última versión de R, puede que aparezca un `Warning`al instalar alguno de los paquetes que diga que el paquete fue construido bajo la versión 3.4.4 y que tú tienes la 3.4.3. Un `Warning` es distinto a un error: R ejecuta el código pero te advierte que no todo puede resultar como esperas. 
 
 ## Utilización de RStudio

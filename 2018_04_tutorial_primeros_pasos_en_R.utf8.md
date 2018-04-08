@@ -85,7 +85,7 @@ Una de las ventajas de RStudio es que permite crear "proyectos". [EXPLICAR VENTA
 
 Para crear un proyecto, debes ir al menú File > New Proyect. 
 
-<img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject1.png)" width="200"> 
+<img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject1.png)" width="200">
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject1.png)
 

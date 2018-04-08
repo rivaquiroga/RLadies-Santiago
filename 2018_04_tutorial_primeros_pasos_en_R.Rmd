@@ -195,11 +195,67 @@ En R, podemos ver un objeto simplemente ejecutándolo:
 
 En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R, lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas para que nos hagamos una idea de lo que contiene y no los casi dos millones totales (mejor así, ¿no?)
 
-Si quisiéramos tener una visión general de los datos, hay una función que resulta muy útil para esto, ya que nos los muestra en una pestaña distinta y con un formato tipo planilla:
+Si quisiéramos tener una visión general de los datos, hay una función que resulta muy útil para esto, ya que nos los muestra en una pestaña distinta y con un formato tipo planilla. `View()`. De ahora en adelante, en vez de mostrarte un pantallazo del script, el código que haya que ejecutar aparecerá en un recuadro, así:
 
 ``` r
 View(babynames)
 ```
+Si ejecutas ese código, una nueva pestaña se abrirá y te mostrará todos los datos en un formato tipo planilla.
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png)
+
+Existen otras funciones útiles para darle una primera mirada a nuestros datos `head()` y `tail()`. Como su nombre lo indican, lo que hacen es mostrarnos las primeras y las últimas líneas de nuestros datos, respectivamente. 
+
+``` r
+head(babynames)
+```
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/hed_babynames.png)
+
+``` r
+tail(babynames)
+```
+
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames.png)
+
+Las funciones `tail` y `head` resultan muy útiles para chequear si nuestros datos están completos, ya que nos permiten mirar sus extremos. 
+
+
+Si queremos conocer la estructura de nuestro conjunto de datos, es decir, conocer la cantidad de observaciones, de variables y de qué tipo son, podemos utilizar  `str()`.
+
+```r
+str(babynames)
+```
+
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/str_babynames.png)
+
+
+
+#### Algo más sobre las funciones
+
+Hasta el momento hemos utilizado funciones en las que hemos indicado un solo "argumento": el nombre del objeto que queremos ver. Sin embargo, todas estas funciones tienen más argumentos. Lo que ha ocurrido es que hemos utilizado los valores que vienen por defecto. Si queremos conocer cuáles son los otros argumentos que aceptan, podemos buscar por el nombre de la función en el panel _Help_. También puedes hacerlo teclando directamente en la consola: `?nombre`, por ejemplo:
+```r
+?tail
+```
+
+Si revisamos la ayuda podemos enterarnos que `tail` permite definir la cantidad de filas se muestren. Si en vez de las 6 líneas por defecto quiero que me aparezcan 10, tendría que indicarlo así:
+
+```r
+tail(babynames, n = 10)
+```
+
+
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_n10.png)
+
+Las funciones leen sus argumentos en orden, por lo que si en la ayuda vemos que el segundo argumento de `tail` es `n =`, podríamos solo escribir el número de líneas que queremos, es decir, así:
+
+```r
+tail(babynames, 10)
+```
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png)
+
+¡El resultado es el mismo! 
+
+
+
+
 

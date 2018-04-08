@@ -18,6 +18,10 @@ Si quedó todo bien instalado, cuando abras RStudio deberías ver algo así:
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio.png)
 
+En este tutorial usaremos al última versión de R y RStudio, así que si tienes instalada una versión previa, puede que algunas cosas se vean un poco distintas.
+
+Si te aparece algún error durante este proceso, lo más probabable es que sea por alguna configuración de tu sistema operativo. En ese caso, la mejor manera de buscar una solución es copiar el error que arroja R, pegarlo en tu motor de búsqueda favorito y ver cómo alguien que se enfrentó a eso antes lo resolvió. 
+
 ## Instalación de los paquetes de R que usaremos
 
 Cuando instalamos R por primera vez en nuestro computador, lo que estamos instalando es lo que se conoce como "R Base", es decir, los elementos centrales del lenguaje de programación. Una de las ventajas de R es que se trata de un lenguaje extensible: la propia comunidad de usuarios puede desarrollar nuevas posibilidades para utilizarlo. La manera de compartir estos nuevos desarrollos es a través de "paquetes", que incluyen, entre otras cosas, código y datos.
@@ -43,7 +47,37 @@ El último paquete es un poco más pesado que el resto, así que, dependiendo de
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/paquetes_instalados.png)
 
+Si no tienes la última versión de R, puede que aparezca un `Warning`al instalar alguno de los paquetes que diga que el paquete fue construido bajo la versión 3.4.4 y que tú tienes la 3.4.3. Un `Warning` es distinto a un error: R ejecuta el código pero te advierte que no todo puede resultar como esperas. 
+
 ## Utilización de RStudio
+
+Como señalamos antes, RStudio es un entorno que facilita el trabajo con R. Si solo abres R en tu computador, lo que verás es una consola. En ella escribes directamente el código que quieres ejecutar.
+
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/r_consola.png)
+
+Si abres RStudio verás que te aparece la misma consola, pero además te encontrarás con otros paneles:
+
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio.png)
+
+El panel de abajo a la derecha tiene varias pestañas. 
+
+Files muestra el directorio (la carpeta) en la que te encuentras actualmente. En mi caso, no hay nada ahí, porque por defecto me muestra el Escritorio (_Desktop_). Es posible que a ti te muestre otra carpeta (por ejemplo, _Documentos_). 
+
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_files.png)
+
+En la pestaña Plots tampoco hay nada por ahora. Cuando hagas algún gráfico, es es el lugar en el que aparecerán.
+
+Packages muestra la lista de paquetes que tienes instalados. 
+
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_packages.png)
+
+Help, como su nombre lo indica, es la pestaña en la que podemos encontrar ayuda. Si ingresamos algún término (por ejemplo, el nombre de un paquete o de una función), RStudio nos remitirá a la documentación asociada. 
+
+El cuarto panel (que probablemente todavía no ves) es el que ocuparemos para escribir el código que queremos que luego R ejecute, es decir, el panel para nuestro _script_. Para crear un nuevo script podemos ir a File > New File > R Script, ocupar el atajo de teclado `shift(mayúscula)` + `comando` + `n` (Mac) o `shift(mayúscula)` + `control` + `n` o seleccionarlo desde la barra superior de la ventana:
+
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/nuevo_script.png)
+
+### Creación de un proyecto 
 
 Una de las ventajas de RStudio es que permite crear "proyectos". [EXPLICAR VENTAJAS]
 
@@ -78,6 +112,8 @@ Otra cosa que ocurre es que en la barra superior aparece ahora la ruta a la carp
 Por último, algo cambia en el ícono de R: aparece el nombre que le dimos a nuestro archivo:
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png)
+
+Esto último es muy muy muy útil: RStudio se ejecuta para cada proyecto de manera independiente. Es decir, si tuvieras otro proyecto abierto te aparecería otro ícono. De esta forma, podemos trabajar en dos proyectos en paralelo sin que se nos mezclen los objetos del entorno, el código, los archivos, etc.
 
 ¡Ya estamos listas para empezar programar!
 

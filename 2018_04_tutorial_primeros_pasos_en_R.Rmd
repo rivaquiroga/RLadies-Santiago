@@ -137,10 +137,6 @@ Si quisiéramos tener una visión general de los datos, hay una función que res
 
 ``` r
 View(babynames)
-``
-
-
-
-
+```
 
 

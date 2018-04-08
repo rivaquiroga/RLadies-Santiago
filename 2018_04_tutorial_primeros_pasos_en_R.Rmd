@@ -119,15 +119,15 @@ Finalmente, le damos un nombre al proyecto y decidimos en qué parte de nuestro 
 
 Luego de apretar _Create Project_ RStudio se reinicia y se producen algunos cambios. El panel _Files_ (abajo a la derecha) ahora nos muestra la carpeta de nuestro proyecto y el único archivo que hay en ella por ahora. Ese es el archivo mágico que mantiene unido todo lo que hay dentro de la carpeta. Cuando queramos volver a trabajar en nuestro proyecto, solo tenemos que abrir ese archivo. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_rproj.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_rproj.png" align="center" height="150"></a>
 
 Otro cambio que ocurre es que en la barra superior aparece ahora la ruta a la carpeta de nuestro projecto. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_barraproyecto.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_barraproyecto.png" align="center" height="50"></a>
 
 Por último, algo cambia en el ícono de R: aparece el nombre que le dimos a nuestro archivo:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png" align="center" height="40"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png" align="center" height="150"></a>
 
 
 Esto último es muy muy muy útil: RStudio se ejecuta para cada proyecto de manera independiente. Es decir, si tuvieras otro proyecto abierto te aparecería otro ícono. De esta forma, podemos trabajar en dos proyectos en paralelo sin que se nos mezclen los objetos del entorno, el código, los archivos, etc. Cada cosa en su lugar.
@@ -142,65 +142,70 @@ La función para hacer eso es `library(nombre_del_paquete)`, así que escribirem
 
 RStudio trata de hacernos la vida más simple, así que cuando empezamos a escribir el nombre de la función se despliega un menú con posibles opciones que indican el nombre y el paquete al que está asociada (en este caso, sugiere `{base}`). Lo que aparece en amarillo es la estructura de la función, algo sobre lo que no hablaremos por ahora:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_funcion.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_funcion.png" align="center" height="200"></a>
 
 Lo mismo ocurre cuando empezamos a escribir el nombre del paquete. RStudio nos va ofreciendo sugerencias de nombres de los paquetes que tenemos instalados: 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_argumento.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_argumento.png" align="center" height="200"></a>
 
 
 Todavía no hemos 'ejecutado' el código, así que nada ha pasado. Como todo en R, hay varias opciones para ejecutar el código. 
 Si hacemos clic en el botón Run que está en la barra del script, se ejecutará la línea de código en la que está actualmente el cursor y este se moverá automáticamente a la siguiente línea. Es decir, si ponemos el curso en la línea en la que llamamos por primera vez la función `library`y hacemos clic tres veces, se ejecutarán las tres líneas. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_codigo.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_codigo.png" align="center" height="200"></a>
 
 Eso mismo podemos hacerlo usando un atajo del teclado `ctrl` + `shift (mayúsculas)` + `enter` (si estás en Linux o Windows) o `comando` + `shift (mayúsculas)` + `enter` si estás en Mac. 
 
 Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es seleccionar todo el fragmento y hacer clic sobre Run o usar el atajo del teclado. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/seleccion_para_ejecutar_png.png" align="center" height="250"></a>
-
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/seleccion_para_ejecutar_png.png" align="center" height="150"></a>
 
 ¡Ejecutemos el código y veamos qué pasa!
 
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/codigo_ejecutado.png" align="center" height="250"></a>
 
+Cuando ejecutamos el código de nuestro script esté pasa a la consola. En el caso de la primera línea, la consola nos da dos avisos. El primero, cuáles son todos los paquetes que estamos cargando al usar `library(tidyverse`). Como comentamos antes, este es un metapaquete que incluye otros paquetes en su interior. Al llamarlos a través de `library(tidyverse)` se activan estos 8 paquetes (pese a que incluye más) y eso es lo que nos está avisando R en la consola. El otro aviso es de un "Conflicto". Nos dice que las funciones `filter()`y `lag()` del paquete `dplyr` tienen el mismo nombre que funciones del paquete `stats` (que es parte de R base). Como cargamos `dplyr`después (al instalar `tidyverse`), lo que R nos avisa es que son las funciones de este paquete  las que van a prevalecer por sobre las del paquete `stats`.
 
-Cuando ejecutamos código de nuestro script esté pasa a la consola. En el caso de la primera línea, la consola nos da dos avisos. El primero, cuáles son todos los paquetes que estamos activando al usar `library(tidyverse`). Como comentamos antes, este es un metapaquete que incluye otros paquetes en su interior. Al llamarlos a través de `library(tidyverse)` se activan estos 8 paquetes (pese a que incluye más) y eso es lo que nos está avisando R en la consola. El otro aviso es de un "Conflicto". Nos dice que las funciones `filter()`y `lag()` del paquete `dplyr` tienen el mismo nombre que funciones de paquete `stats`. Como cargamos `dplyr`después (el instalar `tidyverse`), lo que R nos avisa es que las de este paquete son las que van a prevalecer por sobre las del paquete `stats`(que es parte de R base). 
+#### Buenas prácticas
 
-En este punto es importante sugerir dos buenas prácticas. La primera, es hacer lo que ya hicimos: llamar todos los paquetes que ocuparemos al inicio de nuestro script. De este modo, cuando volvemos a utilizarlo más adelante u otra persona quiere ejecutarlo puede tener claro qué paquetes se utilizan. Obviamente, cuando comienzo a escribir un script puedo no saber cuáles son todos los paquetes que necesitaré, pero si en la mitad decido usar un nuevo paquete, la idea sería volver a las primeras líneas del script y agregarlo. 
+En este punto es importante sugerir dos buenas prácticas. La primera, es hacer lo que ya hicimos: llamar todos los paquetes que ocuparemos al inicio de nuestro script. De este modo, cuando volvemos a utilizarlo más adelante (u otra persona quiere ejecutarlo) desde el principio queda claro qué paquetes se utilizan (y es necesario descargar). Obviamente, cuando comenzamos a escribir un script no siempre sabemos cuáles son todos los paquetes que necesitaremos, por eso, si en la mitad del proceso decido usar un nuevo paquete, la buena práctica es  volver a las primeras líneas del script y agregarlo. 
 
 La segunda buena práctica es comentar nuestro script. En R podemos agregar comentarios anteponiendo un `#` al fragmento que cumple esa función. En una línea de nuestro script, todo lo que está después de un `#` no se ejecuta como código. 
 
-¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace o  dejar registro de por qué hicimos algo de determinada manera. Esto es muy útil para que nuestro futuro yo o las personas con las que compartiremos nuestro script entiendan lo que hicimos. 
+¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace o dejar registro de por qué hicimos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo o las personas con las que compartiremos nuestro script entiendan lo que hicimos. 
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png)
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" height="250"></a>
 
 También es útil agregar al inicio de nuestro script una descripción de lo que hace. 
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentario_inicio_script.png) 
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentario_inicio_script.png" align="center" height="200"></a>
 
-Antes de seguir, es important que guardemos nuestro script. 
+Si te fijas, nuestro script aún dice Untitle1. Antes de seguir, es importante que lo guardemos. Al hacerlo, aparecerá en la pestaña _Files_.  
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png)
 
 ## Miremos los datos
 
-`babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El objeto que contiene los datos dentro del paquete se llama también `babynames`. No vemos ese objeto en nuestro `Gobal Environment` porque el objeto existe dentro del paquete, pero si fueramos a ver el entorno de ese paquete en particular, lo encontraríamos:
+`babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El "objeto" que contiene los datos dentro del paquete se llama también `babynames`. No vemos ese objeto en nuestro `Gobal Environment` porque el objeto existe dentro del paquete, pero si hacemos clic sobre Global Environment podemos acceder al "environment" del paquete y ahí lo encontraremos: 
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/entorno_babynames.png)
 
-En R, podemos ver un objeto simplemente ejecutándolo: 
+En R, podemos ver un objeto simplemente ejecutándolo. Es decir, escribimos el nombre del objeto y ejecutamos el código. De ahora en adelante, en vez de mostrarte un pantallazo del script, el código que haya que ejecutar aparecerá en un recuadro, así:
+
+```r
+babynames
+```
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png)
 
-En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R, lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas para que nos hagamos una idea de lo que contiene y no los casi dos millones totales (mejor así, ¿no?)
+En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R, lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas para que nos hagamos una idea de lo que contiene y no los casi dos millones que tiene (mejor así, ¿no?)
 
-Si quisiéramos tener una visión general de los datos, hay una función que resulta muy útil para esto, ya que nos los muestra en una pestaña distinta y con un formato tipo planilla. `View()`. De ahora en adelante, en vez de mostrarte un pantallazo del script, el código que haya que ejecutar aparecerá en un recuadro, así:
+Si quisiéramos tener una visión general de los datos, hay una función que resulta muy útil para esto, ya que nos los muestra en una pestaña distinta y con un formato tipo planilla: `View()`. 
 
 ``` r
 View(babynames)
 ```
-Si ejecutas ese código, una nueva pestaña se abrirá y te mostrará todos los datos en un formato tipo planilla.
+Si ejecutas ese código, una nueva pestaña se abrirá y te mostrará todos los datos en un formato tipo planilla:
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png)
 

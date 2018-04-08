@@ -214,7 +214,7 @@ Existen otras funciones útiles para darle una primera mirada a nuestros datos `
 ``` r
 head(babynames)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/head_babynames.png" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/head_babynames.png" height="200"></a>
 
 ``` r
 tail(babynames)

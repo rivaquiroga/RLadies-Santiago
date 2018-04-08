@@ -1,6 +1,6 @@
 # Tutorial: primeros pasos en R
 
-Taller organizado por RLadies Santiago y realizado por Riva Quiroga. 
+Tutorial en construcción del Taller organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga)
 
 
 ## Instalación de R y RStudio
@@ -86,22 +86,22 @@ Por último, algo cambia en el ícono de R: aparece el nombre que le dimos a nue
 Antes del taller instalaste los tres paquetes que ocuparemos en esta sesión. Cuando instalamos los paquetes, estos quedan en nuestro computador y podemos chequear eso revisando el panel "Packages" abajo a la izquierda. Sin embargo, que los hayamos instalado no quiere decir que estén listos para ser usados. Tenemos que decirle explícitamente a R qué paquetes queremos ocupar. ¿Por qué? Para ahorrar memoria: activamos solo los que necesitamos. 
 La función para hacer eso es `library(nombre_del_paquete)`, así que escribiremos eso al inicio de nuestro script. RStudio trata de hacernos la vida más simple, así que cuando empezamos a escribir el nombre de la función se despliega un menú con posibles opciones que indican el nombre y el paquete al que está asociada (en este caso, sugiere `{base}`). Lo que aparece en amarillo es la estructura de la función, algo sobre lo que no hablaremos por ahora:
 
-![]() [IMAGEN sugerencia función]
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_funcion.png) 
 
 Lo mismo ocurre cuando empezamos a escribir el nombre del paquete. RStudio nos va ofreciendo sugerencias de nombres de los paquetes que tenemos instalados- 
 
-![]() [IMAGEN sugerencia argumento library()]
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_argumento.png) 
 
 Todavía no hemos 'ejecutado' el código, así que nada ha pasado. Como todo en R, hay varias opciones para ejecutar el código. 
 Si hacemos clic en el botón Run que está en la barra del script, se ejecutará la línea de código en la que está actualmente el cursor y este se moverá automáticamente a la siguiente línea. Es decir, si ponemos el curso en la línea en la que llamamos por primera vez la función `library`y hacemos clic tres veces, se ejecutarán las tres líneas. 
 
-![]() [IMAGEN ejecutar código]
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_codigo.png)
 
 Eso mismo podemos hacerlo usando un atajo del teclado `ctrl` + `shift (mayúsculas)` + `enter` (si estás en Linux o Windows) o `comando` + `shift (mayúsculas)` + `enter` si estás en Mac. 
 
 Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es seleccionar todo el fragmento y hacer clic sobre Run o usar el atajo del teclado. 
 
-![]() [IMAGEN seleccion código a ejecutar]
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/seleccion_para_ejecutar_png.png)
 
 ¡Ejecutemos el código y veamos qué pasa!
 
@@ -115,21 +115,25 @@ La segunda buena práctica es comentar nuestro script. En R podemos agregar come
 
 ¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace o  dejar registro de por qué hicimos algo de determinada manera. Esto es muy útil para que nuestro futuro yo o las personas con las que compartiremos nuestro script entiendan lo que hicimos. 
 
-![]() [IMAGEN COMENTARIO]
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png)
 
 También es útil agregar al inicio de nuestro script una descripción de lo que hace. 
 
-![]() [IMAGEN COMENTARIO inicial]
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentario_inicio_script.png) 
+
+Antes de seguir, es important que guardemos nuestro script. 
+
+![] (https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png)
 
 ## Miremos los datos
 
 `babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El objeto que contiene los datos dentro del paquete se llama también `babynames`. No vemos ese objeto en nuestro `Gobal Environment` porque el objeto existe dentro del paquete, pero si fueramos a ver el entorno de ese paquete en particular, lo encontraríamos:
 
-![]() [IMAGEN_entorno_babynames]
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/entorno_babynames.png)
 
 En R, podemos ver un objeto simplemente ejecutándolo: 
 
-![]() [IMAGEN objeto babynames]
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png)
 
 En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R, lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas para que nos hagamos una idea de lo que contiene y no los casi dos millones totales (mejor así, ¿no?)
 
@@ -138,5 +142,5 @@ Si quisiéramos tener una visión general de los datos, hay una función que res
 ``` r
 View(babynames)
 ```
-
+[]!(https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png)
 

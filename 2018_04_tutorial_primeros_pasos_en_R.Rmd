@@ -127,7 +127,7 @@ Otro cambio que ocurre es que en la barra superior aparece ahora la ruta a la ca
 
 Por último, algo cambia en el ícono de R: aparece el nombre que le dimos a nuestro archivo:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png" align="center" height="150"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png" align="center" height="120"></a>
 
 
 Esto último es muy muy muy útil: RStudio se ejecuta para cada proyecto de manera independiente. Es decir, si tuvieras otro proyecto abierto te aparecería otro ícono. De esta forma, podemos trabajar en dos proyectos en paralelo sin que se nos mezclen los objetos del entorno, el código, los archivos, etc. Cada cosa en su lugar.
@@ -174,7 +174,7 @@ La segunda buena práctica es comentar nuestro script. En R podemos agregar come
 
 ¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace o dejar registro de por qué hicimos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo o las personas con las que compartiremos nuestro script entiendan lo que hicimos. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" height="200"></a>
 
 También es útil agregar al inicio de nuestro script una descripción de lo que hace. 
 
@@ -182,9 +182,9 @@ También es útil agregar al inicio de nuestro script una descripción de lo que
 
 Si te fijas, nuestro script aún dice Untitle1. Antes de seguir, es importante que lo guardemos. Al hacerlo, aparecerá en la pestaña _Files_.  
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png)
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png" align="center" height="200"></a>
 
-## Miremos los datos
+## Una mirada inicial a los datos
 
 `babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El "objeto" que contiene los datos dentro del paquete se llama también `babynames`. No vemos ese objeto en nuestro `Gobal Environment` porque el objeto existe dentro del paquete, pero si hacemos clic sobre Global Environment podemos acceder al "environment" del paquete y ahí lo encontraremos: 
 
@@ -214,7 +214,7 @@ Existen otras funciones útiles para darle una primera mirada a nuestros datos `
 ``` r
 head(babynames)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/head_babynames.png" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/head_babynames.png" height="230"></a>
 
 ``` r
 tail(babynames)
@@ -262,6 +262,8 @@ tail(babynames, 10)
 ¡El resultado es el mismo! 
 
 
+## Exploración y manipulación de los datos
 
+...
 
 

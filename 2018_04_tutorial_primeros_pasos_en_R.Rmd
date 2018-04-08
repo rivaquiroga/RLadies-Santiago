@@ -159,7 +159,7 @@ También es útil agregar al inicio de nuestro script una descripción de lo que
 
 Antes de seguir, es important que guardemos nuestro script. 
 
-![] (https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png)
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png)
 
 ## Miremos los datos
 
@@ -178,5 +178,6 @@ Si quisiéramos tener una visión general de los datos, hay una función que res
 ``` r
 View(babynames)
 ```
-[]!(https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png)
+
+![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png)
 

@@ -9,7 +9,7 @@ En este taller utilizaremos R a través del IDE RStudio. ¿Qué es un IDE? IDE e
 
 Para poder instalar R y RStudio, sigue los siguientes pasos:
 
-- Descarga R desde https://cran.r-project.org/. Debes elegir la opción que corresponda según tu sistema operativo.
+- Descarga R desde https://cran.r-project.org/. Debes elegir la opción que corresponda, según tu sistema operativo.
 - Instala R en tu computador, tal como lo haces con cualquier programa. 
 - Una vez que R ha quedado correctamente instalado, descarga RStudio desde https://www.rstudio.com/products/rstudio/download/. Elige la primera opción, es decir, "RStudio Desktop Open Source License" (gratuita). 
 - Instala RStudio en tu computador, tal como lo haces con cualquier programa. 
@@ -22,11 +22,11 @@ En este tutorial usaremos al última versión de R y RStudio, así que si tienes
 
 Si te aparece algún error durante este proceso, lo más probabable es que sea por alguna configuración de tu sistema operativo. En ese caso, la mejor manera de buscar una solución es copiar el error que arroja R, pegarlo en tu motor de búsqueda favorito y ver cómo alguien que se enfrentó a eso antes lo resolvió. 
 
-## Instalación de los paquetes de R que usaremos
+## Instalación de los paquetes de R que utilizaremos
 
 Cuando instalamos R por primera vez en nuestro computador, lo que estamos instalando es lo que se conoce como "R Base", es decir, los elementos centrales del lenguaje de programación. Una de las ventajas de R es que se trata de un lenguaje extensible: la propia comunidad de usuarios puede desarrollar nuevas posibilidades para utilizarlo. La manera de compartir estos nuevos desarrollos es a través de "paquetes", que incluyen, entre otras cosas, código y datos.
 
-En este taller usaremos tres paquetes: `gapminder`, `babynames` y `tidyverse`. `gapminder` y `babynames` son paquetes de datos que nos servirán para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos los paquetes del Tidyverse comparten la misma visión sobre el trabajo con datos. Quizás ahora eso suene un poco enigmático, pero más adelante explicaremos qué quiere decir. 
+En este taller usaremos tres paquetes: `gapminder`, `babynames` y `tidyverse`. Los dos primeros (`gapminder` y `babynames`) son paquetes de datos que nos servirán para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos los paquetes que conforman el Tidyverse comparten la misma visión sobre el trabajo con datos. Quizás ahora eso suene un poco enigmático, pero más adelante explicaremos qué quiere decir. 
 
 Para instalarlos, 
 
@@ -50,11 +50,11 @@ El último paquete es un poco más pesado que el resto, así que, dependiendo de
 ¿Salió todo bien? ¡Excelente! Ya escribiste tus primeras líneas de código :)
 
 #### Advertencias / Warnings
-Si no tienes la última versión de R, puede que aparezca un `Warning`al instalar alguno de los paquetes que diga que el paquete fue construido bajo la versión 3.4.4 y que tú tienes la 3.4.3. Un `Warning` es distinto a un error: R ejecuta el código pero te advierte que no todo puede resultar como esperas. 
+Si no tienes la última versión de R, puede que aparezca un "Warning" al instalar alguno de los paquetes que indica que el paquete fue construido bajo la versión 3.4.4 y que tú tienes la 3.4.3. Un "Warning"" es distinto a un error: R ejecuta el código que le pides, pero te advierte que no todo puede resultar como esperas. 
 
 ## Utilización de RStudio
 
-Como señalamos antes, RStudio es un entorno que facilita el trabajo con R. Si solo abres R en tu computador, lo que verás es una consola. En ella se escribe directamente el código que uno quiere ejecutar.
+Como señalamos antes, RStudio es un entorno que facilita el trabajo con R. Si solo abres R en tu computador, lo que verás es una consola. Cuando trabajamos en ella escribimos directamente el código que queremos que se ejecute.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/r_consola.png" align="center" height="400"></a>
 
@@ -62,32 +62,35 @@ Si abres RStudio verás que te aparece la misma consola, pero además te encontr
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio.png)
 
-Partamos por el panel de abajo a la derecha. Si te fijas, el panel tiene varias ventanas: 
+¿Para qué sirven estos paneles? Comentemos primero el panel de abajo a la derecha. Si te fijas, el panel tiene varias ventanas: 
 
-* __Files__ muestra el directorio (la carpeta) en la que te encuentras actualmente. En mi caso, no hay nada ahí, porque por defecto me muestra el Escritorio (_Desktop_). Es posible que a ti te muestre otra carpeta (por ejemplo, _Documentos_). 
+* __Files__ muestra el directorio (la carpeta) en la que te encuentras actualmente. En mi caso, no hay nada ahí, porque por defecto RStudio me muestra el Escritorio (_Desktop_). Es posible que a ti te muestre otra carpeta (por ejemplo, _Documentos_). 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_files.png" align="center" height="300"></a>
 
-* __Plots__ es el lugar donde aparecerán los gráficos que crees. No hemos hecho ninguno por ahora, así que este panel está vacío. 
+* __Plots__ es el lugar donde aparecerán los gráficos que crees. No hemos hecho ninguno por ahora, así que este panel también está vacío. 
 
-* __Packages__ muestra la lista de paquetes que tienes instalados en tu computador
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_plots.png" align="center" height="300"></a>
+
+* __Packages__ muestra la lista de paquetes que tienes instalados en tu computador. Si recorres el panel verás que algunos tiene una marca - [x]. Eso quiere decir que el paquete está activo en ese momento (ya veremos cómo hacer eso).
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_packages.png" align="center" height="300"></a>
 
-* __Help__, como su nombre lo indica, es la pestaña en la que podemos encontrar ayuda. Si ingresamos algún término (por ejemplo, el nombre de un paquete o de una función), RStudio nos remitirá a la documentación asociada. 
+* __Help__, como su nombre lo indica, es la pestaña en la que podemos encontrar ayuda. Si buscamos el nombre de un paquete o de una función, RStudio nos remitirá a la documentación asociada. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_help.png" align="center" height="300"></a>
 
 * __Viewer__ es el panel para ver contenido web generado por algún paquete de R (gráficos para la web o aplicaciones interactivas). Por el momento no lo utilizaremos. 
 
-El panel de arriba a la derecha contiene el historial de funciones que hemos ejecutado (_History_), la opción para generar conexiones a bases de datos externas (_Connections_, que no lo utilizaremos por ahora) y _Environment_. Este último panel es muy importante y entender lo que nos muestra es fundamental para comprender cómo funciona R. 
+El panel de arriba a la derecha contiene el historial de funciones que hemos ejecutado (_History_), la opción para generar conexiones a bases de datos externas (_Connections_) y _Environment_. Este último panel es muy importante y entender lo que nos muestra es fundamental para comprender cómo funciona R. 
 
-[EXPLICAR]
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_globalenvironment.png" align="center" height="300"></a>
 
+Por ahora está vacío porque no hemos creado ningún objeto o variable, pero cuando creemos alguno es aquí donde aparecerá. Ya volveremos a hablar sobre este panel cuando comenzemos a trabajar con datos. 
 
 Hay un cuarto panel (que probablemente todavía no te aparece)  y que es el que utilizaremos para escribir el código que queremos que R ejecute, es decir, el panel para nuestro _script_. Para crear un nuevo script podemos:
 * ir a File > New File > R Script
-* ocupar el atajo de teclado `shift(mayúscula)` + `comando` + `n` (Mac) o `shift(mayúscula)` + `control` + `n`
+* ocupar el atajo de teclado `shift(mayúscula)` + `comando` + `n` (Mac) o `shift(mayúscula)` + `control` + `n` (Linux / Windows)
 * o seleccionar la opción desde la barra superior de la ventana:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/nuevo_script.png" align="center" height="300"></a>
@@ -96,55 +99,52 @@ Hay un cuarto panel (que probablemente todavía no te aparece)  y que es el que 
 
 ### Creación de un proyecto 
 
-Una de las ventajas de RStudio es que permite crear "proyectos". [EXPLICAR VENTAJAS]
+Una de las ventajas de RStudio es que permite crear "proyectos". Un projecto es un espacio o contexto de trabajo asociado a una carpeta que contiene nuestro(s) script(s), archivos, etc. Cuando creamos un proyecto en RStudio, se crea un tipo especial de archivo (.Rproj) que lo que hace es vincular todo lo que se encuentra dentro de esa carpeta. ¿Por qué esto es útil? Si parte de nuestro script, por ejemplo, implica abrir un archivo que está en la carpeta de nuestro proyecto, no necesito indicar en mi código toda la ruta del archivo: lo que hará RStudio es buscarlo en el entorno/carpeta del projecto. Esto es muy muy útil, ya que si movemos la carpeta a otro lugar de nuestro computador o la compartimos con otra persona, por ejemplo, nuestro código seguirá funcionando.
 
-Para crear un proyecto, debes ir al menú File > New Proyect. 
+¿Cómo crear un projecto? Puedes hacerlo desde el menú File > New Proyect. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject1.png" align="center" height="250"></a>
 
-Lo primero que nos pregunta es en qué carpeta de nuestro computador queremos que el proyecto viva. Elegiremos esta vez que viva en una carpeta nueva, así que seleccionaremos _New Directory_. 
+Lo primero que nos pregunta es si queremos crearlo en una carpeta nueva o en una ya existente. Elegiremos esta vez una carpeta nueva, así que seleccionaremos _New Directory_. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject2.png" align="center" height="250"></a>
 
-La siguiente pregunta es qué tipo de proyecto queremos crear. En esta ocasión, elegiremos la primer _New Project_ (¡en futuros talleres ocuparemos las otras opciones!).
+La siguiente pregunta es qué tipo de proyecto queremos crear. En esta ocasión, elegiremos la primera _New Project_ (¡en futuros talleres ocuparemos las otras opciones!).
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject3.png" align="center" height="250"></a>
 
-Finalmente, le damos un nombre al proyecto y decidimos en qué parte de nuestro computador queremos guardar la carpeta que lo contiene. 
+Finalmente, le damos un nombre al proyecto y decidimos en qué parte de nuestro computador queremos que viva la carpeta que lo contiene. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject4.png" align="center" height="250"></a>
 
-Luego de apretar _Create Project_ RStudio se reinicia y se producen algunos cambios. El panel _Files_ (abajo a la derecha) ahora nos muestra la carpeta de nuestro projecto y el único archivo que hay en ella por ahora. Ese es el archivo mágico que mantiene unido todo lo que hay dentro de la carpeta. Cuando queramos volver a trabajar en nuestro projecto, solo tenemos que abrir ese archivo. 
+Luego de apretar _Create Project_ RStudio se reinicia y se producen algunos cambios. El panel _Files_ (abajo a la derecha) ahora nos muestra la carpeta de nuestro proyecto y el único archivo que hay en ella por ahora. Ese es el archivo mágico que mantiene unido todo lo que hay dentro de la carpeta. Cuando queramos volver a trabajar en nuestro proyecto, solo tenemos que abrir ese archivo. 
 
-![]() [IMAGEN FALTA]
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_rstudioproj.png" align="center" height="300"></a>
 
-También apareció un nuevo panel arriba a la izquierda: es el panel para escribir nuestro script, es decir, la serie de códigos que queremos ejecutar en R. 
+Otro cambio que ocurre es que en la barra superior aparece ahora la ruta a la carpeta de nuestro projecto. 
 
-![]() [IMAGEN carpeta FILES]
-
-Otra cosa que ocurre es que en la barra superior aparece ahora la ruta a la carpeta de nuestro projecto. 
-
-![]() [IMAGEN BARRA]
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_barraprojecto.png" align="center" height="300"></a>
 
 Por último, algo cambia en el ícono de R: aparece el nombre que le dimos a nuestro archivo:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png" align="center" height="200"></a>
 
 
-Esto último es muy muy muy útil: RStudio se ejecuta para cada proyecto de manera independiente. Es decir, si tuvieras otro proyecto abierto te aparecería otro ícono. De esta forma, podemos trabajar en dos proyectos en paralelo sin que se nos mezclen los objetos del entorno, el código, los archivos, etc.
+Esto último es muy muy muy útil: RStudio se ejecuta para cada proyecto de manera independiente. Es decir, si tuvieras otro proyecto abierto te aparecería otro ícono. De esta forma, podemos trabajar en dos proyectos en paralelo sin que se nos mezclen los objetos del entorno, el código, los archivos, etc. Cada cosa en su lugar.
 
 ¡Ya estamos listas para empezar programar!
 
 ## Cargar los paquetes necesarios
 
-Antes del taller instalaste los tres paquetes que ocuparemos en esta sesión. Cuando instalamos los paquetes, estos quedan en nuestro computador y podemos chequear eso revisando el panel "Packages" abajo a la izquierda. Sin embargo, que los hayamos instalado no quiere decir que estén listos para ser usados. Tenemos que decirle explícitamente a R qué paquetes queremos ocupar. ¿Por qué? Para ahorrar memoria: activamos solo los que necesitamos. 
+Antes del taller instalaste los tres paquetes que ocuparemos en esta sesión. Cuando instalamos los paquetes, estos quedan en nuestro computador y podemos chequear eso revisando el panel "Packages" abajo a la izquierda. Sin embargo, que los hayamos instalado no quiere decir que estén listos para ser usados. Tenemos que decirle explícitamente a R qué paquetes queremos ocupar. ¿Por qué? No tiene sentido tener activos paquetes que no estamos utilizando. 
 
-La función para hacer eso es `library(nombre_del_paquete)`, así que escribiremos eso al inicio de nuestro script. RStudio trata de hacernos la vida más simple, así que cuando empezamos a escribir el nombre de la función se despliega un menú con posibles opciones que indican el nombre y el paquete al que está asociada (en este caso, sugiere `{base}`). Lo que aparece en amarillo es la estructura de la función, algo sobre lo que no hablaremos por ahora:
+La función para hacer eso es `library(nombre_del_paquete)`, así que escribiremos eso al inicio de nuestro script. Si no tienes un script abierto, simplemente sigue los pasos comentados más arriba.
 
+RStudio trata de hacernos la vida más simple, así que cuando empezamos a escribir el nombre de la función se despliega un menú con posibles opciones que indican el nombre y el paquete al que está asociada (en este caso, sugiere `{base}`). Lo que aparece en amarillo es la estructura de la función, algo sobre lo que no hablaremos por ahora:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_funcion.png" align="center" height="250"></a>
 
-Lo mismo ocurre cuando empezamos a escribir el nombre del paquete. RStudio nos va ofreciendo sugerencias de nombres de los paquetes que tenemos instalados- 
+Lo mismo ocurre cuando empezamos a escribir el nombre del paquete. RStudio nos va ofreciendo sugerencias de nombres de los paquetes que tenemos instalados: 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_argumento.png" align="center" height="250"></a>
 

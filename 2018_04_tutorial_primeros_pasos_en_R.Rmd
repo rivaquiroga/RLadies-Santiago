@@ -127,7 +127,7 @@ Otro cambio que ocurre es que en la barra superior aparece ahora la ruta a la ca
 
 Por último, algo cambia en el ícono de R: aparece el nombre que le dimos a nuestro archivo:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png" align="center"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png" align="center" height="40"></a>
 
 
 Esto último es muy muy muy útil: RStudio se ejecuta para cada proyecto de manera independiente. Es decir, si tuvieras otro proyecto abierto te aparecería otro ícono. De esta forma, podemos trabajar en dos proyectos en paralelo sin que se nos mezclen los objetos del entorno, el código, los archivos, etc. Cada cosa en su lugar.

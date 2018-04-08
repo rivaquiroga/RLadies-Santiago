@@ -214,13 +214,14 @@ Existen otras funciones útiles para darle una primera mirada a nuestros datos `
 ``` r
 head(babynames)
 ```
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/hed_babynames.png)
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/head_babynames.png" height="300"></a>
 
 ``` r
 tail(babynames)
 ```
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames.png)
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames.png" height="300"></a>
+
 
 Las funciones `tail` y `head` resultan muy útiles para chequear si nuestros datos están completos, ya que nos permiten mirar sus extremos. 
 
@@ -231,8 +232,7 @@ Si queremos conocer la estructura de nuestro conjunto de datos, es decir, conoce
 str(babynames)
 ```
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/str_babynames.png)
-
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/str_babynames.png" height="300"></a>
 
 
 #### Algo más sobre las funciones
@@ -248,15 +248,16 @@ Si revisamos la ayuda podemos enterarnos que `tail` permite definir la cantidad 
 tail(babynames, n = 10)
 ```
 
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_n10.png" align="center" height="300"></a>
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_n10.png)
 
 Las funciones leen sus argumentos en orden, por lo que si en la ayuda vemos que el segundo argumento de `tail` es `n =`, podríamos solo escribir el número de líneas que queremos, es decir, así:
 
 ```r
 tail(babynames, 10)
 ```
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png)
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png" align="center" height="300"></a>
+
 
 ¡El resultado es el mismo! 
 

@@ -1,0 +1,112 @@
+---
+title: "Taller: primeros pasos en R"
+author: "Riva Quiroga | @rivaquiroga | @RLadiesSCL"
+date: "6/4/2018"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Una de las ventajas de RStudio es que permite crear "proyectos". [EXPLICAR VENTAJAS]
+
+Para crear un proyecto, debes ir al menú File > New Proyect. 
+
+[IMAGEN rstudio_newproject1]
+
+Lo primero que nos pregunta es en qué carpeta de nuestro computador queremos que el proyecto viva. Elegiremos esta vez que viva en una carpeta nueva, así que seleccionaremos _New Directory_. 
+
+[IMAGEN rstudio_newproject2]
+
+La siguiente pregunta es qué tipo de proyecto queremos crear. En esta ocasión, elegiremos la primer _New Project_ (¡en futuros talleres ocuparemos las otras opciones!).
+
+[IMAGEN rstudio_newproject3]
+
+Finalmente, le damos un nombre al proyecto y decidimos en qué parte de nuestro computador queremos guardar la carpeta que lo contiene. 
+
+[IMAGEN rstudio_newproject4]
+
+Luego de apretar _Create Project_ RStudio se reinicia y se producen algunos cambios. El panel _Files_ (abajo a la derecha) ahora nos muestra la carpeta de nuestro projecto y el único archivo que hay en ella por ahora. Ese es el archivo mágico que mantiene unido todo lo que hay dentro de la carpeta. Cuando queramos volver a trabajar en nuestro projecto, solo tenemos que abrir ese archivo. 
+
+[IMAGEN FALTA]
+
+También apareció un nuevo panel arriba a la izquierda: es el panel para escribir nuestro script, es decir, la serie de códigos que queremos ejecutar en R. 
+
+[IMAGEN carpeta FILES]
+
+Otra cosa que ocurre es que en la barra superior aparece ahora la ruta a la carpeta de nuestro projecto. 
+
+[IMAGEN BARRA]
+
+Por último, algo cambia en el ícono de R: aparece el nombre que le dimos a nuestro archivo:
+
+[IMAGEN ICONO]
+
+¡Ya estamos listas para empezar programar!
+
+## Cargar los paquetes necesarios
+
+Antes del taller instalaste los tres paquetes que ocuparemos en esta sesión. Cuando instalamos los paquetes, estos quedan en nuestro computador y podemos chequear eso revisando el panel "Packages" abajo a la izquierda. Sin embargo, que los hayamos instalado no quiere decir que estén listos para ser usados. Tenemos que decirle explícitamente a R qué paquetes queremos ocupar. ¿Por qué? Para ahorrar memoria: activamos solo los que necesitamos. 
+La función para hacer eso es `library(nombre_del_paquete)`, así que escribiremos eso al inicio de nuestro script. RStudio trata de hacernos la vida más simple, así que cuando empezamos a escribir el nombre de la función se despliega un menú con posibles opciones que indican el nombre y el paquete al que está asociada (en este caso, sugiere `{base}`). Lo que aparece en amarillo es la estructura de la función, algo sobre lo que no hablaremos por ahora:
+
+[IMAGEN sugerencia función]
+
+Lo mismo ocurre cuando empezamos a escribir el nombre del paquete. RStudio nos va ofreciendo sugerencias de nombres de los paquetes que tenemos instalados- 
+
+[IMAGEN sugerencia argumento library()]
+
+Todavía no hemos 'ejecutado' el código, así que nada ha pasado. Como todo en R, hay varias opciones para ejecutar el código. 
+Si hacemos clic en el botón Run que está en la barra del script, se ejecutará la línea de código en la que está actualmente el cursor y este se moverá automáticamente a la siguiente línea. Es decir, si ponemos el curso en la línea en la que llamamos por primera vez la función `library`y hacemos clic tres veces, se ejecutarán las tres líneas. 
+
+[IMAGEN ejecutar código]
+
+Eso mismo podemos hacerlo usando un atajo del teclado `ctrl` + `shift (mayúsculas)` + `enter` (si estás en Linux o Windows) o `comando` + `shift (mayúsculas)` + `enter` si estás en Mac. 
+
+Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es seleccionar todo el fragmento y hacer clic sobre Run o usar el atajo del teclado. 
+
+[IMAGEN seleccion código a ejecutar]
+
+¡Ejecutemos el código y veamos qué pasa!
+
+
+
+Cuando ejecutamos código de nuestro script esté pasa a la consola. En el caso de la primera línea, la consola nos da dos avisos. El primero, cuáles son todos los paquetes que estamos activando al usar `library(tidyverse`). Como comentamos antes, este es un metapaquete que incluye otros paquetes en su interior. Al llamarlos a través de `library(tidyverse)` se activan estos 8 paquetes (pese a que incluye más) y eso es lo que nos está avisando R en la consola. El otro aviso es de un "Conflicto". Nos dice que las funciones `filter()`y `lag()` del paquete `dplyr` tienen el mismo nombre que funciones de paquete `stats`. Como cargamos `dplyr`después (el instalar `tidyverse`), lo que R nos avisa es que las de este paquete son las que van a prevalecer por sobre las del paquete `stats`(que es parte de R base). 
+
+En este punto es importante sugerir dos buenas prácticas. La primera, es hacer lo que ya hicimos: llamar todos los paquetes que ocuparemos al inicio de nuestro script. De este modo, cuando volvemos a utilizarlo más adelante u otra persona quiere ejecutarlo puede tener claro qué paquetes se utilizan. Obviamente, cuando comienzo a escribir un script puedo no saber cuáles son todos los paquetes que necesitaré, pero si en la mitad decido usar un nuevo paquete, la idea sería volver a las primeras líneas del script y agregarlo. 
+
+La segunda buena práctica es comentar nuestro script. En R podemos agregar comentarios anteponiendo un `#` al fragmento que cumple esa función. En una línea de nuestro script, todo lo que está después de un `#` no se ejecuta como código. 
+
+¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace o  dejar registro de por qué hicimos algo de determinada manera. Esto es muy útil para que nuestro futuro yo o las personas con las que compartiremos nuestro script entiendan lo que hicimos. 
+
+[IMAGEN COMENTARIO]
+
+También es útil agregar al inicio de nuestro script una descripción de lo que hace. 
+
+[IMAGEN COMENTARIO inicial]
+
+## Miremos los datos
+
+`babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El objeto que contiene los datos dentro del paquete se llama también `babynames`. No vemos ese objeto en nuestro `Gobal Environment` porque el objeto existe dentro del paquete, pero si fueramos a ver el entorno de ese paquete en particular, lo encontraríamos:
+
+[IMAGEN_entorno_babynames]
+
+En R, podemos ver un objeto simplemente ejecutándolo: 
+
+[IMAGEN objeto babynames]
+
+En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R, lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas para que nos hagamos una idea de lo que contiene y no los casi dos millones totales (mejor así, ¿no?)
+
+Si quisiéramos tener una visión general de los datos, hay una función que resulta muy útil para esto, ya que nos los muestra en una pestaña distinta y con un formato tipo planilla:
+
+``` r
+View(babynames)
+``
+
+
+
+
+
+

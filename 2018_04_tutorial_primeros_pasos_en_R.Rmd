@@ -188,15 +188,15 @@ Si te fijas, nuestro script aún dice Untitle1. Antes de seguir, es importante q
 
 `babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El "objeto" que contiene los datos dentro del paquete se llama también `babynames`. No vemos ese objeto en nuestro `Gobal Environment` porque el objeto existe dentro del paquete, pero si hacemos clic sobre Global Environment podemos acceder al "environment" del paquete y ahí lo encontraremos: 
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/entorno_babynames.png)
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/entorno_babynames.png" height="200"></a>
 
 En R, podemos ver un objeto simplemente ejecutándolo. Es decir, escribimos el nombre del objeto y ejecutamos el código. De ahora en adelante, en vez de mostrarte un pantallazo del script, el código que haya que ejecutar aparecerá en un recuadro, así:
 
 ```r
 babynames
 ```
-
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png)
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" height="300"></a>
 
 En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R, lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas para que nos hagamos una idea de lo que contiene y no los casi dos millones que tiene (mejor así, ¿no?)
 
@@ -214,13 +214,13 @@ Existen otras funciones útiles para darle una primera mirada a nuestros datos `
 ``` r
 head(babynames)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/head_babynames.png" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/head_babynames.png" height="250"></a>
 
 ``` r
 tail(babynames)
 ```
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames.png" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames.png" height="200"></a>
 
 
 Las funciones `tail` y `head` resultan muy útiles para chequear si nuestros datos están completos, ya que nos permiten mirar sus extremos. 
@@ -232,7 +232,7 @@ Si queremos conocer la estructura de nuestro conjunto de datos, es decir, conoce
 str(babynames)
 ```
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/str_babynames.png" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/str_babynames.png" height="150"></a>
 
 
 #### Algo más sobre las funciones
@@ -248,7 +248,7 @@ Si revisamos la ayuda podemos enterarnos que `tail` permite definir la cantidad 
 tail(babynames, n = 10)
 ```
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_n10.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_n10.png" align="center" height="250"></a>
 
 
 Las funciones leen sus argumentos en orden, por lo que si en la ayuda vemos que el segundo argumento de `tail` es `n =`, podríamos solo escribir el número de líneas que queremos, es decir, así:
@@ -256,7 +256,7 @@ Las funciones leen sus argumentos en orden, por lo que si en la ayuda vemos que 
 ```r
 tail(babynames, 10)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png" align="center" height="250"></a>
 
 
 ¡El resultado es el mismo! 

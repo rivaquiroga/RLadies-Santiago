@@ -47,6 +47,9 @@ El último paquete es un poco más pesado que el resto, así que, dependiendo de
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/paquetes_instalados.png)
 
+¿Salió todo bien? ¡Excelente! Ya escribiste tus primeras líneas de código :)
+
+### Advertencias / Warnings
 Si no tienes la última versión de R, puede que aparezca un `Warning`al instalar alguno de los paquetes que diga que el paquete fue construido bajo la versión 3.4.4 y que tú tienes la 3.4.3. Un `Warning` es distinto a un error: R ejecuta el código pero te advierte que no todo puede resultar como esperas. 
 
 ## Utilización de RStudio
@@ -76,7 +79,10 @@ Help, como su nombre lo indica, es la pestaña en la que podemos encontrar ayuda
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_help.png" align="center" height="300"></a>
 
 
-El cuarto panel (que probablemente todavía no te aparece) es el que ocuparemos para escribir el código que queremos que luego R ejecute, es decir, el panel para nuestro _script_. Para crear un nuevo script podemos ir a File > New File > R Script, ocupar el atajo de teclado `shift(mayúscula)` + `comando` + `n` (Mac) o `shift(mayúscula)` + `control` + `n` o seleccionarlo desde la barra superior de la ventana:
+El cuarto panel (que probablemente todavía no te aparece) es el que ocuparemos para escribir el código que queremos que luego R ejecute, es decir, el panel para nuestro _script_. Para crear un nuevo script podemos:
+* ir a File > New File > R Script
+* ocupar el atajo de teclado `shift(mayúscula)` + `comando` + `n` (Mac) o `shift(mayúscula)` + `control` + `n`
+* o seleccionar la opción desde la barra superior de la ventana:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/nuevo_script.png" align="center" height="300"></a>
 
@@ -124,6 +130,7 @@ Esto último es muy muy muy útil: RStudio se ejecuta para cada proyecto de mane
 ## Cargar los paquetes necesarios
 
 Antes del taller instalaste los tres paquetes que ocuparemos en esta sesión. Cuando instalamos los paquetes, estos quedan en nuestro computador y podemos chequear eso revisando el panel "Packages" abajo a la izquierda. Sin embargo, que los hayamos instalado no quiere decir que estén listos para ser usados. Tenemos que decirle explícitamente a R qué paquetes queremos ocupar. ¿Por qué? Para ahorrar memoria: activamos solo los que necesitamos. 
+
 La función para hacer eso es `library(nombre_del_paquete)`, así que escribiremos eso al inicio de nuestro script. RStudio trata de hacernos la vida más simple, así que cuando empezamos a escribir el nombre de la función se despliega un menú con posibles opciones que indican el nombre y el paquete al que está asociada (en este caso, sugiere `{base}`). Lo que aparece en amarillo es la estructura de la función, algo sobre lo que no hablaremos por ahora:
 
 

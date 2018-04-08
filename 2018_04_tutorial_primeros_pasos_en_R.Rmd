@@ -119,11 +119,11 @@ Finalmente, le damos un nombre al proyecto y decidimos en qué parte de nuestro 
 
 Luego de apretar _Create Project_ RStudio se reinicia y se producen algunos cambios. El panel _Files_ (abajo a la derecha) ahora nos muestra la carpeta de nuestro proyecto y el único archivo que hay en ella por ahora. Ese es el archivo mágico que mantiene unido todo lo que hay dentro de la carpeta. Cuando queramos volver a trabajar en nuestro proyecto, solo tenemos que abrir ese archivo. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_rstudioproj.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_rproj.png" align="center" height="300"></a>
 
 Otro cambio que ocurre es que en la barra superior aparece ahora la ruta a la carpeta de nuestro projecto. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_barraprojecto.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_barraproyecto.png" align="center" height="300"></a>
 
 Por último, algo cambia en el ícono de R: aparece el nombre que le dimos a nuestro archivo:
 

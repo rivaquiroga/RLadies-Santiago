@@ -97,6 +97,9 @@ Hay un cuarto panel (que probablemente todavía no te aparece)  y que es el que 
 
 ¡Ahora ya están los cuatro paneles!
 
+[Nota: si alguna vez has utilizado Git o Github, lo que diré a continuación tendrá algo de sentido. Si no, puedes omitir este comentario y seguir 
+Si te fijas, en el panel en que está la consola hay una segunda pestaña: el/la Terminal. Esto es muy útil, ya que, por ejemplo, si tu proyecto lo tienes alojado en Github, no tienes que salir de R para hacer commit a los cambios que has hecho].
+
 ### Creación de un proyecto 
 
 Una de las ventajas de RStudio es que permite crear "proyectos". Un projecto es un espacio o contexto de trabajo asociado a una carpeta en particular, en la que se guardan nuestro(s) script(s), archivos, etc. Cuando creamos un proyecto en RStudio, se crea un tipo especial de archivo (.Rproj) que lo que hace es vincular todo lo que se encuentra dentro de esa carpeta. ¿Por qué esto es útil? Si parte de nuestro script, por ejemplo, implica abrir un archivo que está en la carpeta de nuestro proyecto, no necesito indicar en mi código toda la ruta del archivo: lo que hará RStudio será buscarlo en el entorno/carpeta del projecto. Esto es muy muy útil, ya que si movemos la carpeta a otro lugar de nuestro computador o la compartimos con otra persona, por ejemplo, nuestro código seguirá funcionando.
@@ -339,7 +342,7 @@ Más arriba comentamos que el Tidyverse era un conjunto de paquetes que compart�
 sum(babynames$n[babynames$name == "Arya"])
 ```
 Ambos códigos hacen exactamente lo mismo y llegan al mismo resultado: 8866 (puedes probar ejecutándolo). La diferencia es que el primero que escribimos (usando ` %>% `) resulta más fácil de leer que el segundo, en que tenemos que leer de adentro hacia afuera. Además, para facilitar la lectura, los paquetes del Tidyverse suelen tener nombres de funciones que resultan más intuitivas (en inglés, claro).
-Existen otros tipos de análisis para los que no es posible aplicar este tipo de sintaxis o para el que, por un tema de procesamiento, resulta más rápido usar la de R base. 
+Existen algunos tipos de análisis estadísticos para los que no es posible aplicar este tipo de sintaxis o situaciones en las que, por un tema de procesamiento, resulta más rápido usar la de R base. 
 
 #### Creación de objetos
 
@@ -350,7 +353,7 @@ babynames
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" height="300"></a>
 
-Imagina que nos interesa guardar los datos sobre la cantidad de Aryas porque seguiremos trabajando con ellos. Para no tener que filtrar cada vez que los queramos ocupar, nos conviene crear un nuevo objeto. En R eso lo hacemos con el símbolo de asignación: `<-`. ¿Cómo funciona? Lo que está a la izquierda del símbolo de asignación es el objeto que queremos crear y lo que está a su derecha el valor que queremos asignarle. Así:
+Imagina que nos interesa guardar los datos sobre la cantidad de Aryas porque seguiremos trabajando con ellos y el resto no nos interesa. Para no tener que filtrar cada vez que los queramos ocupar, nos conviene crear un nuevo objeto. En R eso lo hacemos con el símbolo de asignación: `<-`. ¿Cómo funciona? Lo que está a la izquierda del símbolo de asignación es el objeto que queremos crear y lo que está a su derecha es el valor que queremos asignarle. Así:
 
 ```r
 aryas <- babynames %>% 
@@ -360,4 +363,36 @@ El código crea un nuevo objeto llamado `aryas`, que contiene lo que resulta de 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/aryas.png" align="center" height="100"></a>
 
-[EN CONSTRUCCIÓN]
+Ahora podemos llamar a ese objeto tal como hicimos con `babynames`. 
+
+```r
+aryas
+```
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_aryas.png" align="center" height="100"></a>
+
+Hacer clic sobre cualquier objeto del _Global Environmet_ es equivalente a aplicar la función `View()`. Haz la prueba: si haces clic sobre `aryas`, se abrirá una nueva pestaña en el panel de tu script en el que verás el objeto como una planilla. En la consola, apareció automáticamente el código para realizar esa acción `View(aryas)`.
+
+## Más funciones para explorar y manipular datos
+
+Trabajemos ahora con el paquete `gapminder`. Este paquete contiene una parte de los datos de Gapminder, una base de datos que incluye información mundial sobre población, expectativa de vida, PIB per cápita y otros. Su autor, Hans Rosling, ha hecho varias charlas TED en las que comenta cosas sobre estos datos que vale la pena mirar.
+
+Podemos dar una mirada inicial a los datos usando las funciones que ya revisamos:
+
+```r
+str(gapminder)
+head(gapminder)
+tail(gapminder)
+```
+Además, puedes buscar ayuda sobre este paquete y así tener más información sobre cada variables:
+
+```r
+?gapminder
+```
+
+Las variables que tenemos son país (`country`), continente (`continent`), año (`year`), expectativa de vida (`lifeExp`), población (`pop`) e ingreso percápita en dólares (`gdpPercap`). Otra forma de conocer los nombres de las variables de un conjunto de datos es a través de la función `names()`:
+```r
+names(gapminder)
+```
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder.png" align="center" height="100"></a>
+
+

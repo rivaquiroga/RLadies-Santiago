@@ -278,7 +278,7 @@ babynames %>%
 
 Si lo ejecutamos, podemos ver el siguiente resultado:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" height="160"></a>
 
 ¡Las primeras Daenerys aparecen en 2012! ¿Y las Aryas? Podemos usar el mismo código, cambiando solo el valor que queremos que tenga la variable nombre: que se igual a Araya. 
 
@@ -286,7 +286,7 @@ Si lo ejecutamos, podemos ver el siguiente resultado:
 babynames %>% 
     filter(name == "Arya")
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_arya.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_arya.png" align="center" height="260"></a>
 
 Hay muchas más Aryas. Y aparecen antes (o sea, por influencia del libro y no de la serie). Y son tantas que no alcanzan a imprimirse en la consola. ¿Cómo podríamos saber cuántas son? 
 
@@ -310,7 +310,9 @@ Con este código le estamos diciendo a R que :
 
 ¿Qué pasa si ejecutamos este código? ¡8866 Aryas!
 
-Más arriba comentamos que el Tidyverse era un conjunto de paquetes que compartía un mismo enfoque de trabajo con los datos. Uno de las características de este enfoque tiene que ver con la forma de escribir el código. En particular, con el uso de ` %>% `. Lo que hace este símbolo es "desempaquetar" el código, de modo que lo leamos de arriba hacia abajo y de izquierda a derecha. La manera "tradicional"" de escribir el mismo código sería la siguiente:
+#### Distintos tipos de sintaxis
+
+Más arriba comentamos que el Tidyverse era un conjunto de paquetes que compartía un mismo enfoque de trabajo con los datos. Uno de las características de este enfoque tiene que ver con la forma de escribir el código. En particular, con cómo cambia la sintaxis del código al usar ` %>% `. Lo que hace esta función es "desempaquetar" el código, de modo que lo leamos de arriba hacia abajo y de izquierda a derecha (la orientación que suele tener nuestra lectura). Si quisiéramos realizar las mismas acciones usando la sintaxis "tradicional" (la de R base) nuestro código se vería así:
 
 ```r
 sum(babynames$n[babynames$name == "Arya"])
@@ -326,14 +328,14 @@ babynames
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" height="300"></a>
 
-Imagina que nos interesa guardar los datos sobre la cantidad de Aryas porque seguiremos trabajando con ellos. Para no tener que filtrar cada vez, nos conviene crear un nuevo objeto. Eso lo podemos hacer con el símbolo de asignación: `<-`. ¿Cómo funciona? Lo que está a la izquierda del símbolo de asignación es el objeto que queremos crear y lo que está a su derecha el valor que queremos asignarle. Así:
+Imagina que nos interesa guardar los datos sobre la cantidad de Aryas porque seguiremos trabajando con ellos. Para no tener que filtrar cada vez que los queramos ocupar, nos conviene crear un nuevo objeto. En R eso lo hacemos con el símbolo de asignación: `<-`. ¿Cómo funciona? Lo que está a la izquierda del símbolo de asignación es el objeto que queremos crear y lo que está a su derecha el valor que queremos asignarle. Así:
 
 ```r
 aryas <- babynames %>% 
     filter(name == "Arya")
 ```
-El código crea un nuevo objeto llamado `aryas`, que contiene lo que resulta de aplicar ese filtro a `babynames`. Si ejecutas ese código, no aparecerá nada nuevo en la consola (solo el código que acabas de ejecutar). Sin embargo, en nuestro Global Enviromen (el panel de arriba a la derecha) apareció el objeto que hemos creado:
+El código crea un nuevo objeto llamado `aryas`, que contiene lo que resulta de aplicar un filtro a `babynames`. Si ejecutas ese código, no aparecerá nada nuevo en la consola (solo el código que acabas de ejecutar). Sin embargo, en nuestro _Global Enviroment_ (el panel de arriba a la derecha) aparecerá el objeto que hemos creado:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/aryas.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/aryas.png" align="center" height="100"></a>
 
-
+[EN CONSTRUCCIÓN]

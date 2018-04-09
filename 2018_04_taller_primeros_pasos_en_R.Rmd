@@ -264,6 +264,76 @@ tail(babynames, 10)
 
 ## Exploración y manipulación de los datos
 
-...
+Ahora que conocemos cómo es el conjunto de datos con el que estamos trabajando, podemos empezar a explorarlo y hacernos preguntas. Por ejemplo, podríamos querer saber a cuántas personas le han puesto como Danerys (como el personaje de Juego de Tronos). Para eso podemos utilizar el siguiente código:
+
+```r
+babynames %>% 
+    filter(name == "Daenerys")
+```
+
+¿Qué hace este código? Le estamos diciendo a R que :
+* tome el objeto `babynames` 
+* luego (` %>% `) 
+* que filtre (`filter()`) los nombres (`name`) que sean iguales `==` a `Daenerys`. 
+
+Si lo ejecutamos, podemos ver el siguiente resultado:
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" height="250"></a>
+
+¡Las primeras Daenerys aparecen en 2012! ¿Y las Aryas? Podemos usar el mismo código, cambiando solo el valor que queremos que tenga la variable nombre: que se igual a Araya. 
+
+```r
+babynames %>% 
+    filter(name == "Arya")
+```
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_arya.png" align="center" height="250"></a>
+
+Hay muchas más Aryas. Y aparecen antes (o sea, por influencia del libro y no de la serie). Y son tantas que no alcanzan a imprimirse en la consola. ¿Cómo podríamos saber cuántas son? 
+
+Antes de responder eso, hablemos un poco del símbolo ` %>% `. ¿Qué es ` %>% `? Este símbolo se llama _pipe_ (en inglés, _tubo_) y en el código lo podemos leer como "luego" o "a continuación". El atajo del teclado para realizarlo es `control` + `shift` + `m` (Linux / Windows) o `command` + `shift` + `m` (Mac.)
+
+`%>%`es una función que nos permite encadenar las acciones que queremos aplicar en un objeto (en este caso, `babynames`). Por ejemplo, si quisiéramos saber a cuántas personas le han puesto el nombre Arya, podría agregar otra función que sume todos los valores de la columna `n` (la que tiene la cantidad de nombres por año). La función que nos sirve para eso es `summarize` (o `summarise`; R acepta inglés norteamericano o británico). Como su nombre lo indica, lo que hace `summarize`es resumir información, según el criterio que le entreguemos. Veamos cómo funciona:
+
+```r
+babynames %>% 
+    filter(name == "Arya") %>% 
+    summarize(sum(n))
+```
+Con este código le estamos diciendo a R que :
+
+* tome el objeto `babynames` 
+* luego (` %>% `) 
+* que filtre (`filter()`) los nombres (`name`) que sean iguales `==` a `Arya` 
+* luego (` %>% `)
+* que resuma (`summarize`) la siguiente información:
+* la suma (`sum`) de los valores de la columna `n`. 
+
+¿Qué pasa si ejecutamos este código? ¡8866 Aryas!
+
+Más arriba comentamos que el Tidyverse era un conjunto de paquetes que compartía un mismo enfoque de trabajo con los datos. Uno de las características de este enfoque tiene que ver con la forma de escribir el código. En particular, con el uso de ` %>% `. Lo que hace este símbolo es "desempaquetar" el código, de modo que lo leamos de arriba hacia abajo y de izquierda a derecha. La manera "tradicional"" de escribir el mismo código sería la siguiente:
+
+```r
+sum(babynames$n[babynames$name == "Arya"])
+```
+Ambos códigos hacen exactamente lo mismo y llegan al mismo resultado (puedes probar ejecutándolo). La diferencia es que el primero que escribimos (usando ` %>% `) resulta más fácil de leer que el segundo, en que tenemos que leer de adentro hacia afuera. 
+
+#### Creación de objetos
+
+Hasta el momento hemos realizado una serie de acciones sobre el objeto `babynames`: hemos filtrado información y hemos hecho cálculos en una variable. Sin embargo, el objeto no ha sido alterado. Si vuelves imprimir en la consola el contenido de ese objeto, tendrás los mismos resultados que al principio, ya que todas las acciones que hemos realizado no han sido guardadas, sino que las hemos hecho en la memoria operativa.
+
+```r
+babynames
+```
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" height="300"></a>
+
+Imagina que nos interesa guardar los datos sobre la cantidad de Aryas porque seguiremos trabajando con ellos. Para no tener que filtrar cada vez, nos conviene crear un nuevo objeto. Eso lo podemos hacer con el símbolo de asignación: `<-`. ¿Cómo funciona? Lo que está a la izquierda del símbolo de asignación es el objeto que queremos crear y lo que está a su derecha el valor que queremos asignarle. Así:
+
+```r
+aryas <- babynames %>% 
+    filter(name == "Arya")
+```
+El código crea un nuevo objeto llamado `aryas`, que contiene lo que resulta de aplicar ese filtro a `babynames`. Si ejecutas ese código, no aparecerá nada nuevo en la consola (solo el código que acabas de ejecutar). Sin embargo, en nuestro Global Enviromen (el panel de arriba a la derecha) apareció el objeto que hemos creado:
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/aryas.png" align="center" height="250"></a>
 
 

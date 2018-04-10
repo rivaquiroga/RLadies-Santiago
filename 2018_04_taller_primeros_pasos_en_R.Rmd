@@ -1,6 +1,6 @@
 # Tutorial: primeros pasos en R
 
-Tutorial en construcción del Taller organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga)
+Tutorial en construcción del Taller organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga). 
 
 
 ## Instalación de R y RStudio
@@ -341,8 +341,8 @@ Más arriba comentamos que el Tidyverse era un conjunto de paquetes que compart�
 ```r
 sum(babynames$n[babynames$name == "Arya"])
 ```
-Ambos códigos hacen exactamente lo mismo y llegan al mismo resultado: 8866 (puedes probar ejecutándolo). La diferencia es que el primero que escribimos (usando ` %>% `) resulta más fácil de leer que el segundo, en que tenemos que leer de adentro hacia afuera. Además, para facilitar la lectura, los paquetes del Tidyverse suelen tener nombres de funciones que resultan más intuitivas (en inglés, claro).
-Existen algunos tipos de análisis estadísticos para los que no es posible aplicar este tipo de sintaxis o situaciones en las que, por un tema de procesamiento, resulta más rápido usar la de R base. 
+Ambos códigos hacen exactamente lo mismo y llegan al mismo resultado: 8866 (puedes probar ejecutándolo). La diferencia es que el primero que escribimos (usando ` %>% `) resulta más fácil de leer que el segundo, en que tenemos que leer de adentro hacia afuera. Además, para facilitar la lectura, los paquetes del Tidyverse suelen tener nombres de funciones que resultan más intuitivas (aunque están en inglés, claro).
+Existen algunos tipos de análisis estadísticos para los que no es posible aplicar este tipo de sintaxis o situaciones en las que, por un tema de procesamiento, resulta mejor usar la de R base. Sin embargo, para la mayoría de las operaciones de importación, limpieza, exploración y manipulación de datos, la sintaxis del Tidyverse nos permite resolver nuestras preguntas. 
 
 #### Creación de objetos
 
@@ -376,6 +376,7 @@ Hacer clic sobre cualquier objeto del _Global Environmet_ es equivalente a aplic
 
 Trabajemos ahora con el paquete `gapminder`. Este paquete contiene una parte de los datos de Gapminder, una base de datos que incluye información mundial sobre población, expectativa de vida, PIB per cápita y otros. Su autor, Hans Rosling, ha hecho varias charlas TED en las que comenta cosas sobre estos datos que vale la pena mirar.
 
+
 Podemos dar una mirada inicial a los datos usando las funciones que ya revisamos:
 
 ```r
@@ -389,10 +390,74 @@ Además, puedes buscar ayuda sobre este paquete y así tener más información s
 ?gapminder
 ```
 
-Las variables que tenemos son país (`country`), continente (`continent`), año (`year`), expectativa de vida (`lifeExp`), población (`pop`) e ingreso percápita en dólares (`gdpPercap`). Otra forma de conocer los nombres de las variables de un conjunto de datos es a través de la función `names()`:
+Las variables que tenemos son país (`country`), continente (`continent`), año (`year`), expectativa de vida (`lifeExp`), población (`pop`) e ingreso percápita en dólares (`gdpPercap`). Otra forma de conocer los nombres de las variables de un conjunto de datos es a través de la función `names()`.
 ```r
 names(gapminder)
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder.png" align="center" height="100"></a>
 
+#### Filtrar casos
 
+Tal como vimos más arriba, la función `filter` nos sirve para seleccionar casos (filas) a partir de un determinado criterio. Por ejemplo, si quisiéramos ver los datos de `gapminder` para Chile, podríamos hacerlo así:
+
+```r
+gapminder %>% 
+    filter(country == "Chile")
+```
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_chile.png" align="center" height="100"></a>
+
+La función `filter` admite más de un criterio de filtrado. Por ejemplo, si quisiéramos saber qué países tuvieron durante 2007 un PIB per cápita menor a 1000 dólares, podríamos hacerlo así:
+
+```r
+gapminder %>% 
+    filter(year == 2007, gdpPercap < 1000)
+```
+Es decir, le estamos pidiendo a R que:
+
+* tome el objeto `gapminder`
+* a continuación (` %>% `)
+* que filtre las filas que cumplan con dos criterios: año 2007 y PIB menor a 1000 dólares.
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_2007_PIB.png" align="center" height="250"></a>
+
+#### Ordenar los casos
+
+Los resultados del ejemplo anterior aparecen ordenados alfabéticamente, según el nombre del país. Sin embargo, en algunos casos podría interesarnos que sea otra variable la que defina el orden en que se muestran los resultados. Para eso podemos utilizar la función `arrange()`. 
+Por ejemplo, si quisiéramos ver los datos del año 2007 de las tres Américas (norte, centro y sur) ordenados por expectativa de vida, podríamos usar el siguiente código:
+
+```r
+gapminder %>% 
+    filter(year == 2007, continent == "Americas") %>%
+    arrange(lifeExp)
+```
+Por defecto, `arrange()` organiza los datos de menor a mayor. ¿Y si quisiéramos ver el orden inverso?. En ese caso, tendríamos que indicar que el orden que nos interesa es el descendiente: `desc()`:
+
+```r
+gapminder %>% 
+    filter(year == 2007, continent == "Americas") %>%
+    arrange(desc(lifeExp))
+````
+
+### Agrupar
+
+Más arriba vimos que la función `summarize()` nos permite crear una tabla que resume información de acuerdo a algún criterio. Por ejemplo, si quisiéramos conocer el promedio de expectativa de vida para el año 2007, podríamos hacerlo así:
+
+```r
+gapminder %>% 
+    filter(year == 2007) %>% 
+    summarise(mean(lifeExp))
+```
+Este dato no es muy informativo respecto de las diferencias que podrían existir por continente. ¿Cómo podríamos desagregar esa información? Para estos casos, la función `group_by` resulta muy útil:
+```r
+gapminder %>% 
+    filter(year == 2007) %>%
+    group_by(continent) %>% 
+    summarise(mean(lifeExp))
+```
+Lo que les estamos pidiendo a R es que tome el objeto `gapminder`, luego, que filtre los casos del año 2007, luego, que agrupe los casos de acuerdo a la variable continente, luego, que haga un resumen de la información que sale de calcular la media de la expectativa de vida. 
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/group_by.png" align="center" height="250"></a>
+
+
+[EN CONSTRUCCIÓN]

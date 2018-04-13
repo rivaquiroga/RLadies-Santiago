@@ -169,6 +169,8 @@ Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es 
 
 Cuando ejecutamos el código de nuestro script esté pasa a la consola. En el caso del primer paquete (`tidyverse`), la consola nos da dos avisos. El primero, cuáles son todos los paquetes que estamos cargando al usar cargar `tidyverse`. Como comentamos antes, este es un metapaquete que incluye otros paquetes en su interior. Al llamarlos a través de `library(tidyverse)` se activan estos 8 paquetes que aparecen consignados (pese a que incluye más) y eso es lo que nos está avisando R en la consola. El otro aviso es de un "Conflicto". Nos dice que las funciones `filter()`y `lag()` del paquete `dplyr` tienen el mismo nombre que funciones del paquete `stats` (que es parte de R base). Como cargamos `dplyr`después (al instalar `tidyverse`), lo que R nos avisa es que son las funciones de este paquete las que van a prevalecer por sobre las del paquete `stats`.
 
+IMPORTANTE: Lo que hicimos recién fue cargar los código para esta sesión de R que estamos ejecutando actualmente. Si en algún momento cerraras el programa y retomaras este tutorial en otro momento, tendrías que volver a cargarlos. 
+
 #### Buenas prácticas
 
 En este punto es importante sugerir dos buenas prácticas. La primera, es hacer lo que ya hicimos: llamar todos los paquetes que ocuparemos al inicio de nuestro script. De este modo, cuando volvemos a trabajar con él más adelante (u otra persona quiere ejecutarlo) queda claro desde el principio qué paquetes se utilizan (y es necesario descargar). Obviamente, cuando comenzamos a escribir un script no siempre sabemos cuáles son todos los paquetes que necesitaremos. Por eso, si en la mitad del proceso decido usar un nuevo paquete, la buena práctica es  volver a las primeras líneas del script y agregarlo. 
@@ -291,7 +293,7 @@ Podemos seguir utilizando ese mismo código para buscar otros nombres. Solo tene
 babynames %>% 
     filter(name == "Sansa")
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sansas.png" align="center" height="260"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sansas.png" align="center" height="160"></a>
 
 Al parecer Sansa no ha sido un nombre tan popular. Al menos no hasta 2015. ¿Y Arya?
 
@@ -330,7 +332,7 @@ babynames %>%
     filter(name == "Arya") %>% 
     summarize(sum(n), mean(n), first(year))
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/summarize_arya.png" align="center" height="260"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/summarize_arya.png" align="center" height="150"></a>
 
 Lo que hizo `summarize` fue resumir toda la información que le pedimos en una tabla. Ojo: es probable que la cantidad de decimales que te aparecen a ti sea distinta. Depende de la configuración de cada equipo. 
 
@@ -368,7 +370,7 @@ Ahora podemos llamar a ese objeto tal como hicimos con `babynames`.
 ```r
 aryas
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_aryas.png" align="center" height="100"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_aryas.png" align="center" height="250"></a>
 
 Hacer clic sobre cualquier objeto del _Global Environmet_ es equivalente a aplicar la función `View()`. Haz la prueba: si haces clic sobre `aryas`, se abrirá una nueva pestaña en el panel de tu script en el que verás el objeto como una planilla. En la consola, apareció automáticamente el código para realizar esa acción `View(aryas)`.
 
@@ -394,7 +396,7 @@ Las variables que tenemos son país (`country`), continente (`continent`), año 
 ```r
 names(gapminder)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder.png" align="center" height="100"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder.png" align="center" height="50"></a>
 
 #### Filtrar casos
 
@@ -405,7 +407,7 @@ gapminder %>%
     filter(country == "Chile")
 ```
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_chile.png" align="center" height="100"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_chile.png" align="center" height="250"></a>
 
 La función `filter` admite más de un criterio de filtrado. Por ejemplo, si quisiéramos saber qué países tuvieron durante 2007 un PIB per cápita menor a 1000 dólares, podríamos hacerlo así:
 
@@ -419,25 +421,105 @@ Es decir, le estamos pidiendo a R que:
 * a continuación (` %>% `)
 * que filtre las filas que cumplan con dos criterios: año 2007 y PIB menor a 1000 dólares.
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_2007_PIB.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_2007_PIB.png" align="center" height="350"></a>
 
-#### Ordenar los casos
+Existen muchas más formas de crear criterios de filtrado, que en futuros tutoriales exploraremos. Por ahora, revisaremos un último caso, porque nos servirá para volver a practicar la creacion de objetos. 
 
-Los resultados del ejemplo anterior aparecen ordenados alfabéticamente, según el nombre del país. Sin embargo, en algunos casos podría interesarnos que sea otra variable la que defina el orden en que se muestran los resultados. Para eso podemos utilizar la función `arrange()`. 
-Por ejemplo, si quisiéramos ver los datos del año 2007 de las tres Américas (norte, centro y sur) ordenados por expectativa de vida, podríamos usar el siguiente código:
+En los ejemplos anteriores solo consideramos un valor por variable para filtrar (por ejemplo, que país fuera == a "Chile"). ¿Cómo podríamos hacer una selección que incluya más países. Imagina que solo nos interesan los datos de Sudamérica. La variable `continent` considera a las tres Américas como una sola zona, así que no podemos seleccionarlas usando ese valor. 
+
+Lo que podemos hacer es crear un vector con todos los países de América del Sur que están en `gapminder` y decirle a R que ocupe eso como criterio de selección, así:
 
 ```r
 gapminder %>% 
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))
+```
+Lo que le estamos pidiendo a R es que
+
+* tome el objeto `gapminder`
+* luego (` %>% `)
+* que filtre las filas en que el valor de la variable `country` se encuentre en (`%in%`) el conjunto de nombres que indicamos a continuación.
+
+¡Ta dá!
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_latam.png" align="center" height="250"></a>
+
+Recuerda que también puedes agregar `View()` al final del código para ver tu selección en una ventana distinta. 
+
+```r
+gapminder %>% 
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela")) %>% 
+    View()
+```
+
+Si esta selección de casos nos interesa y tenemos intención de seguir utilizándola, nos conviene guardarla como un nuevo objeto usando el operador `<-`. Esto permite que no tengamos que volver a escribir un criterio de filtrado tan largo cuando queramos volver a trabajar con esos datos.
+
+```r
+gapminder_sudamerica <- gapminder %>% 
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))
+```
+
+#### ¿Y si quisiera guardar esos datos en mi computador? 
+
+El paquete `readr`, que es parte del Tidyverse, tiene funciones muy útiles para importar y exportar archivos. En este caso, utilizaremos `write_csv()` para guardar en nuestro computador los datos de Gapminder para Sudamérica. Tenemos dos opciones.
+
+Si ya creamos el objeto, lo indicamos como primer argumento dentro de la función. El segundo argumento es el nombre que queremos que tenga el archivo creado.
+
+```r
+write_csv(gapminder_sudamerica, "gapminder_sudamerica.csv")
+```
+
+Al ejecutar el código, aparecerá en la carpeta de nuestro proyecto el nuevo archivo. 
+
+Otra opción sería incluir la función `write_csv()` al final de nuestro código, es decir, como una siguiente acción en la cadena de comandos que le dimos a R:
+
+```r
+gapminder %>% 
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela")) %>%
+    write_csv("gapminder_sudamerica.csv")
+```
+En este último caso, no indicamos el primer argumento, ya que los datos que se deben considerar para guardar el objeto se generan en los pasos previos del código.
+
+#### Ordenar los casos
+
+Imagina que nos interesa conocer la expectativa de vida de Norte, Centro y Sudamérica. El último registro que contiene la base es de 2007, así que simplemente podríamos revisar los datos aplicando ese filtro y agregando View al final para mirarlos todos en una nueva pestaña:
+
+```r
+gapminder %>% 
+    filter(year == 2007, continent == "Americas") %>% 
+    View()
+```
+El problema que tenemos es que los datos aparecen ordenados alfabéticamente, es decir, según la variable `country`. Una manera de resolver esto es indicando explícitamente a partir de qué variable queremos que se ordenen. Para eso, podemos utilizar la función `arrange()`. 
+
+```r
+gapminder  %>% 
     filter(year == 2007, continent == "Americas") %>%
     arrange(lifeExp)
 ```
-Por defecto, `arrange()` organiza los datos de menor a mayor. ¿Y si quisiéramos ver el orden inverso?. En ese caso, tendríamos que indicar que el orden que nos interesa es el descendiente: `desc()`:
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/arrange_lifeExp.png" align="center" height="250"></a>
+
+
+¡Ahora es más fácil mirar los resultados! Podemos ver que en la región, Haití, Bolivia y Trinidad y Tobago son los países con una menor expectativa de vida. 
+Por defecto, `arrange()` organiza los datos de menor a mayor. ¿Y si quisiéramos ver el orden inverso?. En ese caso, tendríamos que indicar que el orden que nos interesa es el descendiente: `desc()`. 
 
 ```r
 gapminder %>% 
     filter(year == 2007, continent == "Americas") %>%
     arrange(desc(lifeExp))
 ````
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/desc_lifeExp.png" align="center" height="250"></a>
+
+Un error habitual (muy habitual) es que se nos olvide algún paréntesis en nuestro código, sobre todo cuando, como en el caso anterior, comenzamos a agregar una función dentro de otra. Al agregar `desc()` podríamos haber olvidado el paréntesis extra que teníamos que agregar al final y hubiese ocurrido esto en la consola:
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/r_espera_mas.png" align="center" height="250"></a>
+
+En vez del signo `>`, que es el que nos indica que R terminó de ejecutar la acción anterior y que está dispuesto a aceptar nuevos comandos, aparece un `+`. Lo que quiere decirnos R con esto es que algo falta en el código que acabamos de ejecutar. 
+Uno de los aspectos positivos de RStudio es que para que no nos ocurra esto, tratará de advertirnos sobre este tipo de errores cuando pueda identificarlos. Si hubiéramos olvidado el último paréntesis en nuestro script, RStudio habría hecho esto:
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/error_parentesis.png" align="center" height="250"></a>
+
+Al costado izquierdo de la línea en que identifica el error, habría aparecido una alerta. 
+
 
 ### Agrupar
 
@@ -448,16 +530,91 @@ gapminder %>%
     filter(year == 2007) %>% 
     summarise(mean(lifeExp))
 ```
-Este dato no es muy informativo respecto de las diferencias que podrían existir por continente. ¿Cómo podríamos desagregar esa información? Para estos casos, la función `group_by` resulta muy útil:
+Este dato no es muy informativo respecto de las diferencias que podrían existir por continente. ¿Cómo podríamos desagregar esa información? Para estos casos, la función `group_by()` resulta muy útil:
 ```r
 gapminder %>% 
     filter(year == 2007) %>%
     group_by(continent) %>% 
     summarise(mean(lifeExp))
 ```
-Lo que les estamos pidiendo a R es que tome el objeto `gapminder`, luego, que filtre los casos del año 2007, luego, que agrupe los casos de acuerdo a la variable continente, luego, que haga un resumen de la información que sale de calcular la media de la expectativa de vida. 
+Lo que les estamos pidiendo a R es que:
+* tome el objeto `gapminder`, luego,
+* que filtre los casos del año 2007, luego,
+* que agrupe los casos de acuerdo a la variable continente, luego
+* que haga un resumen de la información que sale de calcular la media de la variable expectativa de vida. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/group_by.png" align="center" height="250"></a>
 
+Esto nos permite tener una mejor idea de las diferencias que existen en la expectativa de vida de los distintos continentes: África está muy por debajo de los otros.
+ 
+### Crear nuevas variables
 
-[EN CONSTRUCCIÓN]
+Muchas veces necesitamos crear nuevas variables. En muchos casos, estas implican la transformación de variables que ya tenemos. Para realizar esto en R podemos utilizar la función `mutate`. 
+Veamos un ejemplo. La variable gdpPercap mide el ingreso percápita en dólares. ¿Cómo podríamos agregar una variable a nuestros datos que incluya el valor en pesos chilenos? Una opción sería multiplicar la variable que ya tenemos por el valor actual del conversión Para hacer esto, utilizaremos la función `mutate` en la que indicaremos el nombre que queremos que tenga la nueva variable y qué valor queremos que tenga:
+
+```r
+gapminder %>% 
+    filter(country == "Chile") %>% 
+    mutate(PIB_pesos = gdpPercap * 606)
+```
+Lo que le estamos pidiendo a R es que 
+
+* tome el objeto gapminder, luego,
+* que filtre los casos correspondientes a Chile, luego, 
+* que cree una variable llamada `PIB_pesos`, cuyo valor sea el de la variable `gdpPercap` multiplicado por 606 (el valor de hoy del dólar).
+
+Con la operación que acabamos de hacer solo creamos momentáneamente la variable para la sección de datos que filtramos. Para poder guardarla de manera definitiva tendríamos que
+
+1. Crear un objeto nuevo que la incluya
+2. O sobreescribir el objeto `gapminder`. 
+
+En esta ocasión no la guardaremos.
+
+### Cambiar el nombre de una variable
+
+Más arriba creamos un nuevo objeto filtrando los casos sudamericanos. Si sigues en la misma sesión, el objeto `gapminder_sudamerica` debería estar aún en tu Global Environment. Si no, puedes volver a ejecutar el código con que lo creamos o, si guardaste el archivo csv, puedes cargarlo usando la función inversa a `write_csv`: `read_csv`:
+
+```r
+gapminder_sudamerica <- read_csv("gapminder_sudamerica.csv")
+```
+Lo que le estamos pidiendo a R con esta función es que 
+
+* al objeto llamado `gapminder_sudamerica`
+* le asigne como valor (`<-`)
+* los datos incluidos en el csv `gapminder_sudamerica.csv`
+
+¿Listo? Si ya tienes el objeto `gapminder_sudamerica` podemos seguir. 
+
+En estos datos todos los nombres de las variables se encuentran en inglés. Podemos chequear eso una función que vimos más arriba: `names()`:
+
+```r
+names(gapminder_sudamerica)
+```
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/nombres_gapminder_sudamerica.png" align="center" height="120"></a>
+
+Para cambiar los nombres de las variables podemos utilizar la función `rename()`. Para cada variable a la que queremos cambiar el nombre, lo que hacemos es indicar el nombre nuevo y luego el valor que tendrá, así: `nombre_nuevo = nombre_actual`. Si quisiéramos cambiar de forma permanente los nombres de todas las variables, tendríamos que sobreescribir el objeto y aplicar esta función. Así:
+
+```r
+gapminder_sudamerica <- gapminder_sudamerica %>% 
+    rename(pais = country, continente = continent, anio = year, expec_vida = lifeExp, poblacion = pop, PIB_percap = gdpPercap)
+```
+¡Listo! Ahora los nombres de las variables están traducidos. Para chequearlo, luego de hacer el cambio puedes volver a aplicar la función `names()` o puedes revisar la base con alguna de las funciones que vimos antes, como `View()`, `str()` o `head()`.
+
+### Seleccionar variables
+
+Andes de volver a guardar nuestro objeto como `csv`, haremos un último cambio. Nuestros datos solo incluyen los datos de Sudamérica, por lo que la variable `continent` es poco informativa. Reescribiremos el objeto sin incluirla. 
+Para seleccionar columnas podemos utilizar la función `select()`. Cuando usamos esa función, lo que indicamos en su interior son los criterios de búsqueda. Veamos un ejemplo. Agregaremos `View()` al final para ver el resultado:
+
+```r
+gapminder_sudamerica %>% 
+    select(pais, anio, expec_vida, poblacion, PIB_percap) %>% 
+    View()
+```
+En este caso, indicamos el nombre de las columnas que queremos mantener al interior de la función. Pero más que mantener columnas, lo que queríamos hacer era deshacernos de continente y eso podemos hacerlo de una manera mucho más rápida: diciéndole a R qué es lo que no queremos conservar. Así:
+
+```r
+gapminder_sudamerica %>% 
+    select(-continente) %>% 
+    View()
+```
+¡El resultado es el mismo! Al anteponer un `-` al nombre de la columna, le decimos a R que queremos conservar todas expecto esa. 

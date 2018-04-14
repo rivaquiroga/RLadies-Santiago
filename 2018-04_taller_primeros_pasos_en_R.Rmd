@@ -1,18 +1,13 @@
-# Tutorial: primeros pasos en R
+# Primeros pasos en R
 
-[En este tutorial se recoge parte del taller de introducción a R organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga)]
-
-El objetivo de este tutorial acompañar a personas nuevas en R 
-Desde la instalación de R y RStudio a la realización de algunos ejercicios de manipulación de datos. 
-Hay muchas formas de acercarse a un nuevo lenguaje de programación; esta trata de ser lo más amable posible, sin recargar con demasiada información. 
-
-¡Hay mucho más que aprender! 
+### Tutorial que recoge parte del taller de introducción a R organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga)
 
 
+> ¡Hola! El objetivo de este tutorial es acompañar el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, en el sentido de empezar a trabajar con los datos de inmediato, y suficientemente explicativo como para que se entienda qué es lo que hace un determinado bloque de código. 
 
 ## Instalación de R y RStudio
 
-En este taller utilizaremos R a través del IDE RStudio. ¿Qué es un IDE? IDE es el acrónimo de *Integrated Development Environment*: un *Entorno de Desarrollo Integrado*. Esto quiere decir que RStudio es una aplicación que nos entrega herramientas para hacer más fácil el desarrollo de proyectos usando R.
+En este tutorial utilizaremos R a través del IDE RStudio. ¿Qué es un IDE? IDE es el acrónimo de *Integrated Development Environment* (*Entorno de Desarrollo Integrado*). Esto quiere decir que RStudio es una aplicación que nos entrega herramientas para hacer más fácil el desarrollo de proyectos usando R.
 
 Para poder instalar R y RStudio, sigue los siguientes pasos:
 
@@ -27,13 +22,13 @@ Si quedó todo bien instalado, cuando abras RStudio deberías ver algo así:
 
 En este tutorial usaremos al última versión de R y RStudio, así que si tienes instalada una versión previa, puede que algunas cosas se vean un poco distintas.
 
-Si te aparece algún error durante este proceso, lo más probabable es que sea por alguna configuración de tu sistema operativo. En ese caso, la mejor manera de buscar una solución es copiar el error que arroja R, pegarlo en tu motor de búsqueda favorito y ver cómo alguien que se enfrentó a eso antes lo resolvió. 
+IMPORTANTE: Si te aparece algún error durante este proceso, lo más probabable es que sea por alguna configuración de tu sistema operativo. En ese caso, la mejor manera de buscar una solución es copiar el error que arroja R, pegarlo en tu motor de búsqueda favorito y ver cómo alguien que se enfrentó a eso antes lo resolvió. 
 
 ## Instalación de los paquetes de R que utilizaremos
 
-Cuando instalamos R por primera vez en nuestro computador, lo que estamos instalando es lo que se conoce como "R Base", es decir, los elementos centrales del lenguaje de programación. Una de las ventajas de R es que se trata de un lenguaje extensible: la propia comunidad de usuarios puede desarrollar nuevas posibilidades para utilizarlo. La manera de compartir estos nuevos desarrollos es a través de "paquetes", que incluyen, entre otras cosas, código y datos. Una analogía que se suele utilizar para explicar esto es que R Base es un teléfono tal como viene de fábrica y los paquetes las _apps_ que descargamos para que tenga más funcionalidades. 
+Cuando instalamos R por primera vez en nuestro computador, lo que estamos instalando es lo que se conoce como "R Base", es decir, los elementos centrales del lenguaje de programación. Una de las ventajas de R es que se trata de un lenguaje extensible: la propia comunidad de usuarios puede desarrollar nuevas posibilidades para utilizarlo. La manera de compartir estos nuevos desarrollos es a través de "paquetes", que incluyen, entre otras cosas, código y datos. Una analogía que se suele utilizar para explicar esto es que R Base es un teléfono celular tal como viene de fábrica y los paquetes las _apps_ que descargamos para que tenga más funcionalidades. 
 
-En este taller usaremos tres paquetes: `gapminder`, `babynames` y `tidyverse`. Los dos primeros (`gapminder` y `babynames`) son paquetes de datos que nos servirán para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos los paquetes que conforman el Tidyverse comparten la misma visión sobre el trabajo con datos. Quizás ahora eso suene un poco enigmático, pero más adelante explicaremos qué quiere decir. 
+En este tutorial usaremos tres paquetes: `gapminder`, `babynames` y `tidyverse`. Los dos primeros (`gapminder` y `babynames`) son paquetes que incluyen datos que nos servirán para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos los paquetes que conforman "el Tidyverse" comparten la misma visión sobre el trabajo con datos y la escritura de código. Quizás ahora eso suene un poco enigmático, pero más adelante explicaremos qué quiere decir. 
 
 Para instalarlos, 
 
@@ -56,12 +51,12 @@ El último paquete es un poco más pesado que el resto, así que, dependiendo de
 
 ¿Salió todo bien? ¡Excelente! Ya escribiste tus primeras líneas de código :)
 
-#### Advertencias / Warnings
-Si no tienes la última versión de R, puede que aparezca un "Warning" al durante la instalación que avisa que el paquete fue construido bajo otra versión de R. Un "Warning" es distinto a un error: R ejecuta el código que le pides, pero te advierte que no todo puede resultar como esperas. 
+#### Warnings / Errores
+Si no tienes la última versión de R, puede que aparezca un "Warning" durante la instalación, que te avisa que el paquete fue construido bajo otra versión de R. Un "Warning" es distinto a un error: R ejecuta el código que le pides, pero te advierte que no todo puede resultar como esperas. Cuando aparece un error, en cambio, el código no se ejecuta. 
 
 ## Utilización de RStudio
 
-Como señalamos antes, RStudio es un entorno que facilita el trabajo con R. Si solo abres R en tu computador, lo que verás es una consola. Cuando trabajamos en ella escribimos directamente el código que queremos que se ejecute.
+Como señalamos antes, RStudio es un entorno que facilita el trabajo con R. Si solo abres R en tu computador, lo que verás es una consola. Cuando trabajamos en ella escribimos directamente el código que queremos que se ejecute. El signo `>` nos indica que R está listo y esperando que escribamos algo.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/r_consola.png" align="center" height="400"></a>
 
@@ -75,7 +70,7 @@ Si abres RStudio verás que te aparece la misma consola, pero además te encontr
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_files.png" align="center" height="300"></a>
 
-* __Plots__ es el lugar donde aparecerán los gráficos que crees. No hemos hecho ninguno por ahora, así que este panel también está vacío. 
+* __Plots__ es el lugar donde aparecerán los gráficos que vayas creando. No hemos hecho ninguno por ahora, así que este panel también está vacío. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_plots.png" align="center" height="300"></a>
 
@@ -89,7 +84,7 @@ Si abres RStudio verás que te aparece la misma consola, pero además te encontr
 
 * __Viewer__ es el panel para ver contenido web generado por algún paquete de R (gráficos para la web o aplicaciones interactivas). Por el momento no lo utilizaremos. 
 
-El panel de arriba a la derecha, por su parte, contiene el historial de funciones que hemos ejecutado (_History_), la opción para generar conexiones a bases de datos externas (_Connections_) y _Environment_. Este último panel es muy importante y entender lo que nos muestra es fundamental para comprender cómo funciona R. 
+El panel de arriba a la derecha, por su parte, contiene el historial de funciones que hemos ejecutado (_History_), la opción para generar conexiones a bases de datos externas (_Connections_) y el _Environment_. Este último panel es muy importante y entender lo que nos muestra es fundamental para comprender cómo funciona R. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_globalenvironment.png" align="center" height="300"></a>
 
@@ -104,12 +99,12 @@ Hay un cuarto panel (que probablemente todavía no te aparece)  y que es el que 
 
 ¡Ahora ya están los cuatro paneles!
 
-[Nota: si alguna vez has utilizado Git o Github, lo que diré a continuación tendrá algo de sentido. Si no, puedes omitir este comentario y seguir 
-Si te fijas, en el panel en que está la consola hay una segunda pestaña: el/la Terminal. Esto es muy útil, ya que, por ejemplo, si tu proyecto lo tienes alojado en Github, no tienes que salir de R para hacer commit a los cambios que has hecho].
+NOTA: si alguna vez has utilizado Git o Github, lo que diré a continuación tendrá algo de sentido. Si no, puedes omitir este comentario y seguir a la sección siguiente. 
+Si te fijas, en el panel en que está la consola hay una segunda pestaña: el/la Terminal. Esto es muy útil, ya que, por ejemplo, si tu proyecto lo tienes alojado en Github, no tienes que salir de R para hacer commit a los cambios que has hecho: puedes hacerlo directamente desde RStudio. 
 
 ### Creación de un proyecto 
 
-Una de las ventajas de RStudio es que permite crear "proyectos". Un projecto es un espacio o contexto de trabajo asociado a una carpeta en particular, en la que se guardan nuestro(s) script(s), archivos, etc. Cuando creamos un proyecto en RStudio, se crea un tipo especial de archivo (.Rproj) que lo que hace es vincular todo lo que se encuentra dentro de esa carpeta. ¿Por qué esto es útil? Si parte de nuestro script, por ejemplo, implica abrir un archivo que está en la carpeta de nuestro proyecto, no necesito indicar en mi código toda la ruta del archivo: lo que hará RStudio será buscarlo en el entorno/carpeta del projecto. Esto es muy muy útil, ya que si movemos la carpeta a otro lugar de nuestro computador o la compartimos con otra persona, por ejemplo, nuestro código seguirá funcionando.
+Una de las ventajas de RStudio es que permite crear "proyectos". Un projecto es un espacio o contexto de trabajo asociado a una carpeta en particular, en la que se guardan nuestro(s) script(s), archivos de datos, etc. Cuando creamos un proyecto en RStudio, se crea un tipo especial de archivo (.Rproj) que lo que hace es vincular todo lo que se encuentra dentro de esa carpeta. ¿Por qué esto es útil? Si parte de nuestro script, por ejemplo, implica abrir un archivo que está en la carpeta de nuestro proyecto, no necesito indicar en mi código toda la ruta del archivo: lo que hará RStudio será buscarlo en el entorno/carpeta del proyecto. Si movemos la carpeta a otro lugar de nuestro computador o la compartimos con otra persona, nuestro código seguirá funcionando, ya que el archivo .Rproj mantendrá todo unido. Si no creara un proyecto, tendría que indicar al inicio de mi script cuál es la ruta de la carpeta que ocuparé como espacio de trabajo. El problema de esa opción es que si muevo la carpeta o le cambio el nombre, tendría que volver a escribir la ruta para que todo funcione. Al crear un proyecto eso deja de ser una preocupación. 
 
 ¿Cómo crear un projecto? Puedes hacerlo desde el menú File > New Proyect. 
 
@@ -146,11 +141,11 @@ Ya tenemos todo listo para empezar :)
 
 ## Cargar los paquetes necesarios
 
-Ya tenemos instalados los tres paquetes que ocuparemos en esta ocasión Cada vez que instalamos un paquete, esta queda en nuestro computador y podemos chequear eso revisando el panel "Packages" abajo a la izquierda. Sin embargo, que los hayamos instalado no quiere decir que estén listos para ser usados. Tenemos que decirle explícitamente a R qué paquetes queremos ocupar en cada sesión (no tiene sentido tener activos paquetes que no estamos utilizando).
+Ya tenemos instalados los tres paquetes que ocuparemos en esta ocasión. Cada vez que instalamos un paquete, este queda en nuestro computador. Podemos chequear eso revisando el panel "Packages" abajo a la izquierda. Sin embargo, que los hayamos instalado no quiere decir que estén listos para ser usados. Tenemos que decirle explícitamente a R qué paquetes queremos ocupar en cada sesión (no tiene sentido tener activos paquetes que no estamos utilizando).
 
 La función para llamar o activar un paquete es `library(nombre_del_paquete)`, así que escribiremos eso al inicio de nuestro script. Si no tienes un script abierto, simplemente sigue los pasos comentados más arriba (File > New File > R Script).
 
-RStudio trata de hacernos la vida más simple, así que cuando empezamos a escribir se despliega un menú con posibles opciones que indican el nombre de la función y el paquete al que está asociada (en este caso, sugiere `{base}`). Lo que aparece en amarillo es la estructura de la función, algo sobre lo que no hablaremos por ahora.
+RStudio trata de hacernos la vida más simple, así que cuando empezamos a escribir se despliega un menú con posibles opciones que indican el nombre de la función y el paquete al que está asociada (en este caso, sugiere `{base}`). Lo que aparece en amarillo es la estructura de la función, algo sobre lo que hablaremos más adelante.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_funcion.png" align="center" height="200"></a>
 
@@ -160,25 +155,27 @@ Lo mismo ocurre cuando empezamos a escribir el nombre del paquete. RStudio nos v
 
 
 Todavía no hemos 'ejecutado' el código, así que nada ha pasado. Como todo en R, hay varias opciones para hacer esto. 
-Si hacemos clic en el botón _Run_ que está en la barra del script, se ejecutará la línea de código en la que está actualmente el cursor y este se moverá automáticamente a la siguiente línea. Es decir, si ponemos el curso en la línea en la que llamamos por primera vez la función `library`y hacemos clic tres veces, se ejecutarán las tres líneas. 
+Si hacemos clic en el botón _Run_ que está en la barra del script, se ejecutará la línea de código en la que está actualmente el cursor y este se moverá automáticamente a la siguiente línea. Es decir, si ponemos el cursor en la línea en la que llamamos por primera vez la función `library`y hacemos clic tres veces, se ejecutarán las tres líneas. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_codigo.png" align="center" height="200"></a>
 
-Eso mismo podemos hacerlo usando un atajo del teclado `ctrl` + `enter` (si estás en Linux o Windows) o `comando` + `enter` si estás en Mac. 
+Eso mismo podemos hacerlo usando el atajo de teclado `ctrl` + `enter` (si estás en Linux o Windows) o `comando` + `enter` si estás en Mac. 
 
 Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es seleccionar todo el fragmento y hacer clic sobre Run o usar el atajo del teclado. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/seleccion_para_ejecutar_png.png" align="center" height="150"></a>
 
+
 ¡Ejecutemos el código y veamos qué pasa!
+
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/codigo_ejecutado.png" align="center" height="250"></a>
 
-Cuando ejecutamos el código de nuestro script esté pasa a la consola. En el caso del primer paquete (`tidyverse`), la consola nos da dos avisos. El primero, cuáles son todos los paquetes que estamos cargando al usar cargar `tidyverse`. Como comentamos antes, este es un metapaquete que incluye otros paquetes en su interior. Al llamarlos a través de `library(tidyverse)` se activan estos 8 paquetes que aparecen consignados (pese a que incluye más) y eso es lo que nos está avisando R en la consola. El otro aviso es de un "Conflicto". Nos dice que las funciones `filter()`y `lag()` del paquete `dplyr` tienen el mismo nombre que funciones del paquete `stats` (que es parte de R base). Como cargamos `dplyr`después (al instalar `tidyverse`), lo que R nos avisa es que son las funciones de este paquete las que van a prevalecer por sobre las del paquete `stats`.
+Cuando ejecutamos el código de nuestro script, este pasa a la consola. En el caso del primer paquete (`tidyverse`), la consola nos da dos avisos. El primero, cuáles son todos los paquetes que estamos cargando al cargar el `tidyverse`. Como comentamos antes, este es un megapaquete que incluye otros paquetes en su interior. Al llamarlos a través de `library(tidyverse)` se activan estos 8 paquetes que aparecen consignados (pese a que el Tidyverse incluye más). Eso es lo que nos está avisando R en la consola. El otro aviso es de un "Conflicto". Nos dice que las funciones `filter()`y `lag()` del paquete `dplyr` tienen el mismo nombre que funciones del paquete `stats` (que es parte de R base). Como cargamos `dplyr`después (al instalar `tidyverse`), lo que R nos avisa es que son las funciones de este último paquete las que van a prevalecer por sobre las del paquete `stats`.
 
-IMPORTANTE: Lo que hicimos recién fue cargar los código para esta sesión de R que estamos ejecutando actualmente. Si en algún momento cerraras el programa y retomaras este tutorial en otro momento, tendrías que volver a cargarlos. 
+IMPORTANTE: Lo que hicimos recién fue cargar los código __para esta sesión__ de R que estamos ejecutando actualmente. Si en algún momento cerraras el programa y retomaras este tutorial en otro momento, tendrías que volver a cargarlos. 
 
-#### Buenas prácticas
+### Buenas prácticas
 
 En este punto es importante sugerir dos buenas prácticas. La primera, es hacer lo que ya hicimos: llamar todos los paquetes que ocuparemos al inicio de nuestro script. De este modo, cuando volvemos a trabajar con él más adelante (u otra persona quiere ejecutarlo) queda claro desde el principio qué paquetes se utilizan (y es necesario descargar). Obviamente, cuando comenzamos a escribir un script no siempre sabemos cuáles son todos los paquetes que necesitaremos. Por eso, si en la mitad del proceso decido usar un nuevo paquete, la buena práctica es  volver a las primeras líneas del script y agregarlo. 
 

@@ -1,11 +1,18 @@
 # Tutorial: primeros pasos en R
 
-Tutorial en construcción del Taller organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga). 
+[En este tutorial se recoge parte del taller de introducción a R organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga)]
+
+El objetivo de este tutorial acompañar a personas nuevas en R 
+Desde la instalación de R y RStudio a la realización de algunos ejercicios de manipulación de datos. 
+Hay muchas formas de acercarse a un nuevo lenguaje de programación; esta trata de ser lo más amable posible, sin recargar con demasiada información. 
+
+¡Hay mucho más que aprender! 
+
 
 
 ## Instalación de R y RStudio
 
-En este taller utilizaremos R a través del IDE RStudio. ¿Qué es un IDE? IDE es el acrónimo de *Integrated Development Environment*, es decir, un *Entorno de Desarrollo Integrado*. Esto quiere decir que RStudio es una aplicación que nos entrega herramientas para hacer más fácil el desarrollo de proyectos usando R.  
+En este taller utilizaremos R a través del IDE RStudio. ¿Qué es un IDE? IDE es el acrónimo de *Integrated Development Environment*: un *Entorno de Desarrollo Integrado*. Esto quiere decir que RStudio es una aplicación que nos entrega herramientas para hacer más fácil el desarrollo de proyectos usando R.
 
 Para poder instalar R y RStudio, sigue los siguientes pasos:
 
@@ -24,7 +31,7 @@ Si te aparece algún error durante este proceso, lo más probabable es que sea p
 
 ## Instalación de los paquetes de R que utilizaremos
 
-Cuando instalamos R por primera vez en nuestro computador, lo que estamos instalando es lo que se conoce como "R Base", es decir, los elementos centrales del lenguaje de programación. Una de las ventajas de R es que se trata de un lenguaje extensible: la propia comunidad de usuarios puede desarrollar nuevas posibilidades para utilizarlo. La manera de compartir estos nuevos desarrollos es a través de "paquetes", que incluyen, entre otras cosas, código y datos.
+Cuando instalamos R por primera vez en nuestro computador, lo que estamos instalando es lo que se conoce como "R Base", es decir, los elementos centrales del lenguaje de programación. Una de las ventajas de R es que se trata de un lenguaje extensible: la propia comunidad de usuarios puede desarrollar nuevas posibilidades para utilizarlo. La manera de compartir estos nuevos desarrollos es a través de "paquetes", que incluyen, entre otras cosas, código y datos. Una analogía que se suele utilizar para explicar esto es que R Base es un teléfono tal como viene de fábrica y los paquetes las _apps_ que descargamos para que tenga más funcionalidades. 
 
 En este taller usaremos tres paquetes: `gapminder`, `babynames` y `tidyverse`. Los dos primeros (`gapminder` y `babynames`) son paquetes de datos que nos servirán para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos los paquetes que conforman el Tidyverse comparten la misma visión sobre el trabajo con datos. Quizás ahora eso suene un poco enigmático, pero más adelante explicaremos qué quiere decir. 
 
@@ -511,12 +518,12 @@ gapminder %>%
 
 Un error habitual (muy habitual) es que se nos olvide algún paréntesis en nuestro código, sobre todo cuando, como en el caso anterior, comenzamos a agregar una función dentro de otra. Al agregar `desc()` podríamos haber olvidado el paréntesis extra que teníamos que agregar al final y hubiese ocurrido esto en la consola:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/r_espera_mas.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/R_espera_mas.png" align="center" height="150"></a>
 
 En vez del signo `>`, que es el que nos indica que R terminó de ejecutar la acción anterior y que está dispuesto a aceptar nuevos comandos, aparece un `+`. Lo que quiere decirnos R con esto es que algo falta en el código que acabamos de ejecutar. 
 Uno de los aspectos positivos de RStudio es que para que no nos ocurra esto, tratará de advertirnos sobre este tipo de errores cuando pueda identificarlos. Si hubiéramos olvidado el último paréntesis en nuestro script, RStudio habría hecho esto:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/error_parentesis.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/error_parentesis.png" align="center" height="150"></a>
 
 Al costado izquierdo de la línea en que identifica el error, habría aparecido una alerta. 
 
@@ -583,6 +590,9 @@ Lo que le estamos pidiendo a R con esta función es que
 * le asigne como valor (`<-`)
 * los datos incluidos en el csv `gapminder_sudamerica.csv`
 
+Esa es la forma de importar datos a R: le pedimos que lea un archivo y asigne los datos que ahí encuentre a un objeto en nuestro entorno de trabajo. Lo más importante a tener en cuenta es que al importar esos datos __el archivo original no se modifica__. Es decir, COMPLETAR
+Esto no solo es bueno porque evita que por error arruinemos nuestros datos, sino también porque hace más transparente y reproducible nuestro trabajo: cualquier persona con el archivo original y nuestro script puede reconstruir lo que hicimos. 
+
 ¿Listo? Si ya tienes el objeto `gapminder_sudamerica` podemos seguir. 
 
 En estos datos todos los nombres de las variables se encuentran en inglés. Podemos chequear eso una función que vimos más arriba: `names()`:
@@ -590,7 +600,7 @@ En estos datos todos los nombres de las variables se encuentran en inglés. Pode
 ```r
 names(gapminder_sudamerica)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/nombres_gapminder_sudamerica.png" align="center" height="120"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/nombres_gapminder_latam.png" align="center" height="120"></a>
 
 Para cambiar los nombres de las variables podemos utilizar la función `rename()`. Para cada variable a la que queremos cambiar el nombre, lo que hacemos es indicar el nombre nuevo y luego el valor que tendrá, así: `nombre_nuevo = nombre_actual`. Si quisiéramos cambiar de forma permanente los nombres de todas las variables, tendríamos que sobreescribir el objeto y aplicar esta función. Así:
 
@@ -602,19 +612,26 @@ gapminder_sudamerica <- gapminder_sudamerica %>%
 
 ### Seleccionar variables
 
-Andes de volver a guardar nuestro objeto como `csv`, haremos un último cambio. Nuestros datos solo incluyen los datos de Sudamérica, por lo que la variable `continent` es poco informativa. Reescribiremos el objeto sin incluirla. 
-Para seleccionar columnas podemos utilizar la función `select()`. Cuando usamos esa función, lo que indicamos en su interior son los criterios de búsqueda. Veamos un ejemplo. Agregaremos `View()` al final para ver el resultado:
+Andes de volver a guardar nuestro objeto como `csv`, haremos un último cambio. Nuestros datos solo incluyen los datos de Sudamérica, por lo que la variable `continent` es poco informativa. Reescribiremos el objeto sin incluirla. Necesitamos, entonces, una función que nos permita seleccionar columnas. Como en el Tidyverse todo trata de ser transparente, la función se llama `select()`. Cuando usamos esa función, lo que indicamos en su interior es el nombre de las columnas que queremos seleccionar. Veamos un ejemplo. Agregaremos `View()` al final del bloque de código para ver el resultado:
 
 ```r
 gapminder_sudamerica %>% 
     select(pais, anio, expec_vida, poblacion, PIB_percap) %>% 
     View()
 ```
-En este caso, indicamos el nombre de las columnas que queremos mantener al interior de la función. Pero más que mantener columnas, lo que queríamos hacer era deshacernos de continente y eso podemos hacerlo de una manera mucho más rápida: diciéndole a R qué es lo que no queremos conservar. Así:
+Perfecto. Lo que hicimos en este caso fue indicar el nombre de las columnas que queremos mantener. Pero más que mantener columnas, lo que queríamos hacer era deshacernos de `continente` y eso podemos hacerlo de una manera mucho más rápida: diciéndole a R qué es lo que no queremos conservar. Así:
 
 ```r
 gapminder_sudamerica %>% 
     select(-continente) %>% 
     View()
 ```
-¡El resultado es el mismo! Al anteponer un `-` al nombre de la columna, le decimos a R que queremos conservar todas expecto esa. 
+¡El resultado es el mismo! Al anteponer un `-` al nombre de la columna, le decimos a R que queremos conservar todas excepto esa. Es muy práctico si nuestra base tiene muchas variables y solo queremos eliminar unas pocas.
+
+### Eso es todo por ahora
+
+¡Hay mucho más que aprender! Pero ya 
+¿Por dónde seguir?
+Si sabes inglés, el mejor paso siguiente es trabajar con el libro de Hadley Wickham y Garreth Grolemund R for Data Science [https://R4DS.had.nz.co]. Con ese libro podrás profundizar en lo revisado en este tutorial, pero sobre todo apropiarte de un proceso de trabajo con datos. 
+
+Y claro, está atenta a los eventos de RLadies Santiago o del capítulo correspondiente a tu ciudad. 

@@ -14,6 +14,6 @@ Taller sobre algunas funciones de dplyr y ggplot2
 Presentación sobre proyecto de análisis de discursos presidenciales.
 Meetup conjunto con el Grupo de Usuarios de R en Chile y la comunidad de PowerBI
 
-* __Meetup abril 2018: tutorial_primeros_pasos_en_R.Rmd__
+* __Meetup abril 2018: taller_primeros_pasos_en_R.Rmd__
 
-Indicaciones para instalar R, RStudio y los paquetes necesarios para el taller.
+Tutorial elaborado a partir del taller de introducción a R. 

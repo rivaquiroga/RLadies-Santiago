@@ -177,7 +177,7 @@ Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es 
 
 Cuando ejecutamos el código de nuestro script, este pasa a la consola. En el caso del primer paquete (`tidyverse`), la consola nos da dos avisos. El primero, cuáles son todos los paquetes que estamos cargando al cargar el `tidyverse`. Como comentamos antes, este es un megapaquete que incluye otros paquetes en su interior. Al llamarlos a través de `library(tidyverse)` se activan estos 8 paquetes que aparecen consignados (pese a que el Tidyverse incluye más). Eso es lo que nos está avisando R en la consola. El otro aviso es de un "Conflicto". Nos dice que las funciones `filter()`y `lag()` del paquete `dplyr` tienen el mismo nombre que funciones del paquete `stats` (que es parte de R base). Como cargamos `dplyr`después (al instalar `tidyverse`), lo que R nos avisa es que son las funciones de este último paquete las que van a prevalecer por sobre las del paquete `stats`.
 
-IMPORTANTE: Lo que hicimos recién fue cargar los paquetes __para esta sesión__ de R que estamos ejecutando actualmente. Si en algún momento cerraras el programa y retomaras este tutorial en otro momento, tendrías que volver a cargarlos. 
+__IMPORTANTE__: Lo que hicimos recién fue cargar los paquetes __para esta sesión__ de R que estamos ejecutando actualmente. Si en algún momento cerraras el programa y retomaras este tutorial en otro momento, tendrías que volver a cargarlos. 
 
 ### Buenas prácticas
 
@@ -203,7 +203,7 @@ Si te fijas, nuestro script aún dice Untitled1. Antes de seguir, es importante 
 
 `babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El "objeto" que contiene los datos dentro del paquete se llama también `babynames`. En R, podemos ver un objeto simplemente ejecutándolo. Es decir, escribimos el nombre del objeto y ejecutamos el código. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_babynames.png" width="75%"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_babynames.png" width="60%"></a>
 
 De ahora en adelante, en vez de mostrarte un pantallazo del script, el código que haya que ejecutar aparecerá en un recuadro, así:
 
@@ -451,7 +451,7 @@ Las variables que incluye son país (`country`), continente (`continent`), año 
 ```r
 names(gapminder)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder.png" align="center" width="60%"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder.png" align="center" width="70%"></a>
 
 ### Filtrar casos
 
@@ -680,14 +680,14 @@ En estos datos todos los nombres de las variables se encuentran en inglés. Pode
 ```r
 names(gapminder_sudamerica)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder_sudamerica.png" align="center" width="75%"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder_sudamerica.png" align="center" width="85%"></a>
 
 Para cambiar los nombres de las variables podemos utilizar la función `rename()` (_renombrar_). Para cada variable a la que queremos cambiar el nombre, lo que hacemos es indicar el nombre nuevo y luego el valor que tendrá, así: `nombre_nuevo = nombre_actual`. Si quisiéramos cambiar de forma permanente los nombres de todas las variables, tendríamos que sobreescribir el objeto y aplicar esta función:
 
 ```r
 gapminder_sudamerica <- gapminder_sudamerica %>% 
-    rename(pais = country, continente = continent, anio = year, expec_vida = lifeExp, 
-    poblacion = pop, PIB_percap = gdpPercap)
+    rename(pais = country, continente = continent, anio = year, expec_vida = lifeExp, poblacion = pop, 
+    PIB_percap = gdpPercap)
 ```
 ¡Listo! Ahora los nombres de las variables están traducidos. Para chequearlo, luego de ejecutar el código anterior puedes volver a aplicar la función `names()` o puedes revisar los datos con alguna de las funciones que vimos antes, como `View()`, `str()` o `head()`.
 

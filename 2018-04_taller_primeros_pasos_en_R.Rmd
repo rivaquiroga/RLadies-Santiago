@@ -686,8 +686,7 @@ Para cambiar los nombres de las variables podemos utilizar la función `rename()
 
 ```r
 gapminder_sudamerica <- gapminder_sudamerica %>% 
-    rename(pais = country, continente = continent, anio = year, expec_vida = lifeExp, poblacion = pop, 
-    PIB_percap = gdpPercap)
+    rename(pais = country, continente = continent, anio = year, expec_vida = lifeExp, poblacion = pop, PIB_percap = gdpPercap)
 ```
 ¡Listo! Ahora los nombres de las variables están traducidos. Para chequearlo, luego de ejecutar el código anterior puedes volver a aplicar la función `names()` o puedes revisar los datos con alguna de las funciones que vimos antes, como `View()`, `str()` o `head()`.
 

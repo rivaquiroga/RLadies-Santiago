@@ -729,4 +729,4 @@ Si no quieres que sobreescriba el que ya tenías (con los nombres de las variabl
 
 * Las RLadies hispanohablantes hemos empezado a generar una [lista de recursos en español](https://github.com/rladies/recursos_en_espanol). Poco a poco va creciendo con materiales que hemos creado para nuestras reuniones. 
 
-* Y claro, también puedes estar atenta a los eventos de [RLadies Santiago] (https://meetup.com/rladies-scl) o del [capítulo correspondiente a tu ciudad](https://www.meetup.com/es/topics/r-ladies/). 
+* Y claro, también puedes estar atenta a los eventos de [RLadies Santiago](https://meetup.com/rladies-scl) o del [capítulo correspondiente a tu ciudad](https://www.meetup.com/es/topics/r-ladies/). 

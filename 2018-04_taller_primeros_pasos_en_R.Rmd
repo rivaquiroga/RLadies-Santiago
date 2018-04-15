@@ -1,6 +1,6 @@
 # Primeros pasos en R
 
-[Riva Quiroga](https://twitter.com/rivaquiroga)
+### Riva Quiroga
 
 
 > ¡Hola! Este tutorial toma como base el taller de introducción a R que realizé para [RLadies Santiago](https://meetup.com/rladies-scl). Su objetivo es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, y a la vez suficientemente explicativo como para que se entienda qué es lo que hace cada bloque de código. El tutorial contiene muchas imágenes, con el fin de ir ilustrando el proceso tal como debieses verlo en tu computador.Puede que sean un poco pequeñas si abres esta página desde tu teléfono móvil.
@@ -72,25 +72,25 @@ Si abres RStudio verás que te aparece la misma consola, pero además te encontr
 
 * __Files__ muestra el directorio (la carpeta) en la que te encuentras actualmente. En mi caso, no hay nada ahí porque por defecto RStudio me muestra el Escritorio (_Desktop_) y no tengo nada en él. Es posible que a ti te muestre otra carpeta (por ejemplo, _Documentos_). 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_files.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_files.png" align="center" width="50%"></a>
 
 * __Plots__ es el lugar donde aparecerán los gráficos que vayas creando. No hemos hecho ninguno por ahora, así que este panel también está vacío. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_plots.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_plots.png" align="center" width="50%"></a>
 
 * __Packages__ muestra la lista de paquetes que tienes instalados en tu computador. Si recorres el panel verás que algunos tiene una marca al lado izquierdo. Eso quiere decir que el paquete está activo en ese momento (ya veremos cómo hacer eso). Solo los paquetes vinculados a R base se activan al abrir RStudio. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_packages.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_packages.png" align="center" width="50%"></a>
 
 * __Help__, como su nombre lo indica, es la pestaña en la que podemos encontrar ayuda. Si buscamos el nombre de un paquete o de una función, RStudio nos remitirá a la documentación asociada. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_help.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_help.png" align="center" width="50%"></a>
 
 * __Viewer__ es el panel para ver contenido web generado por algún paquete de R (gráficos para la web o aplicaciones interactivas). Por el momento no lo utilizaremos. 
 
 El panel de arriba a la derecha, por su parte, contiene el historial de funciones que hemos ejecutado (_History_), la opción para generar conexiones a bases de datos externas (_Connections_) y el _Environment_. Este último panel es muy importante y entender lo que nos muestra es fundamental para comprender cómo funciona R. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_globalenvironment.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_globalenvironment.png" align="center" width="50%"></a>
 
 Por ahora está vacío porque no hemos creado ningún objeto o variable, pero cuando creemos alguno es aquí donde aparecerá. Ya volveremos a hablar sobre este panel cuando comenzemos a trabajar con datos. 
 
@@ -99,7 +99,7 @@ Hay un cuarto panel (que probablemente todavía no te aparece)  y que es el que 
 * ocupar el atajo de teclado `comando` + `shift` + `n` (Mac) o `control` + `shift` + `n` (Linux / Windows)
 * o seleccionar la opción desde la barra superior de la ventana:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/nuevo_script.png" align="center" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/nuevo_script.png" align="center" width="60%"></a>
 
 ¡Ahora ya están los cuatro paneles!
 
@@ -112,31 +112,31 @@ Una de las ventajas de RStudio es que permite crear "proyectos". Un projecto es 
 
 ¿Cómo crear un projecto? Puedes hacerlo desde el menú File > New Proyect. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject1.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject1.png" align="center" width="50%"></a>
 
 Lo primero que nos pregunta es si queremos crearlo en una carpeta nueva o en una ya existente. Elegiremos esta vez una carpeta nueva, así que seleccionaremos _New Directory_. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject2.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject2.png" align="center" width="50%"></a>
 
 La siguiente pregunta es qué tipo de proyecto queremos crear. En esta ocasión, elegiremos la primera: _New Project_.
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject3.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject3.png" align="center" width="50%"></a>
 
 Finalmente, le damos un nombre al proyecto y decidimos en qué parte de nuestro computador queremos que viva la carpeta que lo contiene. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject4.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject4.png" align="center" width="50%"></a>
 
 Luego de apretar _Create Project_, RStudio se reinicia y se producen algunos cambios. El panel _Files_ (abajo a la derecha) ahora nos muestra la carpeta de nuestro proyecto y el único archivo que hay en ella por ahora. Ese es el archivo mágico que mantiene unido todo lo que hay dentro de la carpeta. Cuando queramos volver a trabajar en nuestro proyecto, solo tenemos que abrir ese archivo. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_rproj.png" align="center" height="150"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_rproj.png" align="center" width="50%"></a>
 
 Otro cambio que ocurre es que en la barra superior aparece ahora la ruta de la carpeta de nuestro projecto. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_barraproyecto.png" align="center" height="50"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_barraproyecto.png" align="center" width="100%"></a>
 
 Por último, algo cambia en el ícono de R: aparece el nombre que le dimos a nuestro proyecto:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png" align="center" height="120"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_icono.png" align="center" width="12%"></a>
 
 
 Esto último es muy muy muy útil: RStudio ejecuta sesiones independientes de R para cada proyecto. Es decir, si tuvieras otro proyecto abierto te aparecería otro ícono, con su respectivo nombre. Esto nos permite trabajar en dos proyectos en paralelo sin que se nos mezclen los objetos del entorno, el código, los archivos, etc. Cada cosa en su lugar.
@@ -151,29 +151,29 @@ La función para llamar o activar un paquete es `library(nombre_del_paquete)`, a
 
 RStudio trata de hacernos la vida más simple, así que cuando empezamos a escribir se despliega un menú con posibles opciones que indican el nombre de la función y el paquete al que está asociada (en este caso, es una función de R `{base}`). Lo que aparece en amarillo es la estructura de la función, algo sobre lo que hablaremos más adelante.
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_funcion.png" align="center" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_funcion.png" align="center" width="50%"></a>
 
 Lo mismo ocurre cuando empezamos a escribir el nombre del paquete. RStudio nos va ofreciendo sugerencias a partir de los paquetes que tenemos instalados: 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_argumento.png" align="center" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_argumento.png" align="center" width="50%"></a>
 
 
 Todavía no hemos 'ejecutado' el código, así que nada ha pasado. Como todo en R, hay varias opciones para hacer esto. 
 Si hacemos clic en el botón _Run_ que está en la barra del script, se ejecutará la línea de código en la que está actualmente el cursor y este se moverá automáticamente a la siguiente línea. Es decir, si ponemos el cursor en la línea en la que llamamos por primera vez la función `library` y hacemos clic tres veces, se ejecutarán las tres líneas. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_codigo.png" align="center" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_codigo.png" align="center" width="50%"></a>
 
 Eso mismo podemos hacerlo usando el atajo de teclado `ctrl` + `enter` (si estás en Linux o Windows) o `comando` + `enter` si estás en Mac. 
 
 Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es seleccionar todo el fragmento y hacer clic sobre Run o usar el atajo del teclado. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/seleccion_para_ejecutar_png.png" align="center" height="150"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/seleccion_para_ejecutar_png.png" align="center" width="50%"></a>
 
 
 ¡Ejecutemos el código y veamos qué pasa!
 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/codigo_ejecutado.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/codigo_ejecutado.png" align="center" width="50%"></a>
 
 Cuando ejecutamos el código de nuestro script, este pasa a la consola. En el caso del primer paquete (`tidyverse`), la consola nos da dos avisos. El primero, cuáles son todos los paquetes que estamos cargando al cargar el `tidyverse`. Como comentamos antes, este es un megapaquete que incluye otros paquetes en su interior. Al llamarlos a través de `library(tidyverse)` se activan estos 8 paquetes que aparecen consignados (pese a que el Tidyverse incluye más). Eso es lo que nos está avisando R en la consola. El otro aviso es de un "Conflicto". Nos dice que las funciones `filter()`y `lag()` del paquete `dplyr` tienen el mismo nombre que funciones del paquete `stats` (que es parte de R base). Como cargamos `dplyr`después (al instalar `tidyverse`), lo que R nos avisa es que son las funciones de este último paquete las que van a prevalecer por sobre las del paquete `stats`.
 
@@ -187,23 +187,23 @@ La segunda buena práctica es comentar nuestro script. En R podemos agregar come
 
 ¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace, o podemos dejar registro de por qué realizamos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo (o las personas con las que compartiremos nuestro script) entiendan lo que hicimos. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" height="150"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" width="50%"></a>
 
 ¡Los comentarios también son muy útiles cuando estamos aprendiendo! Probablemente en el futuro ya no necesites indicar que `library()` sirve para cargar paquetes, pero por ahora es una buena manera de ir registrando qué es lo que hace cada función.
 
 También es útil agregar al inicio de nuestro script una descripción de su objetivo o del contexto en que lo escribimos: 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentario_inicio_script.png" align="center" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentario_inicio_script.png" align="center" width="60%"></a>
 
 Si te fijas, nuestro script aún dice Untitled1. Antes de seguir, es importante que lo guardemos. Y lo puedes hacer como en cualquier otro programa: con `Control/Comando` + `S`. RStudio te ofrecerá por defecto guardarlo en la carpeta de tu proyecto. Cuando ya esté guardado, te aparecerá en la pestaña _Files_.  
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png" align="center" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png" align="center" width="75%"></a>
 
 ## Una mirada inicial a los datos
 
 `babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El "objeto" que contiene los datos dentro del paquete se llama también `babynames`. En R, podemos ver un objeto simplemente ejecutándolo. Es decir, escribimos el nombre del objeto y ejecutamos el código. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_babynames.png" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_babynames.png" width="75%"></a>
 
 De ahora en adelante, en vez de mostrarte un pantallazo del script, el código que haya que ejecutar aparecerá en un recuadro, así:
 
@@ -212,11 +212,11 @@ babynames
 ```
 En la consola, veremos sus primeras líneas:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" width="70%"></a>
 
 ¿Dónde está este objeto? No lo vemos en nuestro Global Environment porque no lo hemos creado nosotras. Sin embargo, a través de ese panel podemos acceder al "environment" de todos los paquetes activos. En el de `babynames` lo encontraremos: 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/entorno_babynames.png" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/entorno_babynames.png" width="40%"></a>
 
 En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R; lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas de una "tibble" para que nos hagamos una idea de lo que contiene (y no las casi dos millones de filas que tiene este objeto en particular). 
 
@@ -227,7 +227,7 @@ View(babynames)
 ```
 Si ejecutas ese código, una nueva pestaña se abrirá y te mostrará todos los datos en un formato tipo planilla, que puedes recorrer.
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png" width="100%"></a>
 
 
 Existen otras funciones útiles para darle una primera mirada a nuestros datos: `head()` y `tail()`. Como su nombre lo indica, lo que hacen es mostrarnos las primeras y las últimas líneas de nuestros datos, respectivamente. 
@@ -235,13 +235,13 @@ Existen otras funciones útiles para darle una primera mirada a nuestros datos: 
 ``` r
 head(babynames)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/head_babynames.png" height="230"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/head_babynames.png" width="75%"></a>
 
 ``` r
 tail(babynames)
 ```
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames.png" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames.png" width="75%"></a>
 
 
 Las funciones `tail` y `head` resultan muy útiles para chequear si nuestros datos están completos, ya que nos permiten mirar sus extremos.
@@ -252,7 +252,7 @@ Si queremos conocer la estructura de nuestro conjunto de datos, es decir, conoce
 str(babynames)
 ```
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/str_babynames.png" height="150"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/str_babynames.png" width="75%"></a>
 
 
 ### Algo más sobre las funciones
@@ -267,7 +267,7 @@ Si revisamos la ayuda podemos enterarnos que `tail` permite definir la cantidad 
 tail(babynames, n = 10)
 ```
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_n10.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_n10.png" align="center" width="75%"></a>
 
 
 Es importante tener en cuenta que las funciones leen sus argumentos en orden, por lo que si en la ayuda vemos que el segundo argumento de `tail` es `n =`, podríamos solo escribir el número de líneas que queremos, es decir, así:
@@ -275,7 +275,7 @@ Es importante tener en cuenta que las funciones leen sus argumentos en orden, po
 ```r
 tail(babynames, 10)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png" align="center" width="50%"></a>
 
 
 ¡El resultado es el mismo! 
@@ -314,7 +314,7 @@ Por convención, después de ` %>% ` nos saltamos una línea (sin ella el códig
 
 Si lo ejecutamos, podemos ver el siguiente resultado:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" height="160"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" width="75%"></a>
 
 ¡Las primeras Daenerys aparecen en 2012! 
 ¿Por qué utilizamos `==` y no `=`? Utilizamos `==` porque lo que le estamos pidiendo a R es que busque los casos en los que el valor de la variable `name` sea igual a "Daenerys". En R (y en otros lenguajes de programación) el signo `=` se utiliza para asignar valores (¡lo haremos más adelante!). 
@@ -332,7 +332,7 @@ Podemos seguir utilizando ese mismo código de filtrado para buscar otros nombre
 babynames %>% 
     filter(name == "Sansa")
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sansas.png" align="center" height="160"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sansas.png" align="center" width="60%"></a>
 
 Al parecer Sansa no ha sido un nombre tan popular. Al menos no hasta 2015. ¿Y Arya?
 
@@ -340,7 +340,7 @@ Al parecer Sansa no ha sido un nombre tan popular. Al menos no hasta 2015. ¿Y A
 babynames %>% 
     filter(name == "Arya")
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_arya.png" align="center" height="260"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_arya.png" align="center" width="60%"></a>
 
 ¡Hay muchas más Aryas! Y aparecen antes (o sea, por influencia del libro y no de la serie, como en los otros dos casos). Hay tantas Aryas que no alcanzan a imprimirse en la consola. ¿Cómo podríamos saber cuántas hay en total? En la siguiente sección lo veremos.
 
@@ -373,7 +373,7 @@ babynames %>%
     filter(name == "Arya") %>% 
     summarize(sum(n), mean(n), first(year))
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/summarize_arya.png" align="center" height="150"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/summarize_arya.png" align="center" width="75%"></a>
 
 Lo que hizo `summarize` fue resumir toda la información que le pedimos en una tabla. 
 
@@ -408,7 +408,7 @@ Hasta el momento hemos realizado una serie de acciones sobre el objeto `babyname
 ```r
 babynames
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" height="300"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" width="70%"></a>
 
 Imagina que nos interesa guardar los datos sobre la cantidad de Aryas porque seguiremos trabajando solo con ellos y el resto no nos interesa. Para no tener que filtrar cada vez que los queramos ocupar, nos conviene crear un nuevo objeto. En R eso lo hacemos con el símbolo de asignación: `<-`. ¿Cómo funciona? Lo que está a la izquierda del símbolo de asignación es el objeto que queremos crear y lo que está a su derecha es el valor que queremos asignarle. Así:
 
@@ -418,14 +418,14 @@ aryas <- babynames %>%
 ```
 Este código crea un nuevo objeto llamado `aryas`, cuyo valor contiene lo que resulta de aplicar un filtro a `babynames`. Si ejecutas ese código, no aparecerá nada nuevo en la consola (solo el código que acabas de ejecutar). Sin embargo, en nuestro _Global Enviroment_ (el panel de arriba a la derecha) aparecerá el objeto que hemos creado:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/aryas.png" align="center" height="100"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/aryas.png" align="center" width="40%"></a>
 
 Ahora podemos llamar a ese objeto tal como hicimos con `babynames`. 
 
 ```r
 aryas
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_aryas.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_aryas.png" align="center" width="70%"></a>
 
 Hacer clic sobre cualquier objeto del _Global Environmet_ es equivalente a aplicar la función `View()`. Haz la prueba: si haces clic sobre `aryas`, se abrirá una nueva pestaña en el panel de tu script en el que verás el objeto como una planilla. En la consola, aparecerá automáticamente el código para realizar esa acción `View(aryas)`.
 
@@ -451,7 +451,7 @@ Las variables que incluye son país (`country`), continente (`continent`), año 
 ```r
 names(gapminder)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder.png" align="center" height="50"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder.png" align="center" width="60%"></a>
 
 #### Filtrar casos
 
@@ -462,7 +462,7 @@ gapminder %>%
     filter(country == "China")
 ```
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_china.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_china.png" align="center" width="60%"></a>
 
 ¡Es impresionante cómo ha aumentado el PIB y la expectativa de vida en China en el último medio siglo! En una de sus charlas TED, Hans Rosling aborda la relación que aparece entre estas dos variables al visualizar los datos de Gapminder. Es muy recomendable verla. 
 
@@ -480,7 +480,7 @@ Es decir, le estamos pidiendo a R que:
 
 La mayoría de los países que tuvieron un PIB tan bajo ese año se encuentran en África: 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_2007_PIB.png" align="center" height="350"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_2007_PIB.png" align="center" width="60%"></a>
 
 
 Existen muchas otras formas de crear criterios de filtrado, que en futuros tutoriales exploraremos. Por ahora, revisaremos un último caso, porque nos servirá para volver a practicar la creacion de objetos. 
@@ -493,9 +493,10 @@ Lo que podríamos hacer es crear un vector con todos los países de América del
 gapminder %>% 
     filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))
 ```
-__ATENCIÓN:__ dependiendo de el ancho de tu ventana, puede que no se vea completa la segunda línea del código. Si pones el cursor sobre el bloque de código, podrás moverte horizontalmente hasta el final. De todos modos, para que quede claro, el contenido de la segunda línea es:
-> filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))
+__ATENCIÓN:__ dependiendo de el ancho de tu ventana, puede que no se vea completa la segunda línea del código. Si pones el cursor sobre el bloque, podrás moverte horizontalmente. De todos modos, para que quede claro, la segunda línea es:
 
+>`filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))` 
+    
 Lo que le estamos pidiendo a R es que
 
 * tome el objeto `gapminder`
@@ -504,7 +505,7 @@ Lo que le estamos pidiendo a R es que
 
 ¡Listo!
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_latam.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_latam.png" align="center" width="75%"></a>
 
 
 Recuerda que también puedes agregar `View()` al final del código para ver tu selección en una ventana distinta. 
@@ -524,7 +525,7 @@ gapminder_sudamerica <- gapminder %>%
 
 Ahora el objeto apareció en nuestro Global Environment. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/environment_gap_sudamerica.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/environment_gap_sudamerica.png" align="center" width="50%"></a>
 
 
 IMPORTANTE: muchas veces agregamos `View()` al final de un bloque de código para ver los datos en una ventana distinta. Es muy importante no incluir esa función cuando creamos un nuevo objeto para que el código haga lo que esperamos. 
@@ -542,7 +543,7 @@ write_csv(gapminder_sudamerica, "gapminder_sudamerica.csv")
 
 Al ejecutar el código, aparecerá en la carpeta de nuestro proyecto el nuevo archivo. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_gapminder_sudamerica.png" align="center" height="150"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_gapminder_sudamerica.png" align="center" width="50%"></a>
 
 
 Otra opción sería incluir la función `write_csv()` al final de nuestro código, es decir, como una siguiente acción en la cadena de comandos que le dimos a R:
@@ -571,7 +572,7 @@ gapminder  %>%
     arrange(lifeExp)
 ```
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/arrange_lifeExp.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/arrange_lifeExp.png" align="center" width="80%"></a>
 
 
 ¡Ahora es más fácil mirar los resultados! Podemos ver que en la región, Haití, Bolivia y Trinidad y Tobago son los países con una menor expectativa de vida. 
@@ -583,16 +584,16 @@ gapminder %>%
     filter(year == 2007, continent == "Americas") %>%
     arrange(desc(lifeExp))
 ````
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/desc_lifeExp.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/desc_lifeExp.png" align="center" width="80%"></a>
 
 Un error habitual (muy habitual) es que se nos olvide algún paréntesis en nuestro código, sobre todo cuando, como en el caso anterior, comenzamos a agregar una función dentro de otra. Al agregar `desc()` podríamos haber olvidado el paréntesis extra que teníamos que agregar al final y hubiese ocurrido esto en la consola:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/R_espera_mas.png" align="center" height="100"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/R_espera_mas.png" align="center" width="80%"></a>
 
 En vez del signo `>`, que es el que nos indica que R terminó de ejecutar la acción anterior y que está dispuesto a aceptar nuevos comandos, aparece un `+`. Lo que quiere decirnos R con esto es que algo falta en el código que acabamos de ejecutar. 
 Uno de los aspectos positivos de RStudio es que para que no nos ocurra esto, tratará de advertirnos sobre este tipo de errores cuando pueda identificarlos. Si hubiéramos olvidado el último paréntesis en nuestro script, RStudio habría hecho esto:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/error_parentesis.png" align="center" height="100"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/error_parentesis.png" align="center" width="60%"></a>
 
 Al costado izquierdo de la línea en que identifica el error, habría aparecido una alerta. 
 
@@ -621,7 +622,7 @@ Lo que les estamos pidiendo a R es que:
 * que haga un resumen de la información que sale de calcular la media de la variable expectativa de vida. 
 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/group_by.png" align="center" height="250"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/group_by.png" align="center" width="80%"></a>
 
 Esto nos permite tener una mejor idea de las diferencias que existen en la expectativa de vida de las distintas regiones: África está muy por debajo de las otras.
  
@@ -679,7 +680,7 @@ En estos datos todos los nombres de las variables se encuentran en inglés. Pode
 ```r
 names(gapminder_sudamerica)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder_sudamerica.png" align="center" height="120"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder_sudamerica.png" align="center" width="75%"></a>
 
 Para cambiar los nombres de las variables podemos utilizar la función `rename()` (_renombrar_). Para cada variable a la que queremos cambiar el nombre, lo que hacemos es indicar el nombre nuevo y luego el valor que tendrá, así: `nombre_nuevo = nombre_actual`. Si quisiéramos cambiar de forma permanente los nombres de todas las variables, tendríamos que sobreescribir el objeto y aplicar esta función:
 
@@ -732,4 +733,3 @@ Si no quieres que sobreescriba el que ya tenías (con los nombres de las variabl
 * Las RLadies hispanohablantes hemos empezado a generar una [lista de recursos en español](https://github.com/rladies/recursos_en_espanol). Poco a poco va creciendo con materiales que hemos creado para nuestras reuniones. 
 
 * Y claro, también puedes estar atenta a los eventos de [RLadies Santiago] (https://meetup.com/rladies-scl) o del [capítulo correspondiente a tu ciudad](https://www.meetup.com/es/topics/r-ladies/). 
-

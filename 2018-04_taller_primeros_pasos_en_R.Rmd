@@ -3,8 +3,8 @@
 __Tutorial desarrollado a partir del taller de introducción a R organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga)__
 
 
-> ¡Hola! El objetivo de este tutorial es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, pero suficientemente explicativo como para que se entienda qué es lo que hace un determinado bloque de código. 
-¿Te pareció útil? [Cuéntame](https://twitter.com/rivaquiroga) para saber si sigo desarrollando tutoriales de este tipo :)
+> ¡Hola! El objetivo de este tutorial es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, pero suficientemente explicativo como para que se entienda qué es lo que hace un determinado bloque de código. El tutorial contiene muchas imágenes, con el fin de ir ilustrando el proceso tal como debieses verlo en tu computador. Debido a eso, no se ve muy bien en teléfonos móviles :( 
+¿Te pareció útil? [Avísame](https://twitter.com/rivaquiroga), para saber si sigo desarrollando tutoriales de este tipo :)
 
 _________
 
@@ -314,7 +314,7 @@ Por convención, después de ` %>% ` nos saltamos una línea (sin ella el códig
 
 Si lo ejecutamos, podemos ver el siguiente resultado:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" height="160"></a>
 
 ¡Las primeras Daenerys aparecen en 2012! 
 ¿Por qué utilizamos `==` y no `=`? Utilizamos `==` porque lo que le estamos pidiendo a R es que busque los casos en los que el valor de la variable `name` sea igual a "Daenerys". En R (y en otros lenguajes de programación) el signo `=` se utiliza para asignar valores (¡lo haremos más adelante!). 
@@ -731,3 +731,7 @@ Si no quieres que sobreescriba el que ya tenías (con los nombres de las variabl
 * Las RLadies hispanohablantes hemos empezado a generar una [lista de recursos en español](https://github.com/rladies/recursos_en_espanol). Poco a poco va creciendo con materiales que hemos creado para nuestras reuniones. 
 
 * Y claro, también puedes estar atenta a los eventos de [RLadies Santiago] (https://meetup.com/rladies-scl) o del [capítulo correspondiente a tu ciudad](https://www.meetup.com/es/topics/r-ladies/). 
+
+______
+¿Te pareció útil este tutorial? [Cuéntame](https://twitter.com/rivaquiroga) para saber si sigo desarrollando tutoriales de este tipo.
+

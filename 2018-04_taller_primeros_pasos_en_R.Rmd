@@ -4,8 +4,8 @@ __Tutorial que recoge parte del taller de introducción a R organizado por [RLad
 
 
 
-
-> ¡Hola! El objetivo de este tutorial es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, en el sentido de empezar a trabajar con los datos de inmediato, y a la vez suficientemente explicativo, como para que se entienda qué es lo que hace un determinado bloque de código. Si luego de revisarlo te parece útil, compártelo para que otras personas se puedan beneficiar de él. ¿Hay otros temas sobre los que te gustaría ver un tutorial en español? [Cuéntanos](https://twitter.com/rivaquiroga)
+> ¡Hola! El objetivo de este tutorial es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, pero suficientemente explicativo, como para que se entienda qué es lo que hace un determinado bloque de código. Si luego de revisarlo te parece útil, compártelo para que otras personas se puedan beneficiar de él :) 
+¿Hay otros temas sobre los que te gustaría ver un tutorial en español? [Avísame](https://twitter.com/rivaquiroga).
 
 
 

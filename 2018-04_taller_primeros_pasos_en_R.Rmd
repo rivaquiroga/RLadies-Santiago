@@ -3,11 +3,10 @@
 __Tutorial desarrollado a partir del taller de introducción a R organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga)__
 
 
-
 > ¡Hola! El objetivo de este tutorial es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, pero suficientemente explicativo como para que se entienda qué es lo que hace un determinado bloque de código. 
 ¿Te pareció útil? [Cuéntame](https://twitter.com/rivaquiroga) para saber si sigo desarrollando tutoriales de este tipo :)
 
-
+______
 
 ## Instalación de R y RStudio
 
@@ -187,7 +186,7 @@ La segunda buena práctica es comentar nuestro script. En R podemos agregar come
 
 ¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace, o podemos dejar registro de por qué realizamos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo (o las personas con las que compartiremos nuestro script) entiendan lo que hicimos. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" height="200"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" height="1500"></a>
 
 ¡Los comentarios también son muy útiles cuando estamos aprendiendo! Probablemente en el futuro ya no necesites indicar que `library()` sirve para cargar paquetes, pero por ahora es una buena manera de ir registrando qué es lo que hace cada función.
 
@@ -227,7 +226,8 @@ View(babynames)
 ```
 Si ejecutas ese código, una nueva pestaña se abrirá y te mostrará todos los datos en un formato tipo planilla, que puedes recorrer.
 
-![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png)
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png" height="300"></a>
+
 
 Existen otras funciones útiles para darle una primera mirada a nuestros datos: `head()` y `tail()`. Como su nombre lo indica, lo que hacen es mostrarnos las primeras y las últimas líneas de nuestros datos, respectivamente. 
 
@@ -313,7 +313,7 @@ Por convención, después de ` %>% ` nos saltamos una línea (sin ella el códig
 
 Si lo ejecutamos, podemos ver el siguiente resultado:
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" height="160"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" height="200"></a>
 
 ¡Las primeras Daenerys aparecen en 2012! 
 ¿Por qué utilizamos `==` y no `=`? Utilizamos `==` porque lo que le estamos pidiendo a R es que busque los casos en los que el valor de la variable `name` sea igual a "Daenerys". En R (y en otros lenguajes de programación) el signo `=` se utiliza para asignar valores (¡lo haremos más adelante!). 
@@ -486,13 +486,14 @@ Existen muchas otras formas de crear criterios de filtrado, que en futuros tutor
 
 En los ejemplos anteriores solo consideramos un valor por variable para filtrar (por ejemplo, que país fuera `==` a China). ¿Cómo podríamos hacer una selección que incluya más países. Imagina que solo nos interesan los datos de Sudamérica. La variable `continent` considera a las tres Américas como una sola zona, así que no podemos seleccionarlas usando ese valor. 
 
-Lo que podríamos hacer es crear un vector con todos los países de América del Sur que están en `gapminder` y decirle a R que ocupe eso como criterio de selección. , así:
+Lo que podríamos hacer es crear un vector con todos los países de América del Sur que están en `gapminder` y decirle a R que ocupe eso como criterio de selección, así:
 
 ```r
 gapminder %>% 
-    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", 
-    "Paraguay", "Peru", "Uruguay", "Venezuela"))
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))
 ```
+_ATENCIÓN:_ dependiendo de el ancho de tu ventana, puede que no se vea completa la segunda línea del código. Si pones el cursor sobre él, verás que se aparecerá una barra que permite recorrerlo horizontalmente.
+
 Lo que le estamos pidiendo a R es que
 
 * tome el objeto `gapminder`
@@ -508,8 +509,7 @@ Recuerda que también puedes agregar `View()` al final del código para ver tu s
 
 ```r
 gapminder %>% 
-    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", 
-    "Paraguay", "Peru", "Uruguay", "Venezuela")) %>% 
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela")) %>% 
     View()
 ```
 
@@ -517,8 +517,7 @@ Si esta selección de casos nos interesa y tenemos intención de seguir utilizá
 
 ```r
 gapminder_sudamerica <- gapminder %>% 
-    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", 
-    "Paraguay", "Peru", "Uruguay", "Venezuela"))
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))
 ```
 
 Ahora el objeto apareció en nuestro Global Environment. 
@@ -548,8 +547,7 @@ Otra opción sería incluir la función `write_csv()` al final de nuestro códig
 
 ```r
 gapminder %>% 
-    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", 
-    "Paraguay", "Peru", "Uruguay", "Venezuela")) %>%
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela")) %>%
     write_csv("gapminder_sudamerica.csv")
 ```
 En este último caso, no indicamos el primer argumento, ya que los datos que se deben considerar para guardar el objeto se generan en los pasos previos del código.

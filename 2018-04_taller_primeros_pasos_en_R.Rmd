@@ -8,6 +8,8 @@ __Tutorial desarrollado a partir del taller de introducción a R organizado por 
 ¿Te pareció útil? [Cuéntame](https://twitter.com/rivaquiroga) para saber si sigo desarrollando tutoriales de este tipo :)
 
 
+_________
+
 
 ## Instalación de R y RStudio
 

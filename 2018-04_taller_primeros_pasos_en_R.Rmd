@@ -4,8 +4,8 @@ __Tutorial que recoge parte del taller de introducción a R organizado por [RLad
 
 
 
-> ¡Hola! El objetivo de este tutorial es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, pero suficientemente explicativo, como para que se entienda qué es lo que hace un determinado bloque de código. Si luego de revisarlo te parece útil, compártelo para que otras personas se puedan beneficiar de él :) 
-¿Hay otros temas sobre los que te gustaría ver un tutorial en español? [Avísame](https://twitter.com/rivaquiroga).
+> ¡Hola! El objetivo de este tutorial es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, pero suficientemente explicativo como para que se entienda qué es lo que hace un determinado bloque de código. 
+Si luego de revisarlo te parece útil, avísame; así me entusiasmo y hago más tutoriales :)
 
 
 
@@ -486,11 +486,12 @@ Existen muchas otras formas de crear criterios de filtrado, que en futuros tutor
 
 En los ejemplos anteriores solo consideramos un valor por variable para filtrar (por ejemplo, que país fuera `==` a China). ¿Cómo podríamos hacer una selección que incluya más países. Imagina que solo nos interesan los datos de Sudamérica. La variable `continent` considera a las tres Américas como una sola zona, así que no podemos seleccionarlas usando ese valor. 
 
-Lo que podríamos hacer es crear un vector con todos los países de América del Sur que están en `gapminder` y decirle a R que ocupe eso como criterio de selección, así:
+Lo que podríamos hacer es crear un vector con todos los países de América del Sur que están en `gapminder` y decirle a R que ocupe eso como criterio de selección. , así:
 
 ```r
 gapminder %>% 
-    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay",        "Peru", "Uruguay", "Venezuela"))
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", 
+    "Paraguay", "Peru", "Uruguay", "Venezuela"))
 ```
 Lo que le estamos pidiendo a R es que
 
@@ -507,7 +508,8 @@ Recuerda que también puedes agregar `View()` al final del código para ver tu s
 
 ```r
 gapminder %>% 
-    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay",        "Peru", "Uruguay", "Venezuela")) %>% 
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", 
+    "Paraguay", "Peru", "Uruguay", "Venezuela")) %>% 
     View()
 ```
 
@@ -515,7 +517,8 @@ Si esta selección de casos nos interesa y tenemos intención de seguir utilizá
 
 ```r
 gapminder_sudamerica <- gapminder %>% 
-    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay",        "Peru", "Uruguay", "Venezuela"))
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", 
+    "Paraguay", "Peru", "Uruguay", "Venezuela"))
 ```
 
 Ahora el objeto apareció en nuestro Global Environment. 
@@ -545,7 +548,8 @@ Otra opción sería incluir la función `write_csv()` al final de nuestro códig
 
 ```r
 gapminder %>% 
-    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela")) %>%
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", 
+    "Paraguay", "Peru", "Uruguay", "Venezuela")) %>%
     write_csv("gapminder_sudamerica.csv")
 ```
 En este último caso, no indicamos el primer argumento, ya que los datos que se deben considerar para guardar el objeto se generan en los pasos previos del código.
@@ -681,7 +685,8 @@ Para cambiar los nombres de las variables podemos utilizar la función `rename()
 
 ```r
 gapminder_sudamerica <- gapminder_sudamerica %>% 
-    rename(pais = country, continente = continent, anio = year, expec_vida = lifeExp, poblacion = pop,         PIB_percap = gdpPercap)
+    rename(pais = country, continente = continent, anio = year, expec_vida = lifeExp, 
+    poblacion = pop, PIB_percap = gdpPercap)
 ```
 ¡Listo! Ahora los nombres de las variables están traducidos. Para chequearlo, luego de ejecutar el código anterior puedes volver a aplicar la función `names()` o puedes revisar los datos con alguna de las funciones que vimos antes, como `View()`, `str()` o `head()`.
 

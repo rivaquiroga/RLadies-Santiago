@@ -1,10 +1,10 @@
 # Primeros pasos en R
 
-__Tutorial desarrollado a partir del taller de introducción a R organizado por [RLadies Santiago](https://meetup.com/rladies-scl) y realizado por [Riva Quiroga](https://twitter.com/rivaquiroga)__
+[Riva Quiroga](https://twitter.com/rivaquiroga)
 
 
-> ¡Hola! El objetivo de este tutorial es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, pero suficientemente explicativo como para que se entienda qué es lo que hace un determinado bloque de código. El tutorial contiene muchas imágenes, con el fin de ir ilustrando el proceso tal como debieses verlo en tu computador. Debido a eso, no se ve muy bien en teléfonos móviles :( 
-¿Te pareció útil? [Avísame](https://twitter.com/rivaquiroga), para saber si sigo desarrollando tutoriales de este tipo :)
+> ¡Hola! Este tutorial toma como base el taller de introducción a R que realizé para [RLadies Santiago](https://meetup.com/rladies-scl). Su objetivo es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, y a la vez suficientemente explicativo como para que se entienda qué es lo que hace cada bloque de código. El tutorial contiene muchas imágenes, con el fin de ir ilustrando el proceso tal como debieses verlo en tu computador. Debido a eso, no se ve muy bien en teléfonos móviles :worried: 
+¿Te pareció útil? [Avísame](https://twitter.com/rivaquiroga), para saber si sigo desarrollando tutoriales de este tipo :blush:
 
 _________
 

@@ -275,7 +275,7 @@ Es importante tener en cuenta que las funciones leen sus argumentos en orden, po
 ```r
 tail(babynames, 10)
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png" align="center" width="50%"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png" align="center" width="75%"></a>
 
 
 ¡El resultado es el mismo! 
@@ -298,7 +298,7 @@ Como uno nunca es la primera persona que enfrentó un error, la manera más ráp
 
 ## Exploración y manipulación de los datos
 
-Ahora que ya dimos una mirada inicial al conjunto de datos con el que estamos trabajando, podemos empezar a explorarlo y responder preguntas. Por ejemplo, mientras esperamos el estreno de la última temporada de Juego de Tronos, podríamos querer saber a cuántas personas le han puesto el nombre de una de sus protagonistas: "Deanerys" . Para eso podemos utilizar el siguiente código:
+Ahora que ya dimos una mirada inicial al conjunto de datos con el que estamos trabajando, podemos empezar a explorarlo y responder preguntas. Por ejemplo, mientras esperamos el estreno de la última temporada de Juego de Tronos, podríamos querer saber a cuántas personas le han puesto el nombre de una de sus protagonistas: "Daenerys" . Para eso podemos utilizar el siguiente código:
 
 ```r
 babynames %>% 
@@ -401,7 +401,7 @@ Existen algunos tipos de análisis estadísticos para los que no es posible apli
 
 De todos modos, para la mayoría de las operaciones de importación, limpieza, exploración y manipulación de datos rectangulares podemos utilizar la sintaxis del Tidyverse sin problema. 
 
-#### Creación de objetos
+### Creación de objetos
 
 Hasta el momento hemos realizado una serie de acciones sobre el objeto `babynames`: hemos filtrado información y hemos hecho cálculos en una variable. Sin embargo, el objeto no ha sido alterado. Si vuelves imprimir en la consola el contenido de ese objeto, tendrás los mismos resultados que al principio.
 
@@ -453,7 +453,7 @@ names(gapminder)
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/names_gapminder.png" align="center" width="60%"></a>
 
-#### Filtrar casos
+### Filtrar casos
 
 Tal como vimos más arriba, la función `filter` nos sirve para seleccionar casos (filas) a partir de un determinado criterio. Al igual como buscamos nombres de personas en `babynames`, acá podemos buscar los datos de algún país: 
 
@@ -720,15 +720,13 @@ gapminder_sudamerica %>%
 
 Si no quieres que sobreescriba el que ya tenías (con los nombres de las variables en inglés) ponle otro nombre al archivo.
 
-### Eso es todo por ahora
+## Eso es todo por ahora
 
 ¡Hay mucho más que aprender! Pero por ahora lo dejaremos hasta acá.
 
 ¿Por dónde seguir?
 
 * Si sabes inglés, la sugerencia es trabajar con el libro de Garrett Grolemund y Hadley Wickham [R for Data Science](https://R4DS.had.nz.co). Con ese libro podrás profundizar en lo revisado en este tutorial, pero sobre todo apropiarte de un proceso de trabajo con datos.
-
-* También puedes revisar el sitio web del [Tidyverse](https://www.tidyverse.org/) para saber más sobre sus paquetes y funciones. En este tutorial, la mayoría de las funciones que utilizamos provienen de un paquete llamado "dplyr", así que si revisas [su documentación](http://dplyr.tidyverse.org/articles/dplyr.html), podrás conocer más opciones para filtrar, seleccionar, renombrar, agrupar, sumarizar y mutar datos.
 
 * Las RLadies hispanohablantes hemos empezado a generar una [lista de recursos en español](https://github.com/rladies/recursos_en_espanol). Poco a poco va creciendo con materiales que hemos creado para nuestras reuniones. 
 

@@ -6,13 +6,8 @@ __Tutorial desarrollado a partir del taller de introducción a R organizado por 
 > ¡Hola! El objetivo de este tutorial es acompañar a principiantes en el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, pero suficientemente explicativo como para que se entienda qué es lo que hace un determinado bloque de código. 
 ¿Te pareció útil? [Cuéntame](https://twitter.com/rivaquiroga) para saber si sigo desarrollando tutoriales de este tipo :)
 
-<<<<<<< HEAD
-______
-=======
-
 _________
 
->>>>>>> 5045e80007966ec9037a72eddb86a8e42d41c2db
 
 ## Instalación de R y RStudio
 
@@ -192,7 +187,7 @@ La segunda buena práctica es comentar nuestro script. En R podemos agregar come
 
 ¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace, o podemos dejar registro de por qué realizamos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo (o las personas con las que compartiremos nuestro script) entiendan lo que hicimos. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" height="1500"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" height="150"></a>
 
 ¡Los comentarios también son muy útiles cuando estamos aprendiendo! Probablemente en el futuro ya no necesites indicar que `library()` sirve para cargar paquetes, pero por ahora es una buena manera de ir registrando qué es lo que hace cada función.
 
@@ -498,7 +493,7 @@ Lo que podríamos hacer es crear un vector con todos los países de América del
 gapminder %>% 
     filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))
 ```
-_ATENCIÓN:_ dependiendo de el ancho de tu ventana, puede que no se vea completa la segunda línea del código. Si pones el cursor sobre él, verás que se aparecerá una barra que permite recorrerlo horizontalmente.
+__ATENCIÓN:__ dependiendo de el ancho de tu ventana, puede que no se vea completa la segunda línea del código. Si pones el cursor sobre él, podrás moverte horizontalmente.
 
 Lo que le estamos pidiendo a R es que
 

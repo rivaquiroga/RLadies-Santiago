@@ -4,7 +4,7 @@ __Tutorial que recoge parte del taller de introducción a R organizado por [RLad
 
 
 
-> ¡Hola! El objetivo de este tutorial es acompañar el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, en el sentido de empezar a trabajar con los datos de inmediato, y a la vez suficientemente explicativo como para que se entienda qué es lo que hace un determinado bloque de código. Si luego de revisarlo te parece útil, compártelo para que otras personas se puedan beneficiar de él. 
+> ¡Hola! El objetivo de este tutorial es acompañar el proceso que va desde la instalación de R a la manipulación inicial de datos. La idea es que sea algo práctico, en el sentido de empezar a trabajar con los datos de inmediato, y a la vez suficientemente explicativo, como para que se entienda qué es lo que hace un determinado bloque de código. Si luego de revisarlo te parece útil, compártelo para que otras personas se puedan beneficiar de él. 
 
 
 
@@ -389,7 +389,9 @@ sum(babynames$n[babynames$name == "Arya"])
 ```
 Ambos códigos hacen exactamente lo mismo y llegan al mismo resultado: 8866 (puedes probar ejecutándolo). La diferencia es que el primero que escribimos (usando ` %>% `) "desempaqueta" las acciones, lo que lo hace más intuitivo de leer, En el caso del segundo, tenemos que leer de adentro hacia afuera para comprender la secuencia de acciones realizadas sobre los datos. Además, para facilitar la comprensión, los paquetes del Tidyverse suelen tener nombres de funciones que resultan transparentes (aunque están en inglés, claro). 
 
-Existen algunos tipos de análisis estadísticos para los que no es posible aplicar la sintaxis del Tidyverse o situaciones en las que, por un tema de procesamiento, resulta mejor usar la de R base. La buena noticia es que con el tiempo y uso, uno se va acostumbrando a esa manera de escribir el código. De todos modos, para la mayoría de las operaciones de importación, limpieza, exploración y manipulación de datos podemos utilizar la sintaxis del Tidyverse. 
+Existen algunos tipos de análisis estadísticos para los que no es posible aplicar la sintaxis del Tidyverse, tipos de datos con los que no es compatible o situaciones en las que, por un tema de procesamiento (muchos datos), resulta mejor usar la de R base. La buena noticia es que con el tiempo y uso, uno se va acostumbrando a esa manera de escribir el código. 
+
+De todos modos, para la mayoría de las operaciones de importación, limpieza, exploración y manipulación de datos rectangulares podemos utilizar la sintaxis del Tidyverse sin problema. 
 
 #### Creación de objetos
 

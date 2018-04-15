@@ -187,7 +187,7 @@ La segunda buena práctica es comentar nuestro script. En R podemos agregar come
 
 ¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace, o podemos dejar registro de por qué realizamos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo (o las personas con las que compartiremos nuestro script) entiendan lo que hicimos. 
 
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" width="50%"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" width="35%"></a>
 
 ¡Los comentarios también son muy útiles cuando estamos aprendiendo! Probablemente en el futuro ya no necesites indicar que `library()` sirve para cargar paquetes, pero por ahora es una buena manera de ir registrando qué es lo que hace cada función.
 
@@ -332,7 +332,7 @@ Podemos seguir utilizando ese mismo código de filtrado para buscar otros nombre
 babynames %>% 
     filter(name == "Sansa")
 ```
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sansas.png" align="center" width="60%"></a>
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sansas.png" align="center" width="50%"></a>
 
 Al parecer Sansa no ha sido un nombre tan popular. Al menos no hasta 2015. ¿Y Arya?
 

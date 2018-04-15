@@ -177,29 +177,27 @@ IMPORTANTE: Lo que hicimos recién fue cargar los código __para esta sesión__ 
 
 ### Buenas prácticas
 
-En este punto es importante sugerir dos buenas prácticas. La primera, es hacer lo que ya hicimos: llamar todos los paquetes que ocuparemos al inicio de nuestro script. De este modo, cuando volvemos a trabajar con él más adelante (u otra persona quiere ejecutarlo) queda claro desde el principio qué paquetes se utilizan (y es necesario descargar). Obviamente, cuando comenzamos a escribir un script no siempre sabemos cuáles son todos los paquetes que necesitaremos. Por eso, si en la mitad del proceso decido usar un nuevo paquete, la buena práctica es  volver a las primeras líneas del script y agregarlo. 
+En este punto es importante sugerir dos buenas prácticas. La primera, es hacer lo que ya hicimos: llamar todos los paquetes que ocuparemos al inicio de nuestro script. De este modo, cuando volvemos a trabajar con él más adelante (u otra persona quiere ejecutarlo) queda claro desde el principio qué paquetes se utilizan (y sería necesario descargar, en caso de no tenerlos). Obviamente, cuando comenzamos a escribir un script no siempre sabemos cuáles son todos los paquetes que necesitaremos. Por eso, si en la mitad del proceso decido usar un nuevo paquete, la buena práctica sería volver a las primeras líneas del script y agregarlo. 
 
 La segunda buena práctica es comentar nuestro script. En R podemos agregar comentarios anteponiendo un `#` al fragmento que cumple esa función. En una línea de nuestro script, todo lo que está después de un `#` no se ejecuta como código. 
 
-¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace o dejar registro de por qué hicimos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo o las personas con las que compartiremos nuestro script entiendan lo que hicimos. 
+¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace o podemos dejar registro de por qué hicimos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo (o las personas con las que compartiremos nuestro script) entiendan lo que hicimos. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" height="200"></a>
 
-También es útil agregar al inicio de nuestro script una descripción de lo que hace. 
+¡Los comentarios también son muy útiles cuando estamos aprendiendo! Probablemente en el futuro ya no necesites indicar que `library()` sirve para cargar paquetes, pero por ahora es una buena manera de ir registrando qué es lo que hace cada función.
+
+También es útil agregar al inicio de nuestro script una descripción de lo que hace, o del contexto en que lo escribimos: 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentario_inicio_script.png" align="center" height="200"></a>
 
-Si te fijas, nuestro script aún dice Untitled1. Antes de seguir, es importante que lo guardemos. Al hacerlo, aparecerá en la pestaña _Files_.  
+Si te fijas, nuestro script aún dice Untitled1. Antes de seguir, es importante que lo guardemos. Y lo puedes hacer como en cualquier otro programa: con `Control/Comando` + `S`. RStudio te ofrecerá por defecto guardarlo en la carpeta de tu proyecto. Cuando ya esté guardado, te aparecerá en la pestaña _Files_.  
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png" align="center" height="200"></a>
 
 ## Una mirada inicial a los datos
 
-`babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El "objeto" que contiene los datos dentro del paquete se llama también `babynames`. No vemos ese objeto en nuestro `Global Environment` porque no lo hemos creado nosotros. Sin embargo, si hacemos clic sobre Global Environment podemos acceder al "environment" de todos los paquetes. En el de `babynames` lo encontraremos: 
-
-<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/entorno_babynames.png" height="200"></a>
-
-En R, podemos ver un objeto simplemente ejecutándolo. Es decir, escribimos el nombre del objeto y ejecutamos el código. 
+`babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El "objeto" que contiene los datos dentro del paquete se llama también `babynames`. En R, podemos ver un objeto simplemente ejecutándolo. Es decir, escribimos el nombre del objeto y ejecutamos el código. 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_babynames.png" height="200"></a>
 
@@ -210,14 +208,19 @@ babynames
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" height="300"></a>
 
-En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R; lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas para que nos hagamos una idea de lo que contiene y no los casi dos millones que tiene (mejor así, ¿no?).
+¿Dónde está este objeto? No lo vemos en nuestro Global Environment porque no lo hemos creado nosotras. Sin embargo, a través de ese panel podemos acceder al "environment" de todos los paquetes. En el de `babynames` lo encontraremos: 
+
+<a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/entorno_babynames.png" height="200"></a>
+
+
+En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R; lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas de una "tibble" para que nos hagamos una idea de lo que contiene y no las casi dos millones de filas que tiene (mejor, ¿no?).
 
 Si quisiéramos tener una visión general de los datos, hay una función que resulta muy útil para esto, ya que nos los muestra en una pestaña distinta y con un formato tipo planilla: `View()`. 
 
 ``` r
 View(babynames)
 ```
-Si ejecutas ese código, una nueva pestaña se abrirá y te mostrará todos los datos en un formato tipo planilla:
+Si ejecutas ese código, una nueva pestaña se abrirá y te mostrará todos los datos en un formato tipo planilla, que puedes recorrer.
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png)
 
@@ -246,13 +249,13 @@ str(babynames)
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/str_babynames.png" height="150"></a>
 
 
-#### Algo más sobre las funciones
+### Algo más sobre las funciones
 
-Hasta el momento hemos utilizado funciones en las que hemos indicado un solo "argumento": el nombre del objeto que queremos ver. Sin embargo, todas estas funciones tienen más argumentos. Lo que ha ocurrido es que hemos utilizado los valores que vienen por defecto. Si queremos conocer cuáles son los otros argumentos que acepta, podemos buscar por el nombre de la función en el panel _Help_ o directamente tecleando en la consola: `?función`, por ejemplo:
+Hasta el momento hemos utilizado funciones en las que hemos indicado un solo "argumento" dentro del paréntesis: el nombre del objeto que queremos ver. Sin embargo, todas estas funciones tienen más argumentos. Lo que ocurre es que hemos utilizado los valores que vienen por defecto (por ejemplo, salvo que indiquemos algo distinto, `head()` y `tail()` solo nos mostrarán 6 filas). Si queremos conocer cuáles son los otros argumentos que acepta una determinada función, podemos buscarla en el panel _Help_ o directamente tecleando en la consola: `?función`, por ejemplo:
 ```r
 ?tail
 ```
-Si revisamos la ayuda podemos enterarnos que `tail` permite definir la cantidad de filas se muestren. Si en vez de las 6 líneas por defecto quiero que me aparezcan 10, tendría que indicarlo así:
+Si revisamos la ayuda podemos enterarnos que `tail` permite definir la cantidad de filas se muestran como segundo argumento de la función. Si en vez de las 6 líneas por defecto quiero que me aparezcan 10, tendría que indicarlo así:
 
 ```r
 tail(babynames, n = 10)
@@ -261,7 +264,7 @@ tail(babynames, n = 10)
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_n10.png" align="center" height="250"></a>
 
 
-Las funciones leen sus argumentos en orden, por lo que si en la ayuda vemos que el segundo argumento de `tail` es `n =`, podríamos solo escribir el número de líneas que queremos, es decir, así:
+Es importante tener en cuenta que las funciones leen sus argumentos en orden, por lo que si en la ayuda vemos que el segundo argumento de `tail` es `n =`, podríamos solo escribir el número de líneas que queremos, es decir, así:
 
 ```r
 tail(babynames, 10)
@@ -270,29 +273,45 @@ tail(babynames, 10)
 
 
 ¡El resultado es el mismo! 
+Puedo poner los argumentos en otro orden solo si indico explícitamente a qué argumento corresponde cada uno. Es decir, esto funciona:
 
+```r
+tail(n = 10, x = babynames)
+```
+
+¿Y esto? ¿Funcionaría? Prueba ejecutando el código para que veas lo que ocurre:
+```r
+tail(10, babynames)
+```
 
 ## Exploración y manipulación de los datos
 
-Ahora que ya dimos una mirada inicial al conjunto de datos con el que estamos trabajando, podemos empezar a explorarlo y hacernos preguntas. Por ejemplo, podríamos querer saber a cuántas personas le han puesto como nombre 'Danerys' (como el personaje de Juego de Tronos). Para eso podemos utilizar el siguiente código:
+Ahora que ya dimos una mirada inicial al conjunto de datos con el que estamos trabajando, podemos empezar a explorarlo y responder preguntas con esos datos. Por ejemplo, mientras esperamos el estreno de la última temporada de Juego de Tronos, podríamos querer saber a cuántas personas le han puesto el nombre de una de sus protagonistas: "Deanerys" . Para eso podemos utilizar el siguiente código:
 
 ```r
 babynames %>% 
     filter(name == "Daenerys")
 ```
 
-¿Qué hace este código? Le estamos diciendo a R que :
+¿Qué hace este código? Con él le estamos diciendo a R que :
 * tome el objeto `babynames` 
 * luego (` %>% `) 
-* que filtre (`filter()`) los nombres (`name`) que sean iguales `==` a `Daenerys`. 
+* que filtre (`filter`) los nombres (`name`) que sean iguales `==` a `Daenerys`. 
 
 Si lo ejecutamos, podemos ver el siguiente resultado:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" height="160"></a>
 
-¡Las primeras Daenerys aparecen en 2012! ¿Por qué utilizamos `==` y no `=`? Utilizamos `==` porque lo que le estamos pidiendo es que compruebe que el valor que tome la variable `name` sea igual a "Daenerys". En R (y en otros lenguajes de programación) el signo `=` se utiliza para asignar valores, es decir, cuando queremos, por ejemplo, asignarle un valor a una detemrinada variable (¡lo haremos más adelante!).
+¡Las primeras Daenerys aparecen en 2012! 
+¿Por qué utilizamos `==` y no `=`? Utilizamos `==` porque lo que le estamos pidiendo a R es que compruebe que el valor que tome la variable `name` sea igual a "Daenerys". En R (y en otros lenguajes de programación) el signo `=` se utiliza para asignar valores, es decir, cuando queremos, por ejemplo, asignarle un valor a una determinada variable (¡lo haremos más adelante!). Una de las ventajas de algunos paquetes de R (como los del Tidyverse) es que tratan de que los mensajes de error sean informativos. Prueba ejecutar el código anterior con `=` en vez de `==`:
 
-Podemos seguir utilizando ese mismo código para buscar otros nombres. Solo tenemos que cambiar el valor que queremos que tenga la variable `name`. Por ejemplo, podríamos continuar el ejemplo y buscar otros personajes de Juego de Tronos:
+```r
+babynames %>% 
+    filter(name = "Daenerys")
+```
+¿Qué dice el mensaje de error? No solo nos indica por qué es un error, sino que también nos da una sugerencia para resolverlo :)
+
+Podemos seguir utilizando ese mismo código de filtrado para buscar otros nombres. Solo tenemos que cambiar el valor que queremos que tenga la variable `name`. Por ejemplo, podríamos continuar el ejemplo y buscar otros personajes de Juego de Tronos:
 ```r
 babynames %>% 
     filter(name == "Sansa")
@@ -307,11 +326,13 @@ babynames %>%
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_arya.png" align="center" height="260"></a>
 
-Hay muchas más Aryas. Y aparecen antes (o sea, por influencia del libro y no de la serie, como en los otros dos casos). Y hay tantas Aryas que no alcanzan a imprimirse en la consola. ¿Cómo podríamos saber cuántas son? 
+¡Hay muchas más Aryas! Y aparecen antes (o sea, por influencia del libro y no de la serie, como en los otros dos casos). Hay tantas Aryas que no alcanzan a imprimirse en la consola. ¿Cómo podríamos saber cuántas son? En la siguiente sección lo veremos.
 
-Antes de responder eso, hablemos un poco del símbolo ` %>% `. ¿Qué es ` %>% `? Este símbolo se llama _pipe_ (_tubo_ en inglés) y en el código lo podemos leer como "luego" o "a continuación". El atajo del teclado para realizarlo es `control` + `shift` + `m` (Linux / Windows) o `command` + `shift` + `m` (Mac.)
+### ¿` %>% `? 
 
-`%>%`es una función que nos permite encadenar las acciones que queremos aplicar en un objeto (en este caso, `babynames`). Por ejemplo, si quisiéramos saber a cuántas personas le han puesto el nombre Arya, podría agregar otra función que sume todos los valores de la columna `n` (la que tiene la cantidad de nombres por año). La función que nos sirve para eso es `summarize` (o `summarise`; R acepta inglés norteamericano o británico). Como su nombre lo indica, lo que hace `summarize`es resumir información, según el criterio que le entreguemos. Veamos cómo funciona:
+Antes de responder la pregunta que planteamos en la sección anterior, hablemos un poco del símbolo ` %>% `. ¿Qué es ` %>% `? Este símbolo se llama _pipe_ (_tubo_ en inglés) y en el código lo podemos leer como "luego" o "a continuación". El atajo del teclado para realizarlo es `control` + `shift` + `m` (Linux / Windows) o `comando` + `shift` + `m` (Mac.)
+
+`%>%`es una función que nos permite encadenar las acciones que queremos aplicar en un objeto (en este caso, `babynames`). Por ejemplo, si quisiéramos saber a cuántas personas le han puesto el nombre Arya, podríamos agregar otra función que sume todos los valores de la columna `n` (la que tiene la cantidad de nombres por año). La función que nos sirve para eso es `summarize` (o `summarise`; R acepta inglés norteamericano o británico). Como su nombre lo indica, lo que hace `summarize`es resumir información, según el criterio que le entreguemos. Veamos cómo funciona:
 
 ```r
 babynames %>% 
@@ -329,7 +350,7 @@ Con este código le estamos diciendo a R que :
 
 ¿Qué pasa si ejecutamos este código? ¡8866 Aryas!
 
-Para que quede más claro por qué decimos que `summarize` resume, agreguemos otros criterios: que nos de el promedio de Aryas por año (`mean`) y cuándo apareció la primera (`first`).
+Para que quede más claro por qué decimos que `summarize` resume, agreguemos otros criterios: que nos dé el promedio de Aryas por año (`mean`) y cuándo apareció la primera (`first`).
 
 ```r
 babynames %>% 
@@ -338,11 +359,11 @@ babynames %>%
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/summarize_arya.png" align="center" height="150"></a>
 
-Lo que hizo `summarize` fue resumir toda la información que le pedimos en una tabla. Ojo: es probable que la cantidad de decimales que te aparecen a ti sea distinta. Depende de la configuración de cada equipo. 
+Lo que hizo `summarize` fue resumir toda la información que le pedimos en una tabla. Atención: es probable que la cantidad de decimales que te aparecen a ti sea distinta. Depende de la configuración de cada equipo. 
 
-#### Distintos tipos de sintaxis
+### Distintos tipos de sintaxis
 
-Más arriba comentamos que el Tidyverse era un conjunto de paquetes que compartía un mismo enfoque de trabajo con los datos. Uno de las características de este enfoque tiene que ver con la forma de escribir el código. En particular, con cómo cambia la sintaxis del código al usar ` %>% `. Lo que hace esta función es "desempaquetar" el código, de modo que lo leamos de arriba hacia abajo y de izquierda a derecha (la orientación que suele tener nuestra lectura). Por ejemplo, si quisiéramos contar la cantidad de Aryas usando la sintaxis "tradicional" (la de R base) nuestro código se vería así:
+Más arriba comentamos que el Tidyverse era un conjunto de paquetes que compartía un mismo enfoque de trabajo con los datos. Una de las características de este enfoque tiene que ver con la forma de escribir el código, es decir, con su sintaxis. En particular, con cómo cambia la sintaxis del código al usar ` %>% `. Lo que hace esta función es "desempaquetar" el código, de modo que lo leamos de arriba hacia abajo y de izquierda a derecha (la orientación que suele tener nuestra lectura). Por ejemplo, si quisiéramos contar la cantidad de Aryas usando la sintaxis "tradicional" (la de R base) nuestro código se vería así:
 
 ```r
 sum(babynames$n[babynames$name == "Arya"])

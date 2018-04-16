@@ -429,6 +429,8 @@ aryas
 
 Hacer clic sobre cualquier objeto del _Global Environmet_ es equivalente a aplicar la función `View()`. Haz la prueba: si haces clic sobre `aryas`, se abrirá una nueva pestaña en el panel de tu script en el que verás el objeto como una planilla. En la consola, aparecerá automáticamente el código para realizar esa acción `View(aryas)`.
 
+NOTA: el comando abreviado para `<-` es `alt` + `-`.
+
 ## Más funciones para explorar y manipular datos
 
 Trabajemos ahora con el paquete `gapminder`. Este paquete contiene una parte de los datos de Gapminder, una base de datos que incluye información mundial sobre población, expectativa de vida, PIB per cápita y otros. Su autor, Hans Rosling, ha hecho varias [charlas TED](https://www.ted.com/playlists/474/the_best_hans_rosling_talks_yo) que vale la pena mirar.

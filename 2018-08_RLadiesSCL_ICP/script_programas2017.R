@@ -1,3 +1,9 @@
+# R-Ladies Santiago + ICP
+# Sesión 1: Análisis de discursos políticos Latinoamericanos
+# Riva Quroga (@rivaquiroga)
+
+
+
 #Si no los tienes ya, instala los siguientes paquetes:
 # install.packages("readtext")
 # install.packages("quanteda")
@@ -9,7 +15,6 @@ library(quanteda) # para hacer el análisis
 library(dplyr) # funciones para manipular datos + %>% 
 library(ggplot2) # para editar los gráficos que por defecto entrega quanteda
 library(readr) # para exportar las búsquedas de concordancias
-
 # También puedes cargar todo el Tidyverse: library(tidyverse)
 
 # Versión rápida para importar los textos:
@@ -64,7 +69,7 @@ kwic(corpus_programas, "", 3, "regex")
 
 # si quieres guardar los resultados, puedes hacerlo como csv, para ello, luego del código agrega un %>% y la función para escribir archivos delimitados por algo (¡no por comas!):
 
-write_delim("nombredelarchivo.csv", delim = "|")  # lo abriremos en libreoffice para ver cómo queda. MUY IMPORTANTE elegir sabiamente el delimitador
+write_delim("nombredelarchivo.csv", delim = "|")  # lo abriremos en Libre Office para ver cómo queda. MUY MUY IMPORTANTE elegir sabiamente el delimitador
 
 # ANÁLISIS DE DISPERSIÓN LÉXICA: para saber en qué parte de un discurso se ubica un determinado término. 
 

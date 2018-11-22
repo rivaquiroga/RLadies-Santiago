@@ -48,5 +48,5 @@ reuniones_html <- read_html("http://www.senado.cl/appsenado/index.php?mo=lobby&a
 write_html(asesorias_html, "reuniones")
 ```
 
-Listo.  
+Listo. En la carpeta de tu proyecto deberías ver estos dos objetos que recién creaste. 
 ¡Nos vemos en el taller!

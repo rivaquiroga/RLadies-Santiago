@@ -16,9 +16,9 @@ En este tutorial utilizaremos R a través del IDE RStudio. ¿Qué es un IDE? IDE
 Para poder instalar R y RStudio, sigue los siguientes pasos:
 
 - Descarga R desde https://cran.r-project.org/. Debes elegir la opción que corresponda, según tu sistema operativo.
-- Instala R en tu computador, tal como lo haces con cualquier programa. 
-- Una vez que R ha quedado correctamente instalado, descarga RStudio desde https://www.rstudio.com/products/rstudio/download/. Elige la primera opción, es decir, "RStudio Desktop Open Source License" (gratuita). 
-- Instala RStudio en tu computador, tal como lo haces con cualquier programa. 
+- Instala R en tu computador, tal como lo haces con cualquier programa.
+- Una vez que R ha quedado correctamente instalado, descarga RStudio desde https://www.rstudio.com/products/rstudio/download/. Elige la primera opción, es decir, "RStudio Desktop Open Source License" (gratuita).
+- Instala RStudio en tu computador, tal como lo haces con cualquier programa.
 
 Si quedó todo bien instalado, cuando abras RStudio deberías ver algo así:
 
@@ -26,15 +26,15 @@ Si quedó todo bien instalado, cuando abras RStudio deberías ver algo así:
 
 En este tutorial usaremos al última versión de R y RStudio, así que si tienes instalada una versión previa, puede que algunas cosas se vean un poco distintas.
 
-IMPORTANTE: Si te aparece algún error durante este proceso, lo más probabable es que sea por alguna configuración de tu sistema operativo. En ese caso, la mejor manera de buscar una solución es copiar el error que arroja R, pegarlo en tu motor de búsqueda favorito y ver cómo alguien que se enfrentó a eso antes lo resolvió. 
+IMPORTANTE: Si te aparece algún error durante este proceso, lo más probabable es que sea por alguna configuración de tu sistema operativo. En ese caso, la mejor manera de buscar una solución es copiar el error que arroja R, pegarlo en tu motor de búsqueda favorito y ver cómo alguien que se enfrentó a eso antes lo resolvió.
 
 ## Instalación de los paquetes de R que utilizaremos
 
-Cuando instalamos R por primera vez en nuestro computador, lo que estamos instalando es lo que se conoce como "R Base", es decir, los elementos centrales del lenguaje de programación. Una de las ventajas de R es que se trata de un lenguaje extensible: la propia comunidad de usuarios puede desarrollar nuevas posibilidades para utilizarlo. La manera de compartir estos nuevos desarrollos es a través de "paquetes", que incluyen, entre otras cosas, código y datos. Una analogía que se suele utilizar para explicar esto es que R Base es un teléfono celular tal como viene de fábrica y los paquetes las _apps_ que descargamos para que tenga más funcionalidades. 
+Cuando instalamos R por primera vez en nuestro computador, lo que estamos instalando es lo que se conoce como "R Base", es decir, los elementos centrales del lenguaje de programación. Una de las ventajas de R es que se trata de un lenguaje extensible: la propia comunidad de usuarios puede desarrollar nuevas posibilidades para utilizarlo. La manera de compartir estos nuevos desarrollos es a través de "paquetes", que incluyen, entre otras cosas, código y datos. Una analogía que se suele utilizar para explicar esto es que R Base es un teléfono celular tal como viene de fábrica y los paquetes las _apps_ que descargamos para que tenga más funcionalidades.
 
-En este tutorial usaremos tres paquetes: `gapminder`, `babynames` y `tidyverse`. Los dos primeros (`gapminder` y `babynames`) son paquetes que incluyen datos que nos servirán para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos los paquetes que conforman "el Tidyverse" comparten la misma visión sobre el trabajo con datos y la escritura de código. Quizás ahora eso suene un poco enigmático, pero más adelante explicaremos qué quiere decir. 
+En este tutorial usaremos tres paquetes: `gapminder`, `babynames` y `tidyverse`. Los dos primeros (`gapminder` y `babynames`) son paquetes que incluyen datos que nos servirán para algunos de los ejercicios que realizaremos. `tidyverse`, por su parte, es un "megapaquete" que incluye otros paquetes en su interior. Todos los paquetes que conforman "el Tidyverse" comparten la misma visión sobre el trabajo con datos y la escritura de código. Quizás ahora eso suene un poco enigmático, pero más adelante explicaremos qué quiere decir.
 
-Para instalarlos, 
+Para instalarlos,
 
 1. copia el siguiente código:
 
@@ -48,7 +48,7 @@ install.packages("babynames")
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/install.packages.png)
 
-3. presiona 'enter'. 
+3. presiona 'enter'.
 El último paquete es un poco más pesado que el resto, así que, dependiendo de tu conexión, podría tomar un minuto. El resultado se debería ver parecido a esto:
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/paquetes_instalados.png)
@@ -56,7 +56,7 @@ El último paquete es un poco más pesado que el resto, así que, dependiendo de
 ¿Salió todo bien? ¡Excelente! Ya escribiste tus primeras líneas de código :)
 
 #### Warnings / Errores
-Si no tienes la última versión de R, puede que aparezca un "Warning" durante la instalación, que te avisa que el paquete fue construido bajo otra versión de R. Un "Warning" es distinto a un error: R ejecuta el código que le pides, pero te advierte que no todo puede resultar como esperas. Cuando aparece un error, en cambio, el código no se ejecuta. 
+Si no tienes la última versión de R, puede que aparezca un "Warning" durante la instalación, que te avisa que el paquete fue construido bajo otra versión de R. Un "Warning" es distinto a un error: R ejecuta el código que le pides, pero te advierte que no todo puede resultar como esperas. Cuando aparece un error, en cambio, el código no se ejecuta.
 
 ## Utilización de RStudio
 
@@ -64,35 +64,35 @@ Como señalamos antes, RStudio es un entorno que facilita el trabajo con R. Si s
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/r_consola.png" align="center" height="400"></a>
 
-Si abres RStudio verás que te aparece la misma consola, pero además te encontrarás con otros paneles. Estos paneles nos ayudan a organizar nuestro trabajo y hacen todo el proceso más sencillo. 
+Si abres RStudio verás que te aparece la misma consola, pero además te encontrarás con otros paneles. Estos paneles nos ayudan a organizar nuestro trabajo y hacen todo el proceso más sencillo.
 
 ![](https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio.png)
 
-¿Para qué sirven estos paneles? Comentemos primero el panel de abajo a la derecha. Si te fijas, el panel tiene varias ventanas: 
+¿Para qué sirven estos paneles? Comentemos primero el panel de abajo a la derecha. Si te fijas, el panel tiene varias ventanas:
 
-* __Files__ muestra el directorio (la carpeta) en la que te encuentras actualmente. En mi caso, no hay nada ahí porque por defecto RStudio me muestra el Escritorio (_Desktop_) y no tengo nada en él. Es posible que a ti te muestre otra carpeta (por ejemplo, _Documentos_). 
+* __Files__ muestra el directorio (la carpeta) en la que te encuentras actualmente. En mi caso, no hay nada ahí porque por defecto RStudio me muestra el Escritorio (_Desktop_) y no tengo nada en él. Es posible que a ti te muestre otra carpeta (por ejemplo, _Documentos_).
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_files.png" align="center" width="50%"></a>
 
-* __Plots__ es el lugar donde aparecerán los gráficos que vayas creando. No hemos hecho ninguno por ahora, así que este panel también está vacío. 
+* __Plots__ es el lugar donde aparecerán los gráficos que vayas creando. No hemos hecho ninguno por ahora, así que este panel también está vacío.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_plots.png" align="center" width="50%"></a>
 
-* __Packages__ muestra la lista de paquetes que tienes instalados en tu computador. Si recorres el panel verás que algunos tiene una marca al lado izquierdo. Eso quiere decir que el paquete está activo en ese momento (ya veremos cómo hacer eso). Solo los paquetes vinculados a R base se activan al abrir RStudio. 
+* __Packages__ muestra la lista de paquetes que tienes instalados en tu computador. Si recorres el panel verás que algunos tiene una marca al lado izquierdo. Eso quiere decir que el paquete está activo en ese momento (ya veremos cómo hacer eso). Solo los paquetes vinculados a R base se activan al abrir RStudio.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_packages.png" align="center" width="50%"></a>
 
-* __Help__, como su nombre lo indica, es la pestaña en la que podemos encontrar ayuda. Si buscamos el nombre de un paquete o de una función, RStudio nos remitirá a la documentación asociada. 
+* __Help__, como su nombre lo indica, es la pestaña en la que podemos encontrar ayuda. Si buscamos el nombre de un paquete o de una función, RStudio nos remitirá a la documentación asociada.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_help.png" align="center" width="50%"></a>
 
-* __Viewer__ es el panel para ver contenido web generado por algún paquete de R (gráficos para la web o aplicaciones interactivas). Por el momento no lo utilizaremos. 
+* __Viewer__ es el panel para ver contenido web generado por algún paquete de R (gráficos para la web o aplicaciones interactivas). Por el momento no lo utilizaremos.
 
-El panel de arriba a la derecha, por su parte, contiene el historial de funciones que hemos ejecutado (_History_), la opción para generar conexiones a bases de datos externas (_Connections_) y el _Environment_. Este último panel es muy importante y entender lo que nos muestra es fundamental para comprender cómo funciona R. 
+El panel de arriba a la derecha, por su parte, contiene el historial de funciones que hemos ejecutado (_History_), la opción para generar conexiones a bases de datos externas (_Connections_) y el _Environment_. Este último panel es muy importante y entender lo que nos muestra es fundamental para comprender cómo funciona R.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_globalenvironment.png" align="center" width="50%"></a>
 
-Por ahora está vacío porque no hemos creado ningún objeto o variable, pero cuando creemos alguno es aquí donde aparecerá. Ya volveremos a hablar sobre este panel cuando comenzemos a trabajar con datos. 
+Por ahora está vacío porque no hemos creado ningún objeto o variable, pero cuando creemos alguno es aquí donde aparecerá. Ya volveremos a hablar sobre este panel cuando comenzemos a trabajar con datos.
 
 Hay un cuarto panel (que probablemente todavía no te aparece)  y que es el que utilizamos para escribir el código que queremos que R ejecute, es decir, el panel para nuestro _script_. Para crear un nuevo script podemos:
 * ir a File > New File > R Script
@@ -103,18 +103,18 @@ Hay un cuarto panel (que probablemente todavía no te aparece)  y que es el que 
 
 ¡Ahora ya están los cuatro paneles!
 
-NOTA: si alguna vez has utilizado Git o Github, lo que diré a continuación tendrá algo de sentido. Si no, puedes omitir este comentario y seguir a la sección siguiente. 
-Si te fijas, en el panel en que está la consola hay una segunda pestaña: el/la Terminal. Esto es muy útil, ya que, por ejemplo, si tu proyecto lo tienes alojado en Github, no tienes que salir de R para hacer commit a los cambios que has hecho: puedes hacerlo directamente desde RStudio. 
+NOTA: si alguna vez has utilizado Git o Github, lo que diré a continuación tendrá algo de sentido. Si no, puedes omitir este comentario y seguir a la sección siguiente.
+Si te fijas, en el panel en que está la consola hay una segunda pestaña: el/la Terminal. Esto es muy útil, ya que, por ejemplo, si tu proyecto lo tienes alojado en Github, no tienes que salir de R para hacer commit a los cambios que has hecho: puedes hacerlo directamente desde RStudio.
 
-### Creación de un proyecto 
+### Creación de un proyecto
 
-Una de las ventajas de RStudio es que permite crear "proyectos". Un projecto es un espacio o contexto de trabajo asociado a una carpeta en particular, en la que se guardan nuestro(s) script(s), archivos de datos, etc. Cuando creamos un proyecto en RStudio, se crea un tipo especial de archivo (.Rproj) que lo que hace es vincular todo lo que se encuentra dentro de esa carpeta. ¿Por qué esto es útil? Si parte de nuestro script, por ejemplo, implica abrir un archivo que está en la carpeta de nuestro proyecto, no necesito indicar en mi código toda la ruta del archivo: lo que hará RStudio será buscarlo en el entorno/carpeta del proyecto. Si movemos la carpeta a otro lugar de nuestro computador o la compartimos con otra persona, nuestro código seguirá funcionando, ya que el archivo .Rproj mantendrá todo unido. Si no creara un proyecto, tendría que indicar al inicio de mi script cuál es la ruta de la carpeta que ocuparé como espacio de trabajo. El problema de esa opción es que si muevo la carpeta o le cambio el nombre, tendría que volver a escribir la ruta para que todo funcione. Al crear un proyecto eso deja de ser una preocupación. 
+Una de las ventajas de RStudio es que permite crear "proyectos". Un projecto es un espacio o contexto de trabajo asociado a una carpeta en particular, en la que se guardan nuestro(s) script(s), archivos de datos, etc. Cuando creamos un proyecto en RStudio, se crea un tipo especial de archivo (.Rproj) que lo que hace es vincular todo lo que se encuentra dentro de esa carpeta. ¿Por qué esto es útil? Si parte de nuestro script, por ejemplo, implica abrir un archivo que está en la carpeta de nuestro proyecto, no necesito indicar en mi código toda la ruta del archivo: lo que hará RStudio será buscarlo en el entorno/carpeta del proyecto. Si movemos la carpeta a otro lugar de nuestro computador o la compartimos con otra persona, nuestro código seguirá funcionando, ya que el archivo .Rproj mantendrá todo unido. Si no creara un proyecto, tendría que indicar al inicio de mi script cuál es la ruta de la carpeta que ocuparé como espacio de trabajo. El problema de esa opción es que si muevo la carpeta o le cambio el nombre, tendría que volver a escribir la ruta para que todo funcione. Al crear un proyecto eso deja de ser una preocupación.
 
-¿Cómo crear un proyecto? Puedes hacerlo desde el menú File > New Proyect. 
+¿Cómo crear un proyecto? Puedes hacerlo desde el menú File > New Proyect.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject1.png" align="center" width="50%"></a>
 
-Lo primero que nos pregunta es si queremos crearlo en una carpeta nueva o en una ya existente. Elegiremos esta vez una carpeta nueva, así que seleccionaremos _New Directory_. 
+Lo primero que nos pregunta es si queremos crearlo en una carpeta nueva o en una ya existente. Elegiremos esta vez una carpeta nueva, así que seleccionaremos _New Directory_.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject2.png" align="center" width="50%"></a>
 
@@ -122,15 +122,15 @@ La siguiente pregunta es qué tipo de proyecto queremos crear. En esta ocasión,
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject3.png" align="center" width="50%"></a>
 
-Finalmente, le damos un nombre al proyecto y decidimos en qué parte de nuestro computador queremos que viva la carpeta que lo contiene. 
+Finalmente, le damos un nombre al proyecto y decidimos en qué parte de nuestro computador queremos que viva la carpeta que lo contiene.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_newproject4.png" align="center" width="50%"></a>
 
-Luego de apretar _Create Project_, RStudio se reinicia y se producen algunos cambios. El panel _Files_ (abajo a la derecha) ahora nos muestra la carpeta de nuestro proyecto y el único archivo que hay en ella por ahora. Ese es el archivo mágico que mantiene unido todo lo que hay dentro de la carpeta. Cuando queramos volver a trabajar en nuestro proyecto, solo tenemos que abrir ese archivo. 
+Luego de apretar _Create Project_, RStudio se reinicia y se producen algunos cambios. El panel _Files_ (abajo a la derecha) ahora nos muestra la carpeta de nuestro proyecto y el único archivo que hay en ella por ahora. Ese es el archivo mágico que mantiene unido todo lo que hay dentro de la carpeta. Cuando queramos volver a trabajar en nuestro proyecto, solo tenemos que abrir ese archivo.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_rproj.png" align="center" width="50%"></a>
 
-Otro cambio que ocurre es que en la barra superior aparece ahora la ruta de la carpeta de nuestro projecto. 
+Otro cambio que ocurre es que en la barra superior aparece ahora la ruta de la carpeta de nuestro projecto.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/rstudio_barraproyecto.png" align="center" width="100%"></a>
 
@@ -153,19 +153,19 @@ RStudio trata de hacernos la vida más simple, así que cuando empezamos a escri
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_funcion.png" align="center" width="50%"></a>
 
-Lo mismo ocurre cuando empezamos a escribir el nombre del paquete. RStudio nos va ofreciendo sugerencias a partir de los paquetes que tenemos instalados: 
+Lo mismo ocurre cuando empezamos a escribir el nombre del paquete. RStudio nos va ofreciendo sugerencias a partir de los paquetes que tenemos instalados:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sugerencia_argumento.png" align="center" width="50%"></a>
 
 
-Todavía no hemos 'ejecutado' el código, así que nada ha pasado. Como todo en R, hay varias opciones para hacer esto. 
-Si hacemos clic en el botón _Run_ que está en la barra del script, se ejecutará la línea de código en la que está actualmente el cursor y este se moverá automáticamente a la siguiente línea. Es decir, si ponemos el cursor en la línea en la que llamamos por primera vez la función `library` y hacemos clic tres veces, se ejecutarán las tres líneas. 
+Todavía no hemos 'ejecutado' el código, así que nada ha pasado. Como todo en R, hay varias opciones para hacer esto.
+Si hacemos clic en el botón _Run_ que está en la barra del script, se ejecutará la línea de código en la que está actualmente el cursor y este se moverá automáticamente a la siguiente línea. Es decir, si ponemos el cursor en la línea en la que llamamos por primera vez la función `library` y hacemos clic tres veces, se ejecutarán las tres líneas.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_codigo.png" align="center" width="50%"></a>
 
-Eso mismo podemos hacerlo usando el atajo de teclado `ctrl` + `enter` (si estás en Linux o Windows) o `comando` + `enter` si estás en Mac. 
+Eso mismo podemos hacerlo usando el atajo de teclado `ctrl` + `enter` (si estás en Linux o Windows) o `comando` + `enter` si estás en Mac.
 
-Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es seleccionar todo el fragmento y hacer clic sobre Run o usar el atajo del teclado. 
+Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es seleccionar todo el fragmento y hacer clic sobre Run o usar el atajo del teclado.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/seleccion_para_ejecutar_png.png" align="center" width="50%"></a>
 
@@ -177,31 +177,31 @@ Cuando queremos ejecutar más de una línea de código, lo que podemos hacer es 
 
 Cuando ejecutamos el código de nuestro script, este pasa a la consola. En el caso del primer paquete (`tidyverse`), la consola nos da dos avisos. El primero, cuáles son todos los paquetes que estamos cargando al cargar el `tidyverse`. Como comentamos antes, este es un megapaquete que incluye otros paquetes en su interior. Al llamarlos a través de `library(tidyverse)` se activan estos 8 paquetes que aparecen consignados (pese a que el Tidyverse incluye más). Eso es lo que nos está avisando R en la consola. El otro aviso es de un "Conflicto". Nos dice que las funciones `filter()`y `lag()` del paquete `dplyr` tienen el mismo nombre que funciones del paquete `stats` (que es parte de R base). Como cargamos `dplyr`después (al instalar `tidyverse`), lo que R nos avisa es que son las funciones de este último paquete las que van a prevalecer por sobre las del paquete `stats`.
 
-__IMPORTANTE__: Lo que hicimos recién fue cargar los paquetes __para esta sesión__ de R que estamos ejecutando actualmente. Si en algún momento cerraras el programa y retomaras este tutorial en otro momento, tendrías que volver a cargarlos. 
+__IMPORTANTE__: Lo que hicimos recién fue cargar los paquetes __para esta sesión__ de R que estamos ejecutando actualmente. Si en algún momento cerraras el programa y retomaras este tutorial en otro momento, tendrías que volver a cargarlos.
 
 ### Buenas prácticas
 
-En este punto es importante sugerir dos buenas prácticas. La primera, es hacer lo que ya hicimos: llamar todos los paquetes que ocuparemos al inicio de nuestro script. De este modo, cuando volvemos a trabajar con él más adelante (u otra persona quiere ejecutarlo) queda claro desde el principio qué paquetes se utilizan (y sería necesario descargar, en caso de no tenerlos). Obviamente, cuando comenzamos a escribir un script no siempre sabemos cuáles son todos los paquetes que necesitaremos. Por eso, si en la mitad del proceso decido usar un nuevo paquete, la buena práctica sería volver a las primeras líneas del script y agregarlo. 
+En este punto es importante sugerir dos buenas prácticas. La primera, es hacer lo que ya hicimos: llamar todos los paquetes que ocuparemos al inicio de nuestro script. De este modo, cuando volvemos a trabajar con él más adelante (u otra persona quiere ejecutarlo) queda claro desde el principio qué paquetes se utilizan (y sería necesario descargar, en caso de no tenerlos). Obviamente, cuando comenzamos a escribir un script no siempre sabemos cuáles son todos los paquetes que necesitaremos. Por eso, si en la mitad del proceso decido usar un nuevo paquete, la buena práctica sería volver a las primeras líneas del script y agregarlo.
 
-La segunda buena práctica es comentar nuestro script. En R podemos agregar comentarios anteponiendo un `#` al fragmento que cumple esa función. En una línea de nuestro script, todo lo que está después de un `#` no se ejecuta como código. 
+La segunda buena práctica es comentar nuestro script. En R podemos agregar comentarios anteponiendo un `#` al fragmento que cumple esa función. En una línea de nuestro script, todo lo que está después de un `#` no se ejecuta como código.
 
-¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace, o podemos dejar registro de por qué realizamos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo (o las personas con las que compartiremos nuestro script) entiendan lo que hicimos. 
+¿Por qué es importante comentar nuestro script? Porque así podemos recordar qué es lo que un determinado fragmento de código hace, o podemos dejar registro de por qué realizamos algo de una determinada manera. Esto es muy útil para que nuestro futuro yo (o las personas con las que compartiremos nuestro script) entiendan lo que hicimos.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentarios.png" align="center" width="35%"></a>
 
 ¡Los comentarios también son muy útiles cuando estamos aprendiendo! Probablemente en el futuro ya no necesites indicar que `library()` sirve para cargar paquetes, pero por ahora es una buena manera de ir registrando qué es lo que hace cada función.
 
-También es útil agregar al inicio de nuestro script una descripción de su objetivo o del contexto en que lo escribimos: 
+También es útil agregar al inicio de nuestro script una descripción de su objetivo o del contexto en que lo escribimos:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/comentario_inicio_script.png" align="center" width="60%"></a>
 
-Si te fijas, nuestro script aún dice Untitled1. Antes de seguir, es importante que lo guardemos. Y lo puedes hacer como en cualquier otro programa: con `Control/Comando` + `S`. RStudio te ofrecerá por defecto guardarlo en la carpeta de tu proyecto. Cuando ya esté guardado, te aparecerá en la pestaña _Files_.  
+Si te fijas, nuestro script aún dice Untitled1. Antes de seguir, es importante que lo guardemos. Y lo puedes hacer como en cualquier otro programa: con `Control/Comando` + `S`. RStudio te ofrecerá por defecto guardarlo en la carpeta de tu proyecto. Cuando ya esté guardado, te aparecerá en la pestaña _Files_.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/guardar_script.png" align="center" width="75%"></a>
 
 ## Una mirada inicial a los datos
 
-`babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El "objeto" que contiene los datos dentro del paquete se llama también `babynames`. En R, podemos ver un objeto simplemente ejecutándolo. Es decir, escribimos el nombre del objeto y ejecutamos el código. 
+`babynames` es un paquete que contiene datos sobre nombres registrados en Estados Unidos entre los años 1880 y 2015. El "objeto" que contiene los datos dentro del paquete se llama también `babynames`. En R, podemos ver un objeto simplemente ejecutándolo. Es decir, escribimos el nombre del objeto y ejecutamos el código.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/ejecutar_babynames.png" width="60%"></a>
 
@@ -214,13 +214,13 @@ En la consola, veremos sus primeras líneas:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_babynames.png" width="70%"></a>
 
-¿Dónde está este objeto? No lo vemos en nuestro Global Environment porque no lo hemos creado nosotras. Sin embargo, a través de ese panel podemos acceder al "environment" de todos los paquetes activos. En el de `babynames` lo encontraremos: 
+¿Dónde está este objeto? No lo vemos en nuestro Global Environment porque no lo hemos creado nosotras. Sin embargo, a través de ese panel podemos acceder al "environment" de todos los paquetes activos. En el de `babynames` lo encontraremos:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/entorno_babynames.png" width="40%"></a>
 
-En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R; lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas de una "tibble" para que nos hagamos una idea de lo que contiene (y no las casi dos millones de filas que tiene este objeto en particular). 
+En este caso, el objeto `babynames` es una `tibble`, que es un tipo particular de conjunto de datos. No nos detendremos aún en los tipos de objetos que existen en R; lo importante por ahora es saber que R nos muestra en la consola las primeras diez filas de una "tibble" para que nos hagamos una idea de lo que contiene (y no las casi dos millones de filas que tiene este objeto en particular).
 
-Si quisiéramos tener una visión general de los datos, hay una función que resulta muy útil para esto, ya que nos los muestra en una pestaña distinta: `View()`. 
+Si quisiéramos tener una visión general de los datos, hay una función que resulta muy útil para esto, ya que nos los muestra en una pestaña distinta: `View()`.
 
 ``` r
 View(babynames)
@@ -230,7 +230,7 @@ Si ejecutas ese código, una nueva pestaña se abrirá y te mostrará todos los 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/babynames.png" width="100%"></a>
 
 
-Existen otras funciones útiles para darle una primera mirada a nuestros datos: `head()` y `tail()`. Como su nombre lo indica, lo que hacen es mostrarnos las primeras y las últimas líneas de nuestros datos, respectivamente. 
+Existen otras funciones útiles para darle una primera mirada a nuestros datos: `head()` y `tail()`. Como su nombre lo indica, lo que hacen es mostrarnos las primeras y las últimas líneas de nuestros datos, respectivamente.
 
 ``` r
 head(babynames)
@@ -278,7 +278,7 @@ tail(babynames, 10)
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/tail_babynames_10.png" align="center" width="75%"></a>
 
 
-¡El resultado es el mismo! 
+¡El resultado es el mismo!
 Puedo poner los argumentos en otro orden solo si indico explícitamente a qué argumento corresponde cada uno. Es decir, esto funciona:
 
 ```r
@@ -292,44 +292,44 @@ tail(10, babynames)
 
 ### Intepretar errores
 
-Un error que es muy habitual cometer en R es escribir mal el nombre de un objeto o de una función. Como R distingue entre mayúsculas y minúsculas, `babynames` no es lo mismo que `Babynames`. De hecho, si tratamos de utilizar este último nombre R nos arrojará un error: `Error: object 'Babynames' not found`. Cuando te aparezca este tipo de error, revisa si el nombre del objeto o de la función que quieres aplicar está bien escrito. Este error también aparece cuando no hemos cargado el paquete en que se encuentra un determinado objeto o función. 
+Un error que es muy habitual cometer en R es escribir mal el nombre de un objeto o de una función. Como R distingue entre mayúsculas y minúsculas, `babynames` no es lo mismo que `Babynames`. De hecho, si tratamos de utilizar este último nombre R nos arrojará un error: `Error: object 'Babynames' not found`. Cuando te aparezca este tipo de error, revisa si el nombre del objeto o de la función que quieres aplicar está bien escrito. Este error también aparece cuando no hemos cargado el paquete en que se encuentra un determinado objeto o función.
 
-Como uno nunca es la primera persona que enfrentó un error, la manera más rápida de buscar ayuda es copiar el error, pegarlo en tu motor de búsqueda favorito y ver cómo alguien ya lo resolvió. 
+Como uno nunca es la primera persona que enfrentó un error, la manera más rápida de buscar ayuda es copiar el error, pegarlo en tu motor de búsqueda favorito y ver cómo alguien ya lo resolvió.
 
 ## Exploración y manipulación de los datos
 
 Ahora que ya dimos una mirada inicial al conjunto de datos con el que estamos trabajando, podemos empezar a explorarlo y responder preguntas. Por ejemplo, mientras esperamos el estreno de la última temporada de Juego de Tronos, podríamos querer saber a cuántas personas le han puesto el nombre de una de sus protagonistas: "Daenerys" . Para eso podemos utilizar el siguiente código:
 
 ```r
-babynames %>% 
+babynames %>%
     filter(name == "Daenerys")
 ```
 
 ¿Qué hace este código? Con él le estamos diciendo a R que :
-* tome el objeto `babynames` 
-* luego (` %>% `) 
-* que filtre (`filter`) los nombres (`name`) que sean iguales `==` a `Daenerys`. 
+* tome el objeto `babynames`
+* luego (` %>% `)
+* que filtre (`filter`) los nombres (`name`) que sean iguales `==` a `Daenerys`.
 
-Por convención, después de ` %>% ` nos saltamos una línea (sin ella el código igual funciona). Se hace así para que sea más fácil de leer (por ahora no se nota mucho la diferencia, porque el bloque de código es pequeño). 
+Por convención, después de ` %>% ` nos saltamos una línea (sin ella el código igual funciona). Se hace así para que sea más fácil de leer (por ahora no se nota mucho la diferencia, porque el bloque de código es pequeño).
 
 Si lo ejecutamos, podemos ver el siguiente resultado:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_daenerys.png" align="center" width="75%"></a>
 
-¡Las primeras Daenerys aparecen en 2012! 
-¿Por qué utilizamos `==` y no `=`? Utilizamos `==` porque lo que le estamos pidiendo a R es que busque los casos en los que el valor de la variable `name` sea igual a "Daenerys". En R (y en otros lenguajes de programación) el signo `=` se utiliza para asignar valores (¡lo haremos más adelante!). 
+¡Las primeras Daenerys aparecen en 2012!
+¿Por qué utilizamos `==` y no `=`? Utilizamos `==` porque lo que le estamos pidiendo a R es que busque los casos en los que el valor de la variable `name` sea igual a "Daenerys". En R (y en otros lenguajes de programación) el signo `=` se utiliza para asignar valores (¡lo haremos más adelante!).
 Una de las ventajas de algunos paquetes de R (como los del Tidyverse) es que tratan de que los mensajes de error sean informativos. Prueba ejecutar el código anterior cometiendo el error de usar `=` en vez de `==`:
 
 ```r
-babynames %>% 
+babynames %>%
     filter(name = "Daenerys")
 ```
-¿Qué dice el mensaje de error? 
+¿Qué dice el mensaje de error?
 No solo nos indica cuál es el problema, sino que también nos da una sugerencia para resolverlo :)
 
 Podemos seguir utilizando ese mismo código de filtrado para buscar otros nombres. Solo tenemos que cambiar el valor que queremos que tenga la variable `name`. Busquemos otros personajes de Juego de Tronos:
 ```r
-babynames %>% 
+babynames %>%
     filter(name == "Sansa")
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/sansas.png" align="center" width="50%"></a>
@@ -337,7 +337,7 @@ babynames %>%
 Al parecer Sansa no ha sido un nombre tan popular. Al menos no hasta 2015. ¿Y Arya?
 
 ```r
-babynames %>% 
+babynames %>%
     filter(name == "Arya")
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_arya.png" align="center" width="60%"></a>
@@ -351,42 +351,42 @@ Antes de responder la pregunta que planteamos en la sección anterior, hablemos 
 `%>%`es un operador que nos permite encadenar las acciones que queremos aplicar en un objeto (en este caso, `babynames`). Por ejemplo, si quisiéramos saber a cuántas personas se llaman Arya, podríamos agregar otra función al código que estábamos usando que sume todos los valores de la columna `n` (la que tiene la cantidad de nombres por año). La función que nos sirve para eso es `summarize` (o `summarise`; R acepta inglés norteamericano o británico). Como su nombre lo indica, lo que hace `summarize`es resumir información, según el criterio que le entreguemos. Veamos cómo funciona:
 
 ```r
-babynames %>% 
-    filter(name == "Arya") %>% 
+babynames %>%
+    filter(name == "Arya") %>%
     summarize(sum(n))
 ```
 Con este código le estamos diciendo a R que :
 
-* tome el objeto `babynames` 
-* luego (` %>% `) 
+* tome el objeto `babynames`
+* luego (` %>% `)
 * que filtre los nombres que sean iguales a Arya (`filter == "Arya"`)
 * luego (` %>% `)
 * que resuma (`summarize`) la siguiente información:
-* la suma (`sum`) de los valores de la columna `n`. 
+* la suma (`sum`) de los valores de la columna `n`.
 
 ¿Qué pasa si ejecutamos este código? ¡8866 Aryas!
 
 Para que quede más claro por qué decimos que `summarize` resume, agreguemos otros criterios: que nos dé el promedio de Aryas por año (`mean`) y cuándo se utilizó por primera vez primera vez (`first`).
 
 ```r
-babynames %>% 
-    filter(name == "Arya") %>% 
+babynames %>%
+    filter(name == "Arya") %>%
     summarize(sum(n), mean(n), first(year))
 ```
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/summarize_arya.png" align="center" width="75%"></a>
 
-Lo que hizo `summarize` fue resumir toda la información que le pedimos en una tabla. 
+Lo que hizo `summarize` fue resumir toda la información que le pedimos en una tabla.
 
 [Es probable que la cantidad de decimales que te aparecen a ti sea distinta. Depende de la configuración de cada equipo].
 
 ### Distintos tipos de sintaxis
 
-Más arriba comentamos que el Tidyverse era un conjunto de paquetes que compartía un mismo enfoque de trabajo con los datos. Una de las características de este enfoque se relaciona con la forma de escribir el código, es decir, con su _sintaxis_. La sintaxis de los paquetes del Tidiverse utilizan el operador ` %>% ` que vimos más arriba, que permite organizar el código de modo que lo leamos de arriba hacia abajo y de izquierda a derecha (la orientación que suele tener nuestra lectura). 
+Más arriba comentamos que el Tidyverse era un conjunto de paquetes que compartía un mismo enfoque de trabajo con los datos. Una de las características de este enfoque se relaciona con la forma de escribir el código, es decir, con su _sintaxis_. La sintaxis de los paquetes del Tidiverse utilizan el operador ` %>% ` que vimos más arriba, que permite organizar el código de modo que lo leamos de arriba hacia abajo y de izquierda a derecha (la orientación que suele tener nuestra lectura).
 
 Hagamos una comparación. Si quisiéramos contar la cantidad de Aryas usando la sintaxis propia del Tidyverse, lo haríamos así:
 ```r
-babynames %>% 
-    filter(name == "Arya") %>% 
+babynames %>%
+    filter(name == "Arya") %>%
     summarize(sum(n))
 ```
 
@@ -395,11 +395,11 @@ Si hiciéramos lo mismo utilizando la sintaxis "tradicional" (la de R base) nues
 ```r
 sum(babynames$n[babynames$name == "Arya"])
 ```
-Ambos códigos hacen exactamente lo mismo y llegan al mismo resultado: 8866 (puedes probar ejecutándolo). La diferencia es que el primero que escribimos (usando ` %>% `) "desempaqueta" las acciones, lo que lo hace más intuitivo de leer. En el caso del segundo, tenemos que leer de adentro hacia afuera para comprender la secuencia de acciones realizadas sobre los datos. Además, para facilitar la comprensión, los paquetes del Tidyverse suelen tener nombres de funciones que resultan transparentes (aunque están en inglés, claro). 
+Ambos códigos hacen exactamente lo mismo y llegan al mismo resultado: 8866 (puedes probar ejecutándolo). La diferencia es que el primero que escribimos (usando ` %>% `) "desempaqueta" las acciones, lo que lo hace más intuitivo de leer. En el caso del segundo, tenemos que leer de adentro hacia afuera para comprender la secuencia de acciones realizadas sobre los datos. Además, para facilitar la comprensión, los paquetes del Tidyverse suelen tener nombres de funciones que resultan transparentes (aunque están en inglés, claro).
 
-Existen algunos tipos de análisis estadísticos para los que no es posible aplicar la sintaxis del Tidyverse, tipos de datos con los que no es compatible o situaciones en las que, por un tema de procesamiento (muchos datos), resulta mejor usar la sintaxis de R base. La buena noticia es que con el tiempo y uso, uno se va acostumbrando a esa manera de escribir el código. 
+Existen algunos tipos de análisis estadísticos para los que no es posible aplicar la sintaxis del Tidyverse, tipos de datos con los que no es compatible o situaciones en las que, por un tema de procesamiento (muchos datos), resulta mejor usar la sintaxis de R base. La buena noticia es que con el tiempo y uso, uno se va acostumbrando a esa manera de escribir el código.
 
-De todos modos, para la mayoría de las operaciones de importación, limpieza, exploración y manipulación de datos rectangulares podemos utilizar la sintaxis del Tidyverse sin problema. 
+De todos modos, para la mayoría de las operaciones de importación, limpieza, exploración y manipulación de datos rectangulares podemos utilizar la sintaxis del Tidyverse sin problema.
 
 ### Creación de objetos
 
@@ -413,14 +413,14 @@ babynames
 Imagina que nos interesa guardar los datos sobre la cantidad de Aryas porque seguiremos trabajando solo con ellos y el resto no nos interesa. Para no tener que filtrar cada vez que los queramos ocupar, nos conviene crear un nuevo objeto. En R eso lo hacemos con el símbolo de asignación: `<-`. ¿Cómo funciona? Lo que está a la izquierda del símbolo de asignación es el objeto que queremos crear y lo que está a su derecha es el valor que queremos asignarle. Así:
 
 ```r
-aryas <- babynames %>% 
+aryas <- babynames %>%
     filter(name == "Arya")
 ```
 Este código crea un nuevo objeto llamado `aryas`, cuyo valor contiene lo que resulta de aplicar un filtro a `babynames`. Si ejecutas ese código, no aparecerá nada nuevo en la consola (solo el código que acabas de ejecutar). Sin embargo, en nuestro _Global Enviroment_ (el panel de arriba a la derecha) aparecerá el objeto que hemos creado:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/aryas.png" align="center" width="40%"></a>
 
-Ahora podemos llamar a ese objeto tal como hicimos con `babynames`. 
+Ahora podemos llamar a ese objeto tal como hicimos con `babynames`.
 
 ```r
 aryas
@@ -449,7 +449,7 @@ Además, puedes buscar ayuda sobre este paquete y así tener más información s
 ?gapminder
 ```
 
-Las variables que incluye son país (`country`), continente (`continent`), año (`year`), expectativa de vida (`lifeExp`), población (`pop`) e ingreso per cápita en dólares (`gdpPercap`). Una función útil para conocer los nombres de las columnas de un conjunto de datos es a través de la función `names()`. 
+Las variables que incluye son país (`country`), continente (`continent`), año (`year`), expectativa de vida (`lifeExp`), población (`pop`) e ingreso per cápita en dólares (`gdpPercap`). Una función útil para conocer los nombres de las columnas de un conjunto de datos es a través de la función `names()`.
 ```r
 names(gapminder)
 ```
@@ -457,21 +457,21 @@ names(gapminder)
 
 ### Filtrar casos
 
-Tal como vimos más arriba, la función `filter` nos sirve para seleccionar casos (filas) a partir de un determinado criterio. Al igual como buscamos nombres de personas en `babynames`, acá podemos buscar los datos de algún país: 
+Tal como vimos más arriba, la función `filter` nos sirve para seleccionar casos (filas) a partir de un determinado criterio. Al igual como buscamos nombres de personas en `babynames`, acá podemos buscar los datos de algún país:
 
 ```r
-gapminder %>% 
+gapminder %>%
     filter(country == "China")
 ```
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/filter_china.png" align="center" width="60%"></a>
 
-¡Es impresionante cómo ha aumentado el PIB y la expectativa de vida en China en el último medio siglo! En una de sus charlas TED, Hans Rosling aborda la relación que aparece entre estas dos variables al visualizar los datos de Gapminder. Es muy recomendable verla. 
+¡Es impresionante cómo ha aumentado el PIB y la expectativa de vida en China en el último medio siglo! En una de sus charlas TED, Hans Rosling aborda la relación que aparece entre estas dos variables al visualizar los datos de Gapminder. Es muy recomendable verla.
 
 La función `filter` admite más de un criterio de filtrado. Por ejemplo, si quisiéramos saber qué países tuvieron un PIB per cápita menor que 1000 dólares durante 2007, podríamos hacerlo así:
 
 ```r
-gapminder %>% 
+gapminder %>%
     filter(year == 2007, gdpPercap < 1000)
 ```
 Es decir, le estamos pidiendo a R que:
@@ -480,25 +480,25 @@ Es decir, le estamos pidiendo a R que:
 * a continuación (` %>% `)
 * que filtre las filas que cumplan con dos criterios: año `==` 2007 y PIB `<` que 1000 dólares.
 
-La mayoría de los países que tuvieron un PIB tan bajo ese año se encuentran en África: 
+La mayoría de los países que tuvieron un PIB tan bajo ese año se encuentran en África:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_2007_PIB.png" align="center" width="60%"></a>
 
 
-Existen muchas otras formas de crear criterios de filtrado, que en futuros tutoriales exploraremos. Por ahora, revisaremos un último caso, porque nos servirá para volver a practicar la creacion de objetos. 
+Existen muchas otras formas de crear criterios de filtrado, que en futuros tutoriales exploraremos. Por ahora, revisaremos un último caso, porque nos servirá para volver a practicar la creacion de objetos.
 
-En los ejemplos anteriores solo consideramos un valor por variable para filtrar (por ejemplo, que país fuera `==` a China). ¿Cómo podríamos hacer una selección que incluya más países. Imagina que solo nos interesan los datos de Sudamérica. La variable `continent` considera a las tres Américas como una sola zona, así que no podemos seleccionarlas usando ese valor. 
+En los ejemplos anteriores solo consideramos un valor por variable para filtrar (por ejemplo, que país fuera `==` a China). ¿Cómo podríamos hacer una selección que incluya más países. Imagina que solo nos interesan los datos de Sudamérica. La variable `continent` considera a las tres Américas como una sola zona, así que no podemos seleccionarlas usando ese valor.
 
 Lo que podríamos hacer es crear un vector con todos los países de América del Sur que están en `gapminder` y decirle a R que ocupe eso como criterio de selección, así:
 
 ```r
-gapminder %>% 
+gapminder %>%
     filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))
 ```
 __ATENCIÓN:__ dependiendo de el ancho de tu ventana, puede que no se vea completa la segunda línea del código. Si pones el cursor sobre el bloque, podrás moverte horizontalmente. De todos modos, para que quede claro, la segunda línea es:
 
->`filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))` 
-    
+>`filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))`
+
 Lo que le estamos pidiendo a R es que
 
 * tome el objeto `gapminder`
@@ -510,30 +510,30 @@ Lo que le estamos pidiendo a R es que
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/gapminder_latam.png" align="center" width="75%"></a>
 
 
-Recuerda que también puedes agregar `View()` al final del código para ver tu selección en una ventana distinta. 
+Recuerda que también puedes agregar `View()` al final del código para ver tu selección en una ventana distinta.
 
 ```r
-gapminder %>% 
-    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela")) %>% 
+gapminder %>%
+    filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela")) %>%
     View()
 ```
 
 Si esta selección de casos nos interesa y tenemos intención de seguir utilizándola, nos conviene guardarla como un nuevo objeto usando el operador `<-`. Esto permite que no tengamos que volver a escribir un criterio de filtrado tan largo cuando queramos volver a trabajar con esos datos.
 
 ```r
-gapminder_sudamerica <- gapminder %>% 
+gapminder_sudamerica <- gapminder %>%
     filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"))
 ```
 
-Ahora el objeto apareció en nuestro Global Environment. 
+Ahora el objeto apareció en nuestro Global Environment.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/environment_gap_sudamerica.png" align="center" width="50%"></a>
 
 
-IMPORTANTE: muchas veces agregamos `View()` al final de un bloque de código para ver los datos en una ventana distinta. Es muy importante no incluir esa función cuando creamos un nuevo objeto para que el código haga lo que esperamos. 
+IMPORTANTE: muchas veces agregamos `View()` al final de un bloque de código para ver los datos en una ventana distinta. Es muy importante no incluir esa función cuando creamos un nuevo objeto para que el código haga lo que esperamos.
 
 
-#### ¿Y si quisiera guardar esos datos en mi computador? 
+#### ¿Y si quisiera guardar esos datos en mi computador?
 
 El paquete `readr`, que es parte del Tidyverse, tiene funciones muy útiles para importar y exportar archivos. En este caso, utilizaremos `write_csv()` para guardar en nuestro computador los datos de Gapminder para Sudamérica. Tenemos dos opciones.
 
@@ -543,7 +543,7 @@ Si ya creamos el objeto, podemos indicar su nombre como primer argumento dentro 
 write_csv(gapminder_sudamerica, "gapminder_sudamerica.csv")
 ```
 
-Al ejecutar el código, aparecerá en la carpeta de nuestro proyecto el nuevo archivo. 
+Al ejecutar el código, aparecerá en la carpeta de nuestro proyecto el nuevo archivo.
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/objeto_gapminder_sudamerica.png" align="center" width="50%"></a>
 
@@ -551,7 +551,7 @@ Al ejecutar el código, aparecerá en la carpeta de nuestro proyecto el nuevo ar
 Otra opción sería incluir la función `write_csv()` al final de nuestro código, es decir, como una siguiente acción en la cadena de comandos que le dimos a R:
 
 ```r
-gapminder %>% 
+gapminder %>%
     filter(country %in% c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela")) %>%
     write_csv("gapminder_sudamerica.csv")
 ```
@@ -562,14 +562,14 @@ En este último caso, no indicamos el primer argumento, ya que los datos que se 
 Imagina que nos interesa conocer la expectativa de vida de América del Norte, Centro y Sur. El último registro que contiene la base es de 2007, así que simplemente podríamos revisar los datos aplicando ese filtro y agregando View al final para mirarlos todos en una nueva pestaña:
 
 ```r
-gapminder %>% 
-    filter(year == 2007, continent == "Americas") %>% 
+gapminder %>%
+    filter(year == 2007, continent == "Americas") %>%
     View()
 ```
-El problema que tenemos es que los datos aparecen ordenados alfabéticamente, es decir, según la variable `country`. Una manera de resolver esto es indicando explícitamente a partir de qué variable queremos que se ordenen. Para eso, podemos utilizar la función `arrange()`. 
+El problema que tenemos es que los datos aparecen ordenados alfabéticamente, es decir, según la variable `country`. Una manera de resolver esto es indicando explícitamente a partir de qué variable queremos que se ordenen. Para eso, podemos utilizar la función `arrange()`.
 
 ```r
-gapminder  %>% 
+gapminder  %>%
     filter(year == 2007, continent == "Americas") %>%
     arrange(lifeExp)
 ```
@@ -577,12 +577,12 @@ gapminder  %>%
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/arrange_lifeExp.png" align="center" width="80%"></a>
 
 
-¡Ahora es más fácil mirar los resultados! Podemos ver que en la región, Haití, Bolivia y Trinidad y Tobago son los países con una menor expectativa de vida. 
+¡Ahora es más fácil mirar los resultados! Podemos ver que en la región, Haití, Bolivia y Trinidad y Tobago son los países con una menor expectativa de vida.
 
 Por defecto, `arrange()` organiza los datos de menor a mayor. ¿Y si quisiéramos ver el orden inverso?. En ese caso, tendríamos que indicar que el orden que nos interesa es el descendiente: `desc()`. Explicitamos esto dentro de la función `arrange()`:
 
 ```r
-gapminder %>% 
+gapminder %>%
     filter(year == 2007, continent == "Americas") %>%
     arrange(desc(lifeExp))
 ````
@@ -592,66 +592,66 @@ Un error habitual (muy habitual) es que se nos olvide algún paréntesis en nues
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/R_espera_mas.png" align="center" width="80%"></a>
 
-En vez del signo `>`, que es el que nos indica que R terminó de ejecutar la acción anterior y que está dispuesto a aceptar nuevos comandos, aparece un `+`. Lo que quiere decirnos R con esto es que algo falta en el código que acabamos de ejecutar. 
+En vez del signo `>`, que es el que nos indica que R terminó de ejecutar la acción anterior y que está dispuesto a aceptar nuevos comandos, aparece un `+`. Lo que quiere decirnos R con esto es que algo falta en el código que acabamos de ejecutar.
 Uno de los aspectos positivos de RStudio es que para que no nos ocurra esto, tratará de advertirnos sobre este tipo de errores cuando pueda identificarlos. Si hubiéramos olvidado el último paréntesis en nuestro script, RStudio habría hecho esto:
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/error_parentesis.png" align="center" width="60%"></a>
 
-Al costado izquierdo de la línea en que identifica el error, habría aparecido una alerta. 
+Al costado izquierdo de la línea en que identifica el error, habría aparecido una alerta.
 
-Olvidar un paréntesis o una coma es uno de los errores más habituales, así que es muy muy útil que RStudio nos ayude a indentificar problemas en nuestro script. 
+Olvidar un paréntesis o una coma es uno de los errores más habituales, así que es muy muy útil que RStudio nos ayude a indentificar problemas en nuestro script.
 
 ### Agrupar
 
 Más arriba vimos que la función `summarize()` nos permite crear una tabla que resume información de acuerdo a algún criterio. Por ejemplo, si quisiéramos conocer el promedio de la variable expectativa de vida para el año 2007, podríamos utilizar el siguiente código:
 
 ```r
-gapminder %>% 
-    filter(year == 2007) %>% 
+gapminder %>%
+    filter(year == 2007) %>%
     summarize(mean(lifeExp))
 ```
 El resultado es 67 años. Este dato no es muy informativo respecto de las diferencias que podrían existir por continente. ¿Cómo podríamos desagregar esa información? Para estos casos, la función `group_by()` resulta muy útil:
 ```r
-gapminder %>% 
+gapminder %>%
     filter(year == 2007) %>%
-    group_by(continent) %>% 
+    group_by(continent) %>%
     summarize(mean(lifeExp))
 ```
 Lo que les estamos pidiendo a R es que:
 * tome el objeto `gapminder`, luego,
 * que filtre los casos del año 2007, luego,
 * que agrupe los casos de acuerdo a la variable continente, luego
-* que haga un resumen de la información que sale de calcular la media de la variable expectativa de vida. 
+* que haga un resumen de la información que sale de calcular la media de la variable expectativa de vida.
 
 
 <a href="url"><img src="https://github.com/rivaquiroga/RLadies-Santiago/blob/master/images/group_by.png" align="center" width="80%"></a>
 
 Esto nos permite tener una mejor idea de las diferencias que existen en la expectativa de vida de las distintas regiones: África está muy por debajo de las otras.
- 
+
 ### Crear nuevas variables
 
-Muchas veces necesitamos agregar a nuestros datos nuevas variables. La función que nos permite hacer eso es `mutate()`. Veamos un ejemplo. 
+Muchas veces necesitamos agregar a nuestros datos nuevas variables. La función que nos permite hacer eso es `mutate()`. Veamos un ejemplo.
 
 La variable gdpPercap mide el ingreso per cápita en dólares. ¿Cómo podríamos agregar una variable a nuestros datos que incluya el valor en otra moneda? Una opción sería multiplicar la variable que ya tenemos por el valor actual de conversión de esa moneda. Para hacer esto, utilizaremos la función `mutate`. Al usarla, indicamoa el nombre que queremos que tenga la nueva variable y qué valor queremos que tenga. Como lo que queremos es asignar un valor, usaremos `=`: `mutate(nombre_nueva_variable = su_valor)`.
 
-El siguiente es un ejemplo local. Filtraremos los datos de Chile, donde el valor de conversión del dólar (para hoy) es de 595 pesos. 
+El siguiente es un ejemplo local. Filtraremos los datos de Chile, donde el valor de conversión del dólar (para hoy) es de 595 pesos.
 
 ```r
-gapminder %>% 
-    filter(country == "Chile") %>% 
+gapminder %>%
+    filter(country == "Chile") %>%
     mutate(PIB_pesos = gdpPercap * 595)
 ```
-Lo que le estamos pidiendo a R es que 
+Lo que le estamos pidiendo a R es que
 
 * tome el objeto gapminder, luego,
-* que filtre los casos correspondientes a Chile, luego, 
+* que filtre los casos correspondientes a Chile, luego,
 * que cree una variable llamada `PIB_pesos`, cuyo valor sea el de la variable `gdpPercap` multiplicado por 595 (el valor de hoy del dólar).
 
 Con la operación que acabamos de hacer solo creamos momentáneamente la variable para la sección de datos que filtramos. Para poder guardarla de manera definitiva tendríamos que crear un nuevo objeto que la incluya. Lo llamaremos `gapminder_CL`.
 
 ```r
-gapminder_CL <- gapminder %>% 
-    filter(country == "Chile") %>% 
+gapminder_CL <- gapminder %>%
+    filter(country == "Chile") %>%
     mutate(PIB_pesos = gdpPercap * 595)
 ```
 
@@ -662,7 +662,7 @@ Más arriba creamos un nuevo objeto filtrando los casos sudamericanos. Si sigues
 ```r
 gapminder_sudamerica <- read_csv("gapminder_sudamerica.csv")
 ```
-Lo que le estamos pidiendo a R con esta función es que 
+Lo que le estamos pidiendo a R con esta función es que
 
 * al objeto llamado `gapminder_sudamerica`
 * le asigne como valor (`<-`)
@@ -671,11 +671,11 @@ Lo que le estamos pidiendo a R con esta función es que
 (NOTA: Si ejecutas este código y ya tienes un objeto llamada `gapminder_sudamerica` en tu Global Environmet, lo que hará R será sobreescribirlo).
 
 
-Esa es la forma de importar datos en R: le pedimos que lea un archivo y asigne los datos que ahí encuentre a un objeto en nuestro entorno de trabajo. Lo más importante a tener en cuenta es que al importar esos datos __el archivo original no se modifica__. Es decir, todas las acciones que realicemos en R solo afectarán al objeto que creamos en nuestra sesión, no al archivo .csv que está en tu computador. La única forma de alterarlo sería que sobreescribiésemos el archivo con `write_csv()`. 
+Esa es la forma de importar datos en R: le pedimos que lea un archivo y asigne los datos que ahí encuentre a un objeto en nuestro entorno de trabajo. Lo más importante a tener en cuenta es que al importar esos datos __el archivo original no se modifica__. Es decir, todas las acciones que realicemos en R solo afectarán al objeto que creamos en nuestra sesión, no al archivo .csv que está en tu computador. La única forma de alterarlo sería que sobreescribiésemos el archivo con `write_csv()`.
 
-Que R no altere el archivo original no solo es bueno porque evita que por error arruinemos nuestros datos, sino también porque hace más transparente y reproducible nuestro trabajo: cualquier persona con el archivo original y nuestro script puede reconstruir el análisis que hicimos. 
+Que R no altere el archivo original no solo es bueno porque evita que por error arruinemos nuestros datos, sino también porque hace más transparente y reproducible nuestro trabajo: cualquier persona con el archivo original y nuestro script puede reconstruir el análisis que hicimos.
 
-Si ya tienes el objeto `gapminder_sudamerica` en tu Global Environment, podemos seguir. 
+Si ya tienes el objeto `gapminder_sudamerica` en tu Global Environment, podemos seguir.
 
 En estos datos todos los nombres de las variables se encuentran en inglés. Podemos chequear eso CON una función que vimos más arriba: `names()`:
 
@@ -687,7 +687,7 @@ names(gapminder_sudamerica)
 Para cambiar los nombres de las variables podemos utilizar la función `rename()` (_renombrar_). Para cada variable a la que queremos cambiar el nombre, lo que hacemos es indicar el nombre nuevo y luego el valor que tendrá, así: `nombre_nuevo = nombre_actual`. Si quisiéramos cambiar de forma permanente los nombres de todas las variables, tendríamos que sobreescribir el objeto y aplicar esta función:
 
 ```r
-gapminder_sudamerica <- gapminder_sudamerica %>% 
+gapminder_sudamerica <- gapminder_sudamerica %>%
     rename(pais = country, continente = continent, anio = year, expec_vida = lifeExp, poblacion = pop, PIB_percap = gdpPercap)
 ```
 ¡Listo! Ahora los nombres de las variables están traducidos. Para chequearlo, luego de ejecutar el código anterior puedes volver a aplicar la función `names()` o puedes revisar los datos con alguna de las funciones que vimos antes, como `View()`, `str()` o `head()`.
@@ -697,16 +697,16 @@ gapminder_sudamerica <- gapminder_sudamerica %>%
 Andes de volver a guardar nuestro objeto como csv, haremos un último cambio. Nuestros datos solo incluyen los datos de Sudamérica, por lo que la variable `continent` es poco informativa. Reescribiremos el objeto sin incluirla. Necesitamos, entonces, una función que nos permita seleccionar columnas. Como en el Tidyverse todo trata de ser transparente, la función se llama `select()` (_seleccionar_). Cuando usamos esa función, lo que indicamos en su interior es el nombre de las columnas que queremos seleccionar. Veamos un ejemplo. Agregaremos `View()` al final del bloque de código para ver el resultado:
 
 ```r
-gapminder_sudamerica %>% 
-    select(pais, anio, expec_vida, poblacion, PIB_percap) %>% 
+gapminder_sudamerica %>%
+    select(pais, anio, expec_vida, poblacion, PIB_percap) %>%
     View()
 ```
-Perfecto. Lo que hicimos en este caso fue indicar el nombre de las columnas que queremos mantener. 
+Perfecto. Lo que hicimos en este caso fue indicar el nombre de las columnas que queremos mantener.
 Pero más que mantener columnas, lo que queríamos hacer era deshacernos de `continente` y eso podemos hacerlo de una manera mucho más rápida: diciéndole a R qué es lo que no queremos conservar. Así:
 
 ```r
-gapminder_sudamerica %>% 
-    select(-continente) %>% 
+gapminder_sudamerica %>%
+    select(-continente) %>%
     View()
 ```
 ¡El resultado es el mismo! Al anteponer un `-` al nombre de la columna, le decimos a R que queremos conservar todas excepto esa. Es muy práctico si nuestra base tiene muchas variables y solo queremos eliminar unas pocas.
@@ -714,8 +714,8 @@ gapminder_sudamerica %>%
 Guardemos ahora nuestro objeto:
 
 ```r
-gapminder_sudamerica %>% 
-    select(-continente) %>% 
+gapminder_sudamerica %>%
+    select(-continente) %>%
     write_csv("gapminder_sudamerica.csv")
 ```
 
@@ -729,6 +729,6 @@ Si no quieres que sobreescriba el que ya tenías (con los nombres de las variabl
 
 * Si sabes inglés, la sugerencia es trabajar con el libro de Garrett Grolemund y Hadley Wickham [R for Data Science](https://R4DS.had.nz.co). Con ese libro podrás profundizar en lo revisado en este tutorial, pero sobre todo apropiarte de un proceso de trabajo con datos.
 
-* Las RLadies hispanohablantes hemos empezado a generar una [lista de recursos en español](https://github.com/rladies/recursos_en_espanol). Poco a poco va creciendo con materiales que hemos creado para nuestras reuniones. 
+* Las RLadies hispanohablantes hemos empezado a generar una [lista de recursos en español](https://github.com/rladies/recursos_en_espanol). Poco a poco va creciendo con materiales que hemos creado para nuestras reuniones.
 
 * Y claro, también puedes estar atenta a los eventos de [RLadies Santiago](https://meetup.com/rladies-scl) o del [capítulo correspondiente a tu ciudad](https://www.meetup.com/es/topics/r-ladies/). 
